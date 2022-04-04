@@ -1,5 +1,9 @@
 # Team GetWell
 
+## Mission Statement
+
+Inspiring and cultivating mental well being amongst women in tech
+
 ## Problem Statement
 
 In addition to the gender disparity in tech, the pandemic has detrimentally contributed to the mental health of women in tech.
@@ -19,6 +23,4 @@ As documented in the Sustainable Development Goals report, "suicide is among the
 - DuBow, W. & Gonzalez, J.J. (2020) NCWIT Scorecard: The Status of Women in Technology. Boulder, CO: NCWIT.
 - United Nations. (2021). SDG indicators. United Nations. Retrieved April 2, 2022, from <https://unstats.un.org/sdgs/report/2021/goal-05/>.
 
-## Mission Statement
 
-Inspiring and cultivating mental well being amongst women in tech
