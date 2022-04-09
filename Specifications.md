@@ -1,6 +1,5 @@
 ## Problem
-The pandemic has had disproportionate effects on the job security of women in tech, and now more than ever, women 
-in tech are in need of mental health support.
+Being a woman in the tech industry brings with it stressors which have only been worsened by the pandemic.
 
 Mental health remains today as a leading concern in global well-being. As documented in the Sustainable Development Goals report,
 "suicide is among the leading causes of mortality among people aged 15 to 29..." (SDG, 2021). Over the course of the pandemic, 
