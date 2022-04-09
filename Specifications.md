@@ -20,7 +20,7 @@ It's clear that many women still feel unsure about the efforts placed into eradi
 effort and action must be taken in order to make the working environment an inclusive place that can support every employee’s mental well-being.
 
 
-## Visual Wireframes 
+## Solution
 
-## Interaction Details
+
 
