@@ -21,7 +21,7 @@ effort and action must be taken in order to make the working environment an incl
 
 
 ## Solution
-There are plenty of resources proven to improve mental health outcomes in certain individuals. If we take the resources that are most applicable to women in tech, and pair it with stress-relieving activities such as the creation of art (Brenner, 2019), journaling (Smyth et. al., 2018), and sharing with a support group (Suresh et. al., 2021), women who use our product will see improvements in their mental health. 
+There are plenty of resources proven to improve mental health outcomes in certain individuals. If we take the resources that are most applicable to women in tech, and pair them with stress-relieving activities such as the creation of art (Brenner, 2019), journaling (Smyth et. al., 2018), and sharing with a support group (Suresh et. al., 2021), women who use our product will see improvements in their mental health. 
 
 
 
