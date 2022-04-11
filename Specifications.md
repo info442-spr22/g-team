@@ -57,19 +57,25 @@ This is the Resources Page where users can access useful mental health resources
 
 ## Sources
 
-* SDG Indicators.” United Nations, United Nations, https://unstats.un.org/sdgs/report/2021/goal-03/.
+* Becker, E. G. (2018, September 7). *Overcoming the challenges of being a woman in Tech*. Medium. Retrieved April 2, 2022, from https://uxdesign.cc/overcoming-the-challenges-of-being-a-woman-in-tech-91930375c40f 
 
-* Coakley, Kathryn E, et al. “Mental Health Severity Is Associated with Increases in Alcohol Consumption in Young Adult Students during the COVID-19 Pandemic.” Alcoholism Treatment Quarterly, vol. 39, no. 3, 2021, pp. 328–341., https://doi.org/10.1080/07347324.2021.1917325.
+* Brenner, B. (2021, April 24). *Creativity is your secret advantage for mental health and well-being*. Therapy Group of NYC. Retrieved April 9, 2022, from https://nyctherapy.com/therapists-nyc-blog/creativity-is-your-secret-advantage-for-mental-health-and-well-being/ 
 
-* Becker, E. G. (2018, September 7). Overcoming the challenges of being a woman in Tech. Medium. Retrieved April 2, 2022, from https://uxdesign.cc/overcoming-the-challenges-of-being-a-woman-in-tech-91930375c40f 
+* Coakley, Kathryn E, et al. *Mental Health Severity Is Associated with Increases in Alcohol Consumption in Young Adult Students during the COVID-19 Pandemic*. Alcoholism Treatment Quarterly, vol. 39, no. 3, 2021, pp. 328–341., https://doi.org/10.1080/07347324.2021.1917325.
 
-* Daley, S. (2021, March 21). Women in tech statistics show the industry has a long way to go. Built In. Retrieved April 2, 2022, from https://builtin.com/women-tech/women-in-tech-workplace-statistics 
+* Daley, S. (2021, March 21). *Women in tech statistics show the industry has a long way to go*. Built In. Retrieved April 2, 2022, from https://builtin.com/women-tech/women-in-tech-workplace-statistics 
 
-* Doyle, R. (2020, October 20). Sexism in tech: An inconvenient truth. Medium. Retrieved April 2, 2022, from https://medium.com/swlh/sexism-in-tech-an-inconvenient-truth-26df0329e39 
+* Doyle, R. (2020, October 20). *Sexism in tech: An inconvenient truth*. Medium. Retrieved April 2, 2022, from https://medium.com/swlh/sexism-in-tech-an-inconvenient-truth-26df0329e39 
 
-* Nirmita Panchal, R. K. (2021, February). The implications of COVID-19 for mental health and substance use. KFF. Retrieved April 6, 2022, from https://www.kff.org/coronavirus-covid-19/issue-brief/the-implications-of-covid-19-for-mental-health-and-substance-use/ 
+* Nirmita Panchal, R. K. (2021, February). *The implications of COVID-19 for mental health and substance use*. KFF. Retrieved April 6, 2022, from https://www.kff.org/coronavirus-covid-19/issue-brief/the-implications-of-covid-19-for-mental-health-and-substance-use/ 
 
-* United Nations. (2021). SDG indicators. United Nations. Retrieved April 2, 2022, from https://unstats.un.org/sdgs/report/2021/goal-05/ 
+* *SDG Indicators*. United Nations, United Nations, https://unstats.un.org/sdgs/report/2021/goal-03/.
+
+* Smyth, Joshua M, et al. *Online positive affect journaling in the improvement of mental distress and well-being in general medical patients with elevated anxiety symptoms: A preliminary randomized controlled trial*. JMIR mental health. Retrieved April 9, 2022, from https://pubmed.ncbi.nlm.nih.gov/30530460/ 
+
+* Suresh, R., Alam, A., &amp; Karkossa, Z. (2021, July 12). *Using peer support to strengthen mental health during the COVID-19 pandemic: A Review*. Frontiers in psychiatry. Retrieved April 9, 2022, from https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8310946/ 
+
+* United Nations. (2021). *SDG indicators*. United Nations. Retrieved April 2, 2022, from https://unstats.un.org/sdgs/report/2021/goal-05/ 
 
 
 
