@@ -27,10 +27,6 @@ In addition to creating their own stickers, users can use the stickers they’ve
 
 This is a more detailed view of what users can do with stickers. They have the ability to freely create art with the preselected stickers and their previously created stickers. By saving this piece, users gain the ability use it as a sticker in future pieces.
 
-<img width="740" alt="Screen Shot 2022-04-10 at 6 31 16 PM" src="https://user-images.githubusercontent.com/62968497/162650536-d4d8b6a4-06c7-46d6-8712-090955c8d04e.png">
-
-By clicking the share button, users will be prompted with a pop up asking them if they want to share their sticker. This page allows users to share their content on Twitter or Instagram. By choosing either option they will be redirected to the appropriate platform to share their creations. If an error occurs while attempting share the artwork, the user will be prompted to try again later. The user does not need an account with out service to use this feature, however, would need an account on the social media they are attempting to share to.
-
 <img width="543" alt="Screen Shot 2022-04-10 at 6 32 33 PM" src="https://user-images.githubusercontent.com/62968497/162650620-09ea4087-5997-41f6-80f6-13545131af2e.png">
 
 This is the Journal page where users can create journal entires. In the navigation bar, the Journal link is highlighted. Above the entry box is a question asking the user how they are feeling today. The entry box below is where users will be able to create the journal entry. Users can then click save and select a sticker which will save the journal entry for that day. This sticker is then used as an icon for this journal entry. If the user has not yet created an account or is not signed in, they will be redirected to the sign-up/log-in page. Additionally, if the entry box is empty and the save button is clicked, the user will be warned that there is nothing to save.
@@ -50,6 +46,10 @@ This is the Profile page as well as the Sticker Gallery page. In the navigation 
 <img width="634" alt="Screen Shot 2022-04-10 at 6 35 25 PM" src="https://user-images.githubusercontent.com/62968497/162650790-4915a9ed-0ed5-4ed1-b232-b5baa0142292.png">
 
 Under the profile page, users can access the Sticker Gallery. This is where all of their previous saved works will be displayed. They can click into each card and view their stickers in more details. In the detailed view, they have the choices of discarding this piece, sharing this piece, or just leaving the view by pressing the ‘x’ in the top right corner. 
+
+<img width="740" alt="Screen Shot 2022-04-10 at 6 31 16 PM" src="https://user-images.githubusercontent.com/62968497/162650536-d4d8b6a4-06c7-46d6-8712-090955c8d04e.png">
+
+By clicking the share button, users will be prompted with a pop up asking them if they want to share their sticker. This page allows users to share their content on Twitter or Instagram. By choosing either option they will be redirected to the appropriate platform to share their creations. If an error occurs while attempting share the artwork, the user will be prompted to try again later. The user does not need an account with out service to use this feature, however, would need an account on the social media they are attempting to share to.
 
 <img width="679" alt="Screen Shot 2022-04-10 at 6 35 56 PM" src="https://user-images.githubusercontent.com/62968497/162650815-2338a83a-9d38-4f06-998d-3b934038a3bb.png">
 
