@@ -53,7 +53,7 @@ By clicking the share button, users will be prompted with a pop up asking them i
 
 <img width="679" alt="Screen Shot 2022-04-10 at 6 35 56 PM" src="https://user-images.githubusercontent.com/62968497/162650815-2338a83a-9d38-4f06-998d-3b934038a3bb.png">
 
-This is the Resources Page where users can acess useful mental health resources and inspiring pieces with relatable women in tech experiences. The Resources navigation bar link should be highlighted. There will be a Titles/Categories list on the left hand side of the page that will detail the various content under different genres. To the right of the list, the content will be displayed along with its title and author. Users can click on different titles in the list and the main content should change accordingly.
+This is the Resources Page where users can access useful mental health resources and inspiring pieces relatable to women in tech. The Resources link in the navigation bar should be highlighted. There will be a Titles/Categories list on the left hand side of the page that will detail the various content sorted by genre. To the right of the list, the content will be displayed along with its title and author. Users can click on different titles in the list and the main content should change accordingly.
 
 ## Sources
 
