@@ -55,6 +55,24 @@ Under the profile page, users can access the Sticker Gallery. This is where all 
 
 This is the Resources Page where users can acess useful mental health resources and inspiring pieces with relatable women in tech experiences. The Resources navigation bar link should be highlighted. There will be a Titles/Categories list on the left hand side of the page that will detail the various content under different genres. To the right of the list, the content will be displayed along with its title and author. Users can click on different titles in the list and the main content should change accordingly.
 
+## Sources
+
+* SDG Indicators.” United Nations, United Nations, https://unstats.un.org/sdgs/report/2021/goal-03/.
+
+* Coakley, Kathryn E, et al. “Mental Health Severity Is Associated with Increases in Alcohol Consumption in Young Adult Students during the COVID-19 Pandemic.” Alcoholism Treatment Quarterly, vol. 39, no. 3, 2021, pp. 328–341., https://doi.org/10.1080/07347324.2021.1917325.
+
+* Becker, E. G. (2018, September 7). Overcoming the challenges of being a woman in Tech. Medium. Retrieved April 2, 2022, from https://uxdesign.cc/overcoming-the-challenges-of-being-a-woman-in-tech-91930375c40f 
+
+* Daley, S. (2021, March 21). Women in tech statistics show the industry has a long way to go. Built In. Retrieved April 2, 2022, from https://builtin.com/women-tech/women-in-tech-workplace-statistics 
+
+* Doyle, R. (2020, October 20). Sexism in tech: An inconvenient truth. Medium. Retrieved April 2, 2022, from https://medium.com/swlh/sexism-in-tech-an-inconvenient-truth-26df0329e39 
+
+* Nirmita Panchal, R. K. (2021, February). The implications of COVID-19 for mental health and substance use. KFF. Retrieved April 6, 2022, from https://www.kff.org/coronavirus-covid-19/issue-brief/the-implications-of-covid-19-for-mental-health-and-substance-use/ 
+
+* United Nations. (2021). SDG indicators. United Nations. Retrieved April 2, 2022, from https://unstats.un.org/sdgs/report/2021/goal-05/ 
+
+
+
 
 
 
