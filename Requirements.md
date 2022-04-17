@@ -139,7 +139,7 @@
           <li>The pop up will include a sign up button and pressing that will lead them to the sign-up/login page</li>
           </ol>
         <li>If user has account and is signed in, a pop up will appear to let them know their piece has been saved (detailed in Save to Gallery section)</li>
-       <ol>
+       </ol>
      </ol>
 <li>Can click the clear button to remove all content from page</li>
     <ol>
@@ -171,6 +171,136 @@
        <li>(stretch) If an object is deleted and the stack is full, then the oldest deleted object is removed from the bottom of the stack, permanently deleting it</li>
        </ol>
 </ol>
+  
+## Save to Gallery (Core)
+<ol>
+<li>Users are signed in</li>
+<li>Within the Scrapbook page, users can click on the “Save” button to save a piece</li>
+  <ol>
+    <li>Clicking the button will prompt a pop up</li>
+    <ol>
+      <li>Pop up will confirm to user that their work has been saved to gallery</li>
+        <ol>
+        <li>User can press “OK” to remove pop up</li>
+        <li>User can press “X” in top corner to exit pop up</li>
+        <li>User can press “Go to gallery” to navigate to profile/gallery</li>
+        <li>User can press “Share” to share content (detailed in View Art Pieces/Share Them 8a)</li>
+        </ol>
+     <li>Pop up will say that an error has occurred and work has not been saved</li>
+        <ol>
+        <li>User can press “Retry” to try saving again (pops up until success)</li>
+        <li>User can press “X” in top corner to exit pop up</li>
+        </ol>
+    </ol>
+   </ol>
+</ol>
 
+## Pre-created Stickers (Core)
+<ol>
+<li>Users can view all pre-created stickers under the “Stickers” section on the 'object properties' sidebar on the Scrapbook page.</li>
+<li>Users can select any of the following stickers:</li>
+  <ol>
+  <li>Circle</li>
+    <ol>
+    <li>Users can select the circle by clicking the “c” key on their keyboard.</li>
+    </ol>
+  <li>Ellipse</li>
+    <ol>
+    <li>Users can select the ellipse by clicking the “e” key on their keyboard.</li>
+    </ol>
+  <li>Square</li>
+    <ol>
+    <li>Users can select the square by clicking the “s” key on their keyboard.</li>
+    </ol>
+  <li>Rectangle</li>
+    <ol>
+    <li>Users can select the rectangle by clicking the “r” key on their keyboard.</li>
+    </ol>
+  <li>Line</li>
+    <ol>
+    <li>Users can select the line by clicking the “l” key on their keyboard.</li>
+    </ol>
+  <li>Arrow</li>
+    <ol>
+    <li>Users can select the arrow by clicking the “a” key on their keyboard.</li>
+    </ol>
+  <li>Triangle</li>
+    <ol>
+    <li>Users can select the triangle by clicking the “shift + t” key on their keyboard.</li>
+    </ol>
+  <li>Star</li>
+    <ol>
+    <li>Users can select the star by clicking the “x” key on their keyboard.</li>
+    </ol>
+  <li>Heart</li>
+    <ol>
+    <li>Users can select the heart by clicking the “h” key on their keyboard.</li>
+    </ol>
+  </ol>
+<li>By clicking on a sticker, the user will select that sticker represented by a square outline appearing around it and the background color of this square changing color.</li>
+<li>With a sticker selected the user can click and hold on the canvas to begin the sticker placement process.</li>
+<li>When the user releases their mouse button while the sticker placement process is undergoing, they will place the sticker on the canvas.</li>
+<li>When the user moves their cursor during the sticker placement process, the preview of what the sticker will look like when placed appears.</li>
+  <ol>
+  <li>If the user’s cursor goes off the canvas, the preview stops.</li>
+  <li>If the user’s cursor was off the canvas, during the sticker placement process and returns to the canvas, the preview will resume following the cursor.</li>
+  </ol>
+<li>When a sticker that is placed on the canvas is selected with the select + move tool, the bar on the left of the canvas is replaced with the sticker information bar</li> 
+  <ol>
+  <li>The user can edit the width of the sticker using numeric values.</li> 
+  <li>The user can edit the height of the sticker using numeric values.</li> 
+  <li>The user can edit the rotation of the sticker using numeric values (degrees).</li> 
+  <li>The user can edit the color of the sticker's fill by clicking on a square labeled “sticker fill” opening the color selection tool.</li> 
+    <ol>
+    <li>See color selection tool requirements in Scrapbook-4.</li> 
+    </ol>
+  <li>The user can edit the color of the sticker's fill by clicking on a square labeled “sticker outline” opening the color selection tool. (stretch)</li> 
+    <ol>
+    <li>See color selection tool requirements in Scrapbook-4.</li> 
+    </ol>
+  </ol>
+<li>When a sticker that is placed on the canvas is clicked the sticker will be outlined in a rectangle with squares on the corners.</li>
+  <ol>
+  <li>The user can click and drag these corners to adjust the size of the sticker</li>
+  </ol>
+<li>When a sticker that is placed on the canvas is clicked, the user can use the arrow keys on their keyboard to move the sticker a set distance.</li>
+<li>The user can click and drag a sticker on the canvas to change its position.</li>
+</ol>
+
+## Nav Bar (Core)
+<ol>
+<li>On left side of nav bar, the name of product will be displayed</li>
+  <ol>
+  <li>Clicking on the product name will lead users to the About Us page (stretch)</li>
+  </ol>
+<li>On right side of nav bar, there will be two buttons to help users navigate to different pages. The options will differ depending on whether or not the user is logged in or not</li>
+  <ol>
+  <li>If logged in:</li>
+    <ol>
+      <li>Click on “Scrapbook” to enter Scrapbook page</li>
+      <li>Click on “Profile” to enter Profile page</li>
+    </ol>
+    <li>If not signed in or no account:</li>
+    <ol>
+      <li>Click on “Scrapbook” to enter Scrapbook page</li>
+      <li>Click on “Sign in” to enter Sign-In/Log-In page</li>
+    </ol>
+  </ol>
+</ol>
+
+## Sharing Content to Social Media (Core) 
+<ol>
+<li>When to prompt sharing:</li>
+  <ol>
+  <li>When saving gallery</li>
+  <li>When looking at art in detail (stretch)</li>
+  </ol>
+<li>A user can share to social media after being prompted when saving to the gallery (see Save to Gallery 2.a.i.4)</li>
+<li>A user can share to social media by clicking the share button on the view art piece preview (see View Art Piece/Share (stretch) page) (stretch)</li>
+<li>When a user starts the share process, a medium sized pop-up window appears with social media icons.</li>
+<li>When a user clicks on one of these social media icons, they will be redirected to this platform to share their art piece.</li>
+<li>If an error occurs during the sharing to social media process, an error message will be displayed.</li>
+<li>If the user clicks on the x in the top right corner, they will abort the sharing to social media process and exit the pop-up window.</li>
+</ol>
 
 
