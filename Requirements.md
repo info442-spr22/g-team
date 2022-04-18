@@ -14,7 +14,7 @@
   <li>When the Log In button is clicked, it is disabled and a loading icon is displayed inside of the button while the information is being submitted</li>
   <li>By default, the user is brought to the scrapbook page after successful authentication</li>
   <li>If they were redirected to the login/create account pages because they attempted to take an action that requires authentication, then after successful authentication, the user is redirected to the page they were on when they attempted that action</li>
-  <li>If they were redirected to the login/create account pages because they attempted to navigate to a page that requires authentication, then after   successful authentication, the user is redirected to that page</li>
+  <li>If they were redirected to the login/create account pages because they attempted to navigate to a page that requires authentication, then after   successful authentication, the user is redirected to the page they attempted to navigate to</li>
   <li>The 'create account' link should direct the user to the 'create account' page</li>
 (stretch) There should be an option to reset password if the user forgets their password
    </ol>
