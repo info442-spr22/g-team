@@ -307,6 +307,7 @@
 
 ## Gallery (Core)
 <ol>
+<li>The user should be able to access their personal gallery of scrapbooking artwork after clicking on the account tab in the navigation bar at the top.</li>
 <li>This feature requires users to have an account, otherwise, they cannot access it</li>
 <li>If user has no saved pieces, the gallery will be empty (no cards)</li>
 <li>If user has saved piece(s), the gallery will display the piece(s) (3 cards per row)</li>
@@ -361,8 +362,6 @@
 
 ## View art pieces/share them (Stretch)
 <ol>
-<li>The user should be able to access their personal gallery of scrapbooking artwork after clicking on the account tab in the navigation bar at the top.</li>
-<li>The user will be able to see all of their artwork organized in columns of three.</li>
 <li>The user will be able to click on the artwork in particular that they would like to share to social media.</li>
 <li>A medium sized pop-up window will appear in the center of the page that will contain their artwork and the date it was saved.</li>
     <ol>
