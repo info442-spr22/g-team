@@ -360,7 +360,7 @@
 <li>Non-accessible features are removed when screen is being read by a screen reader (stretch)</li>
 </ol>
 
-## View art pieces/share them (Stretch)
+## View Art Pieces/Share Them (Stretch)
 <ol>
 <li>The user will be able to click on the artwork in particular that they would like to share to social media.</li>
 <li>A medium sized pop-up window will appear in the center of the page that will contain their artwork and the date it was saved.</li>
