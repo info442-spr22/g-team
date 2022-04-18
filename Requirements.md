@@ -70,10 +70,10 @@
   </ol>
 <li>Color selection tool requirements:</li>
       <ol>
-      <li>When the user opens the color selection tool in any way, it will appear beneath the trigger as a medium-sized rectangle.</li> 
+      <li>When the user opens the color selection tool in any way, it will appear beneath the trigger as a medium-sized rectangle.</li>
       <li>The user can use their cursor to create a different shade of the primary color they have currently selected in the rectangle in the center of the color selection tool.</li>
       <li>The user can change the primary color using their cursor on the primary color slider second from the right of the color selection tool.</li>
-      <li>The user can change the opacity using the opacity slider on the far right of the color selection tool.</li> 
+      <li>The user can change the opacity using the opacity slider on the far right of the color selection tool.</li>
       <li>The user can see the new color they have created in the bottom half of the rectangle on the left of the color selection tool.</li>
       <li>The user can see the color most recently selected in the top half of the rectangle on the left of the color selection tool.</li>
       <li>The user confirms the color by clicking the save button.</li>
@@ -173,7 +173,7 @@
        <li>(stretch) If an object is deleted and the stack is full, then the oldest deleted object is removed from the bottom of the stack, permanently deleting it</li>
        </ol>
 </ol>
-  
+
 ## Save to Gallery (Core)
 <ol>
 <li>Users are signed in</li>
@@ -247,18 +247,18 @@
   <li>If the user’s cursor goes off the canvas, the preview stops.</li>
   <li>If the user’s cursor was off the canvas, during the sticker placement process and returns to the canvas, the preview will resume following the cursor.</li>
   </ol>
-<li>When a sticker that is placed on the canvas is selected with the select + move tool, the bar on the left of the canvas is replaced with the sticker information bar</li> 
+<li>When a sticker that is placed on the canvas is selected with the select + move tool, the bar on the left of the canvas is replaced with the sticker information bar</li>
   <ol>
-  <li>The user can edit the width of the sticker using numeric values.</li> 
-  <li>The user can edit the height of the sticker using numeric values.</li> 
-  <li>The user can edit the rotation of the sticker using numeric values (degrees).</li> 
-  <li>The user can edit the color of the sticker's fill by clicking on a square labeled “sticker fill” opening the color selection tool.</li> 
+  <li>The user can edit the width of the sticker using numeric values.</li>
+  <li>The user can edit the height of the sticker using numeric values.</li>
+  <li>The user can edit the rotation of the sticker using numeric values (degrees).</li>
+  <li>The user can edit the color of the sticker's fill by clicking on a square labeled “sticker fill” opening the color selection tool.</li>
     <ol>
-    <li>See color selection tool requirements in Scrapbook-4.</li> 
+    <li>See color selection tool requirements in Scrapbook-4.</li>
     </ol>
-  <li>The user can edit the color of the sticker's fill by clicking on a square labeled “sticker outline” opening the color selection tool. (stretch)</li> 
+  <li>The user can edit the color of the sticker's fill by clicking on a square labeled “sticker outline” opening the color selection tool. (stretch)</li>
     <ol>
-    <li>See color selection tool requirements in Scrapbook-4.</li> 
+    <li>See color selection tool requirements in Scrapbook-4.</li>
     </ol>
   </ol>
 <li>When a sticker that is placed on the canvas is clicked the sticker will be outlined in a rectangle with squares on the corners.</li>
@@ -290,7 +290,7 @@
   </ol>
 </ol>
 
-## Sharing Content to Social Media (Core) 
+## Sharing Content to Social Media (Core)
 <ol>
 <li>When to prompt sharing:</li>
   <ol>
@@ -301,7 +301,7 @@
 <li>A user can share to social media by clicking the share button on the view art piece preview (see View Art Piece/Share (stretch) page) (stretch)</li>
 <li>When a user starts the share process, a medium sized pop-up window appears with social media icons.</li>
 <li>When a user clicks on one of these social media icons, they will be redirected to this platform to share their art piece.</li>
-<li>If an error occurs during the sharing to social media process, an error message will be displayed.</li>
+<li>If an error occurs during the sharing to social media process, an error message will be displayed  stating “Something went wrong, please try again.”</li>
 <li>If the user clicks on the x in the top right corner, they will abort the sharing to social media process and exit the pop-up window.</li>
 </ol>
 
@@ -327,7 +327,7 @@
   </ol>
 </ol>
 
-## Profile Page - Personal Gallery Showcase (Core) 
+## Profile Page - Personal Gallery Showcase (Core)
 <ol>
 <li>After finishing each art piece, users can click the finish button. It would store everything as an image file to firebase.</li>
 <li>On the top half of the profile page, users’ profile picture, display name, and email address would be displayed.</li>
@@ -374,44 +374,44 @@
     <li>The user will be able to click on one of the social media icons and will be redirected to the corresponding platform to share their content.</li>
     <li>If an error occurs while attempting to share the artwork, the user will be prompted on the same window to try again, with an error message that says “Something went wrong, please try again.”</li>
     <li>If the user wants to go back because they do not want to share the content, they will be able to click on a small back arrow on the top left corner of the pop-up window.</li>
-    <li>There will also be a small X in the top right corner that allows the user to click on and close the window.</li> 
+    <li>There will also be a small X in the top right corner that allows the user to click on and close the window.</li>
     </ol>
 </ol>
 
 ## Create Own Stickers (Stretch)
 <ol>
-<li>Users can utilize the same stickers and tools provided in the scrapbook page (all except for text) to create their own stickers</li> 
-<li>These custom stickers can be used in the scrapbook page and in the creation of new stickers.</li> 
-<li>They are used in the same way(s) except that they are put in their own section of the 'object properties' sidebar</li> 
-<li>One user can have a maximum of 12 custom stickers</li> 
-<li>If the user already has the max number of custom stickers:</li> 
+<li>Users can utilize the same stickers and tools provided in the scrapbook page (all except for text) to create their own stickers</li>
+<li>These custom stickers can be used in the scrapbook page and in the creation of new stickers.</li>
+<li>They are used in the same way(s) except that they are put in their own section of the 'object properties' sidebar</li>
+<li>One user can have a maximum of 12 custom stickers</li>
+<li>If the user already has the max number of custom stickers:</li>
   <ol>
-  <li>When they create a new sticker, they are prompted before they begin that they will have to replace a sticker if they save this new one</li> 
-  <li>When they opt to save this new sticker, they are presented with a display of all of their custom stickers, and they choose one to delete and replace with the new sticker</li> 
+  <li>When they create a new sticker, they are prompted before they begin that they will have to replace a sticker if they save this new one</li>
+  <li>When they opt to save this new sticker, they are presented with a display of all of their custom stickers, and they choose one to delete and replace with the new sticker</li>
   </ol>
 <li>Optionally, these stickers can be viewed on the gallery page, in a separate section from the art pieces, and managed from there</li>
   <ol>
-  <li>Users can see a zoomed in view of each of their own stickers from here, individually</li> 
-  <li>Users can delete specific stickers one at a time from this zoomed in view</li> 
+  <li>Users can see a zoomed in view of each of their own stickers from here, individually</li>
+  <li>Users can delete specific stickers one at a time from this zoomed in view</li>
   </ol>
 </ol>
 
 ## About Us Page (Stretch)
 <ol>
-<li>Users can click the About Us Page button in the top menu. It would bring them to the About Us Page which contains content of our product’s mission statement, and a brief introduction of how to use our product.</li> 
-<li>This page would has access to accessibility features.(voiceover)</li> 
+<li>Users can click the About Us Page button in the top menu. It would bring them to the About Us Page which contains content of our product’s mission statement, and a brief introduction of how to use our product.</li>
+<li>This page would has access to accessibility features.(voiceover)</li>
 </ol>
 
 ## Upload Created Stickers to the Public Sticker Set (Stretch)
 <ol>
-<li>Users should be able to save their sticker art by clicking on a button located to the top right of the canvas.</li> 
-<li>Users will see a pop-up window after saving their art that asks them if they want to upload their art to the public sticker set.</li> 
-<li>Users should have the option to click the yes button if they want to upload their sticker to the public sticker set.</li> 
+<li>Users should be able to save their sticker art by clicking on a button located to the top right of the canvas.</li>
+<li>Users will see a pop-up window after saving their art that asks them if they want to upload their art to the public sticker set.</li>
+<li>Users should have the option to click the yes button if they want to upload their sticker to the public sticker set.</li>
     <ol>
-    <li>Users will see a pop-up box that tells them that their sticker will be reviewed and then uploaded to the public sticker set</li> 
+    <li>Users will see a pop-up box that tells them that their sticker will be reviewed and then uploaded to the public sticker set</li>
    </ol>
-<li>Users should have the option to click the no button if they do not want to upload their sticker to the public sticker set</li> 
+<li>Users should have the option to click the no button if they do not want to upload their sticker to the public sticker set</li>
     <ol>
-    <li>Users will see a pop-up box that them that their sticker will be saved to their personal gallery instead</li> 
+    <li>Users will see a pop-up box that them that their sticker will be saved to their personal gallery instead</li>
     </ol>
 </ol>
