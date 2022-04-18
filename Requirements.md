@@ -1,3 +1,5 @@
+# Requirements
+
 ## Create Account / Log-In (Core)
 <ol>
   <li>These are two pages that each have a form with:</li>
@@ -303,4 +305,113 @@
 <li>If the user clicks on the x in the top right corner, they will abort the sharing to social media process and exit the pop-up window.</li>
 </ol>
 
+## Gallery (Core)
+<ol>
+<li>This feature requires users to have an account, otherwise, they cannot access it</li>
+<li>If user has no saved pieces, the gallery will be empty (no cards)</li>
+<li>If user has saved piece(s), the gallery will display the piece(s) (3 cards per row)</li>
+<li>Under the profile page, users can scroll down and see their saved pieces</li>
+<li>User can view art pieces in detail by clicking on the card (detailed in View Art Pieces/Share Them section)</li>
+<li>By default, the gallery pieces are sorted by newest (newest on top and oldest on the bottom)</li>
+<li>User can sort their pieces</li>
+  <ol>
+    <li>By clicking on the “Sort by” drop down, a list of filter options will appear</li>
+    <ol>
+    <li>Sort by: oldest (selecting this option sorts the gallery pieces by oldest on top and newest below)</li>
+    <li>Sort by: newest (selecting this option sorts the gallery pieces by newest on top and oldest below)</li>
+    </ol>
+    <li>Sort by date (would appear in the sort by drop down; stretch)</li>
+    <ol>
+    <li>A calendar template would appear and each piece would be organized into a cell of the calendar depending on which day it was saved</li>
+    </ol>
+  </ol>
+</ol>
 
+## Profile Page - Personal Gallery Showcase (Core) 
+<ol>
+<li>After finishing each art piece, users can click the finish button. It would store everything as an image file to firebase.</li>
+<li>On the top half of the profile page, users’ profile picture, display name, and email address would be displayed.</li>
+<li>There is a “Edit Profile” button on the upper right corner</li>
+    <ol>
+   <li>Upon click of that button, users will bring up a edit profile pop up window that lets them edit their profile</li>
+    <li>When users hover over their profile picture, a edit icon will appear</li>
+      <ol>
+      <li>Users can click on that icon to edit profile picture</li>
+      <li>Upon click, a pop up window will appear, revealing photo options for the user to pick from</li>
+      <li>They can click on a photo and this will close the pop up window and change the profile pic to what they chose, bringing them back to the edit profile pop up</li>
+      </ol>
+   <li>In the Edit Profile pop up, users can edit their display name and view their email address</li>
+      <ol>
+      <li>The text related profile information will be in a form format, allowing users to type</li>
+      <li>Clicking the form for their display name will enable users to type in that form, they can delete or type in a new display name</li>
+      <li>Email address cannot be changed</li>
+      </ol>
+    <li>Once they’re done editing, they can press “Save Changes” at the bottom to save their changes and exit the edit profile pop up</li>
+    <li>If they don’t want to make changes or discard changes, they can press the “X” at the upper right corner of the pop up</li>
+    </ol>
+<li>On the bottom half of the profile page, the art piece preview would be displayed in a card form(3 cards per row)</li>
+</ol>
+
+## Non-Functional Requirements
+<ol>
+<li>All images have proper and accessible alt-text</li>
+<li>User data should be encrypted before transmission to the back-end, and also while at rest in the back-end (these both come with the Firebase services we plan to use)</li>
+<li>Non-accessible features are removed when screen is being read by a screen reader (stretch)</li>
+</ol>
+
+## View art pieces/share them (Stretch)
+<ol>
+<li>The user should be able to access their personal gallery of scrapbooking artwork after clicking on the account tab in the navigation bar at the top.</li>
+<li>The user will be able to see all of their artwork organized in columns of three.</li>
+<li>The user will be able to click on the artwork in particular that they would like to share to social media.</li>
+<li>A medium sized pop-up window will appear in the center of the page that will contain their artwork and the date it was saved.</li>
+    <ol>
+    <li>If the user accidentally clicked on the artwork or does not want to look at it anymore, there will be a small X in the top right corner that allows the user to click on and close the window.</li>
+    </ol>
+<li>Underneath the pop-up window, there will be two small-sized buttons that say “discard” and “share.”</li>
+    <ol>
+    <li>If the user clicks on the “share” button, another medium sized pop-up window will appear that contains multiple different social media icons, such as twitter, facebook, and instagram.</li>
+    <li>The user will be able to click on one of the social media icons and will be redirected to the corresponding platform to share their content.</li>
+    <li>If an error occurs while attempting to share the artwork, the user will be prompted on the same window to try again, with an error message that says “Something went wrong, please try again.”</li>
+    <li>If the user wants to go back because they do not want to share the content, they will be able to click on a small back arrow on the top left corner of the pop-up window.</li>
+    <li>There will also be a small X in the top right corner that allows the user to click on and close the window.</li> 
+    </ol>
+</ol>
+
+## Create Own Stickers (Stretch)
+<ol>
+<li>Users can utilize the same stickers and tools provided in the scrapbook page (all except for text) to create their own stickers</li> 
+<li>These custom stickers can be used in the scrapbook page and in the creation of new stickers.</li> 
+<li>They are used in the same way(s) except that they are put in their own section of the 'object properties' sidebar</li> 
+<li>One user can have a maximum of 12 custom stickers</li> 
+<li>If the user already has the max number of custom stickers:</li> 
+  <ol>
+  <li>When they create a new sticker, they are prompted before they begin that they will have to replace a sticker if they save this new one</li> 
+  <li>When they opt to save this new sticker, they are presented with a display of all of their custom stickers, and they choose one to delete and replace with the new sticker</li> 
+  </ol>
+<li>Optionally, these stickers can be viewed on the gallery page, in a separate section from the art pieces, and managed from there</li>
+  <ol>
+  <li>Users can see a zoomed in view of each of their own stickers from here, individually</li> 
+  <li>Users can delete specific stickers one at a time from this zoomed in view</li> 
+  </ol>
+</ol>
+
+## About Us Page (Stretch)
+<ol>
+<li>Users can click the About Us Page button in the top menu. It would bring them to the About Us Page which contains content of our product’s mission statement, and a brief introduction of how to use our product.</li> 
+<li>This page would has access to accessibility features.(voiceover)</li> 
+</ol>
+
+## Upload Created Stickers to the Public Sticker Set (Stretch)
+<ol>
+<li>Users should be able to save their sticker art by clicking on a button located to the top right of the canvas.</li> 
+<li>Users will see a pop-up window after saving their art that asks them if they want to upload their art to the public sticker set.</li> 
+<li>Users should have the option to click the yes button if they want to upload their sticker to the public sticker set.</li> 
+    <ol>
+    <li>Users will see a pop-up box that tells them that their sticker will be reviewed and then uploaded to the public sticker set</li> 
+   </ol>
+<li>Users should have the option to click the no button if they do not want to upload their sticker to the public sticker set</li> 
+    <ol>
+    <li>Users will see a pop-up box that them that their sticker will be saved to their personal gallery instead</li> 
+    </ol>
+</ol>
