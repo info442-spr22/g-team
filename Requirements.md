@@ -1,7 +1,7 @@
 # Requirements
 
 ## Create Account / Log-In (Core)
-A
+A.
 <ol>
   <li>These are two pages that each have a form with:</li>
   <ol>
@@ -28,7 +28,7 @@ A
 </ol>
 
 ## Landing Page (Core)
-B
+B.
 <ol>
 <li>Should be the first page users see</li>
 <li>User must be able to scroll through landing page</li>
@@ -62,7 +62,7 @@ B
 </ol>
 
 ## Scrapbook (Core)
-C
+C.
 <ol>
 <li>This page consists of a canvas, an 'object properties' sidebar, and an action bar</li>
 <li>By default, the select + move tool is highlighted with a change of color and an outline around the symbol.</li>
@@ -178,7 +178,7 @@ C
 </ol>
 
 ## Save to Gallery (Core)
-D
+D.
 <ol>
 <li>Users are signed in</li>
 <li>Within the Scrapbook page, users can click on the “Save” button to save a piece</li>
@@ -202,7 +202,7 @@ D
 </ol>
 
 ## Pre-created Stickers (Core)
-E
+E.
 <ol>
 <li>Users can view all pre-created stickers under the “Stickers” section on the 'object properties' sidebar on the Scrapbook page.</li>
 <li>Users can select any of the following stickers:</li>
@@ -275,7 +275,7 @@ E
 </ol>
 
 ## Nav Bar (Core)
-F
+F.
 <ol>
 <li>On left side of nav bar, the name of product will be displayed</li>
   <ol>
@@ -297,7 +297,7 @@ F
 </ol>
 
 ## Sharing Content to Social Media (Core)
-G
+G.
 <ol>
 <li>When to prompt sharing:</li>
   <ol>
@@ -313,7 +313,7 @@ G
 </ol>
 
 ## Gallery (Core)
-H
+H.
 <ol>
 <li>The user should be able to access their personal gallery of scrapbooking artwork after clicking on the account tab in the navigation bar at the top.</li>
 <li>This feature requires users to have an account, otherwise, they cannot access it</li>
@@ -337,7 +337,7 @@ H
 </ol>
 
 ## Profile Page - Personal Gallery Showcase (Core)
-I
+I.
 <ol>
 <li>After finishing each art piece, users can click the finish button. It would store everything as an image file to firebase.</li>
 <li>On the top half of the profile page, users’ profile picture, display name, and email address would be displayed.</li>
@@ -363,7 +363,7 @@ I
 </ol>
 
 ## Non-Functional Requirements
-J
+J.
 <ol>
 <li>All images have proper and accessible alt-text</li>
 <li>User data should be encrypted before transmission to the back-end, and also while at rest in the back-end (these both come with the Firebase services we plan to use)</li>
@@ -371,7 +371,7 @@ J
 </ol>
 
 ## View Art Pieces/Share Them (Stretch)
-K
+K.
 <ol>
 <li>The user will be able to click on the artwork in particular that they would like to share to social media.</li>
 <li>A medium sized pop-up window will appear in the center of the page that will contain their artwork and the date it was saved.</li>
@@ -389,7 +389,7 @@ K
 </ol>
 
 ## Create Own Stickers (Stretch)
-L
+L.
 <ol>
 <li>Users can utilize the same stickers and tools provided in the scrapbook page (all except for text) to create their own stickers</li>
 <li>These custom stickers can be used in the scrapbook page and in the creation of new stickers.</li>
@@ -408,14 +408,14 @@ L
 </ol>
 
 ## About Us Page (Stretch)
-M
+M.
 <ol>
 <li>Users can click the About Us Page button in the top menu. It would bring them to the About Us Page which contains content of our product’s mission statement, and a brief introduction of how to use our product.</li>
 <li>This page would has access to accessibility features.(voiceover)</li>
 </ol>
 
 ## Upload Created Stickers to the Public Sticker Set (Stretch)
-N
+N.
 <ol>
 <li>Users should be able to save their sticker art by clicking on a button located to the top right of the canvas.</li>
 <li>Users will see a pop-up window after saving their art that asks them if they want to upload their art to the public sticker set.</li>
