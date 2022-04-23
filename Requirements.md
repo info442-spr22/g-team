@@ -134,7 +134,7 @@ C.
       <li>Text boxes</li>
       <li>Custom stickers (Stretch)</li>
       </ol>
-<li>Users can save content to gallery</li>
+<li>Users can click the save button to save content to gallery</li>
      <ol>
      <li>Users need an account to save to the gallery.</li>
        <ol>
@@ -316,6 +316,9 @@ G.
 H.
 <ol>
 <li>The user should be able to access their personal gallery of scrapbooking artwork after clicking on the account tab in the navigation bar at the top.</li>
+  <ol>
+  <li>If user somehow tries to access it, they will be redirected to the login page</li>
+    </ol>
 <li>This feature requires users to have an account, otherwise, they cannot access it</li>
 <li>If user has no saved pieces, the gallery will be empty (no cards)</li>
 <li>If user has saved piece(s), the gallery will display the piece(s) (3 cards per row)</li>
@@ -339,7 +342,7 @@ H.
 ## Profile Page - Personal Gallery Showcase (Core)
 I.
 <ol>
-<li>After finishing each art piece, users can click the finish button. It would store everything as an image file to firebase.</li>
+<li>After finishing each art piece, users can click the finish button. It would then be able to be seen in the personal gallery.</li>
 <li>On the top half of the profile page, users’ profile picture, display name, and email address would be displayed.</li>
 <li>There is a “Edit Profile” button on the upper right corner</li>
     <ol>
@@ -365,9 +368,8 @@ I.
 ## Non-Functional Requirements
 J.
 <ol>
-<li>All images have proper and accessible alt-text</li>
 <li>User data should be encrypted before transmission to the back-end, and also while at rest in the back-end (these both come with the Firebase services we plan to use)</li>
-<li>Non-accessible features are removed when screen is being read by a screen reader (stretch)</li>
+<li>Non-accessible features are removed when screen is being read by a screen reader</li>
 </ol>
 
 ## View Art Pieces/Share Them (Stretch)
@@ -410,7 +412,7 @@ L.
 ## About Us Page (Stretch)
 M.
 <ol>
-<li>Users can click the About Us Page button in the top menu. It would bring them to the About Us Page which contains content of our product’s mission statement, and a brief introduction of how to use our product.</li>
+<li>Users can click the About Us Page button in the top menu. It would bring them to the About Us Page which contains content of our product’s mission statement, information about our team, and a brief introduction of how to use our product.</li>
 <li>This page would has access to accessibility features.(voiceover)</li>
 </ol>
 
