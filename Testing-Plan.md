@@ -28,6 +28,7 @@ When a GitHub task is completed and the above testing criteria are met, its deve
 ## User Acceptance Testing Script
 - Since user authentication will be implemented in this product, multiple test accounts will be made. Test will be run on supported browsers and OS combinations.
 - For testing for content sharing on social media, test accounts will be made for Twitter and Instagram
+- Following sections and test points will be incorporated into our automated integration testing and manual user acceptance tests.
 
 
 ### Landing page
