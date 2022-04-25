@@ -3,7 +3,13 @@
 ## Create Account / Log-In (Core)
 A.
 <ol>
-  <li>These are two pages that each have a form with:</li>
+  <li>These are two pages that each have a form with the following appearance:</li>
+  <ol>
+    <li>The form on both pages will be centered in the available space</li>
+    <li>Both pages will have input fields for email and password</li>
+    <li>The create account page will have a second password input</li>
+  </ol>
+  <li>These pages will have the following behavior:</li>
   <ol>
     <li>Form validation for the email to be in valid email format</li>
     <li>Form validation for the password to be at least 6 characters</li>
