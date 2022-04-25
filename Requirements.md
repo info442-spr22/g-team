@@ -17,13 +17,18 @@ A.
   <li>If they were redirected to the login/create account pages because they attempted to take an action that requires authentication, then after successful authentication, the user is redirected to the page they were on when they attempted that action</li>
   <li>If they were redirected to the login/create account pages because they attempted to navigate to a page that requires authentication, then after   successful authentication, the user is redirected to the page they attempted to navigate to</li>
   <li>The 'create account' link should direct the user to the 'create account' page</li>
-(stretch) There should be an option to reset password if the user forgets their password
+<li>(stretch) There should be an option to reset password if the user forgets their password</li>
+     <ol>
+       <li>Users that click on “reset password” link will be redirected to password recovery page (stretch)</li>
+       <li>Users will need to input their email address to receive a recovery code that they can use to reset their password (stretch)</li>
+     </ol>
    </ol>
 <li>For the create account page:</li>
   <ol>
   <li>Form validation for the two password entry inputs to contain the same value on submission</li>
   <li>An error message should appear if the email has been used to make an account already</li>
   <li>The 'log in' link should direct the user to the 'log in' page</li>
+  <li>Once user has filled in forms with acceptable entries, clicking on the “Create account” button will lead them to the Scrapbooking page or Gallery page (if they were trying to save work without being logged in)</li>
    </ol>
 </ol>
 
