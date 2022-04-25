@@ -1,7 +1,7 @@
 # Testing Plan
 
 ## Types of Testing
-- Unit (automated)
+- Unit (automated) - stretch goal
 - Integration (automated, from user's perspective)
 - Acceptance testing (manual, from user’s perspective)
 Automated tests will not achieve full code coverage, because certain elements of our functionality are not supported by our testing frameworks. Our stretch goal will be to achieve full coverage of test cases that do not utilize tracking of the user's cursor
@@ -18,7 +18,7 @@ Automated tests will not achieve full code coverage, because certain elements of
 Notably, this product will not support touch input due to the nature of sticker placement.
 
 ## Process
-After completing a GitHub task, developers will do an acceptance test of the task. After developers finish implementing a milestone, all team members will do a complete acceptance test of all the features that are included in that milestone.
+After completing a GitHub task, developers will do an acceptance test of the task on their respective browser windows and operating systems. After developers finish implementing a milestone, all team members will do a complete acceptance test of all the features that are included in that milestone.
 
 Each team member will develop on their own branch, merging to main after each GitHub task is completed. Before starting a task, each member will pull main into their branch to keep up to date on recent changes to the code base. Each member will only merge their branch into main after passing all automated tests and manually acceptance testing the new feature. We will only manually test new features before each merge into main. This is because our extensive milestone acceptance testing will be sufficient to catch regression bugs uncaught by automated tests.
 
@@ -116,4 +116,11 @@ When on the profile page, expect to see the user’s profile picture, email, and
 
 
 ## Defect Management
-If any defects are found, developers should include a screenshot of the error message and a specific description of the module where the defect can be found. Developers then will include reference of where in the requirements and specification does the defect locate to help understand the defect. Then developers should categorize the defect, refer to the milestones & tasks in order to review documents, example code, and tutorials to troubleshoot.
+If any defects are found, developers should include a screenshot of the error message and a specific description of the module where the defect can be found. Any defects will be documented and messaged to each team member in the group chat. It will also be documented as an issue (opened when one is found). Developers then will include reference of where in the requirements and specification does the defect locate to help understand the defect. Then developers should categorize the defect, refer to the milestones & tasks in order to review documents, example code, and tutorials to troubleshoot.
+
+To report defects:
+- Screenshot error
+- OS version
+- Expected result
+- Actual result
+- Report as issue on Github
