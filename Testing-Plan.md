@@ -122,6 +122,8 @@ If any defects are found, developers should include a screenshot of the error me
 To report defects:
 - Screenshot error
 - OS version
+- Severity
+- Priority
 - Expected result
 - Actual result
 - Report as issue on Github
