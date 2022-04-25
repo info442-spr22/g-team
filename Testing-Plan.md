@@ -22,7 +22,7 @@ After completing a GitHub task, developers will do an acceptance test of the tas
 
 Each team member will develop on their own branch, merging to main after each GitHub task is completed. Before starting a task, each member will pull main into their branch to keep up to date on recent changes to the code base. Each member will only merge their branch into main after passing all automated tests and manually acceptance testing the new feature. We will only manually test new features before each merge into main. This is because our extensive milestone acceptance testing will be sufficient to catch regression bugs uncaught by automated tests.
 
-When a GitHub task is completed and the above testing criteria are met, its developer will close the issue. When a milestone is completed, and all members of the team have completed their acceptance test of its features, then the final member to complete their testing will close the milestone.
+When a GitHub task is completed and the above testing criteria are met, its developer will close the issue and inform the project manager. When a milestone is completed, and all members of the team have completed their acceptance test of its features, then the final member to complete their testing will close the milestone.
 
 
 ## User Acceptance Testing Script
