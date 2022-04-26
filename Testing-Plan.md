@@ -113,7 +113,7 @@ When on the profile page, expect to see the user’s profile picture, email, and
 - After signed-in, save artwork to personal gallery (on the “saved” pop up), expect to see a share button on pop-up window with social media icons
   - Expect to be redirected to different social media platform in accordance to the icon selected
   - Pressing the Twitter icon, expect to be redirected to Twitter. An image of the artwork will be attached to the tweet
-  - Pressing the Instagram icon, expect to be redirected to Instagram. Users can then choose to use that image either as a post, story, or message.
+  - Pressing the Instagram icon, expect to be redirected to Instagram. Users can then choose to use that image either as a post or story.
 
 
 ## Defect Management
