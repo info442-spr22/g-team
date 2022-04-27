@@ -1,0 +1,22 @@
+# Codeline Model
+
+ - root
+   - DOCS
+   - src
+     - component
+       - sticker
+       - property-selector
+         - Color
+         - Outline
+         - Font
+     - page
+     - resources
+       - images
+       - constants
+         - url-endpoints.js
+     - theme
+       - colors
+       - fonts
+     - utils
+       - DragTracking.js
+       - DeletionStack.js
