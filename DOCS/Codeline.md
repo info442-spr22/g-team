@@ -1,22 +1,55 @@
 # Codeline Model
 
- - root
-   - DOCS
-   - src
-     - component
-       - sticker
-       - property-selector
-         - Color
-         - Outline
-         - Font
-     - page
-     - resources
-       - images
-       - constants
-         - url-endpoints.js
-     - theme
-       - colors
-       - fonts
-     - utils
-       - DragTracking.js
-       - DeletionStack.js
+ - `root`
+   - `DOCS`
+   - `src`
+     - `component`: React components that aren't full pages
+       - `sticker`
+         - `Sticker.jsx`
+         - `Sticker.module.css`: Only add a .module.css file if needed
+       - `tool`
+         - `SelectMove`
+           - `SelectMove.jsx`
+           - `SelectMove.module.css`
+         - `...`
+       - `property-selector`
+         - `Color`
+           - `Color.jsx`
+           - `Color.module.css`
+         - `Outline`
+           - `Outline.jsx`
+           - `Outline.module.css`
+         - `Font`
+           - `...`
+       - `page-element`
+         - `NavBar`
+           - `NavBar.jsx`
+           - `NavBar.module.css`
+         - `Button`
+           - `Button.jsx`
+           - `Button.module.css`
+     - `page`
+       - `Landing`
+         - `Landing.jsx`
+         - `Landing.module.css`
+         - `Landing.test.js`: Note the inclusion of a test script for each page. This will hold integration tests
+       - `WithNavBar`: This is the wrapper for all pages that have a Nav Bar. This way, we don't have to put the Nav Bar at the top of every page manually. The App.tsx routes are where you will find how it wraps, but you'll also have to understand react-router-dom to really get it
+         - `WithNavBar.jsx`
+         - `WithNavBar.module.css`: Only add a .module.css file if needed
+         - `WithNavBar.test.jsx`
+       - `...`
+     - `resources`
+       - `images`
+       - `constants`: Constants that represent implementation decisions
+         - `url-endpoints.js`
+         - `...`
+     - `theme`: Constants that represent design decisions such as would be found in design guidelines
+       - `colors`
+       - `fonts`
+       - `...`
+     - `utils`: Utility files that will be used by several components
+       - `DragTracking.js`
+       - `DeletionStack.js`
+       - `...`
+     - `App.js`: Where page routing happens
+     - `index.js`: Where global styles are loaded

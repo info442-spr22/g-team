@@ -1,0 +1,9 @@
+:root {
+  --page-background: #FFFFFF;
+  --color-one: #FEB930;
+  --color-two: #CEE1CE;
+
+  --landing-section-one-color: var(--page-background);
+  --landing-section-two-color: var(--color-one);
+  --button-color: var(--color-one)
+}
