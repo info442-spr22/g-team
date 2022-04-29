@@ -1,22 +1,51 @@
 # Codeline Model
 
- - root
-   - DOCS
-   - src
-     - component
-       - sticker
-       - property-selector
-         - Color
-         - Outline
-         - Font
-     - page
-     - resources
-       - images
-       - constants
-         - url-endpoints.js
-     - theme
-       - colors
-       - fonts
-     - utils
-       - DragTracking.js
-       - DeletionStack.js
+ - `root`
+   - `DOCS`
+   - `src`
+     - `component`: React components that aren't full pages
+       - `sticker`
+         - `Sticker.jsx`
+         - `Sticker.module.css`: Only add a .module.css file if needed
+       - `tool`
+         - `SelectMove`
+           - `SelectMove.jsx`
+           - `SelectMove.module.css`
+         - `...`
+       - `property-selector`
+         - `Color`
+           - `Color.jsx`
+           - `Color.module.css`
+         - `Outline`
+           - `Outline.jsx`
+           - `Outline.module.css`
+         - `Font`
+           - `...`
+       - `page-element`
+         - `NavBar`
+           - `NavBar.jsx`
+           - `NavBar.module.css`
+         - `Button`
+           - `Button.jsx`
+           - `Button.module.css`
+     - `page`
+       - `Landing`
+         - `Landing.jsx`
+         - `Landing.module.css`: Only add a .module.css file if needed
+         - `Landing.test.js`: Note the inclusion of a test script for each page. This will hold integration tests
+       - `...`
+     - `resources`
+       - `images`
+       - `constants`: Constants that represent implementation decisions
+         - `url-endpoints.js`
+         - `...`
+     - `theme`: Constants that represent design decisions such as would be found in design guidelines
+       - `colors`
+       - `fonts`
+       - `...`
+     - `utils`: Utility files that will be used by several components
+       - `DragTracking.js`
+       - `DeletionStack.js`
+       - `...`
+     - `App.js`: Where page routing happens
+     - `index.js`: Where global styles are loaded
