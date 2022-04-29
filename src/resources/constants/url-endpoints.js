@@ -1,2 +1,2 @@
-// export const LANDING = 'landing'
+export const LANDING = ''
 export const SCRAPBOOK = 'scrapbook'

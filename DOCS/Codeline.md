@@ -31,12 +31,8 @@
      - `page`
        - `Landing`
          - `Landing.jsx`
-         - `Landing.module.css`
+         - `Landing.module.css`: Only add a .module.css file if needed
          - `Landing.test.js`: Note the inclusion of a test script for each page. This will hold integration tests
-       - `WithNavBar`: This is the wrapper for all pages that have a Nav Bar. This way, we don't have to put the Nav Bar at the top of every page manually. The App.tsx routes are where you will find how it wraps, but you'll also have to understand react-router-dom to really get it
-         - `WithNavBar.jsx`
-         - `WithNavBar.module.css`: Only add a .module.css file if needed
-         - `WithNavBar.test.jsx`
        - `...`
      - `resources`
        - `images`
