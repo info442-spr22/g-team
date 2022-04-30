@@ -9,8 +9,11 @@ function Landing() {
       <section className={styles.intro}>
         <div className={styles.intro_txt}>
           <h1>GetWell</h1>
-          <p>Lorem ipsum</p>
-          <div>Get Started</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dolor
+             mi, consectetur sit amet placerat vel, eleifend sit amet nisl.
+              Aenean vel orci ut libero dignissim ornare. Sed hendrerit lobortis
+               dictum</p>
+          <div><p>Get Started</p></div>
         </div>
         <div className={styles.intro_pic}>
           <img src={landing_splash} alt={"Person painting with space"} />
