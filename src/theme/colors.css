@@ -1,12 +1,16 @@
 :root {
   --page-background: #F9FAFA;
   --color-one: #FEB930; /* orange-yellow */
-  --color-two: #FFE2A4;
+  --color-two: #FFE2A4; /* light orange-yellow */
   --color-three: #1E2F4D; /* dark-blue */
+  --color-four: #CCDDEF; /* light-blue */
 
   --landing-section-one-color: var(--page-background);
 
   --landing-section-two-color: var(--color-one);
+
+  --landing-section-three-color: var(--color-four);
+
   --button-color: var(--color-one);
 
   --button-color-variant: var(--page-background);
