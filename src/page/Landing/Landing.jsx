@@ -47,6 +47,13 @@ function Landing() {
       </section>
       <section className={styles.insp}>
         <h3>Inspiration</h3>
+        <p>
+          Maybe a paragraph about the context of our project and how it came to
+          be. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dolor
+          mi, consectetur sit amet placerat vel, eleifend sit amet nisl. Aenean
+          vel orci ut libero dignissim ornare. Sed hendrerit lobortis
+          dictum.
+        </p>
       </section>
     </div>
   );
