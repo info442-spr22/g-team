@@ -1,22 +1,23 @@
 import React from 'react';
+import styles from './Landing.module.css';
 
 function Landing() {
   return(
     <div>
       <h2>Landing Page</h2>
-      <section className="intro">
-        <div className="intro-txt">
+      <section className={styles.intro}>
+        <div className={styles.intro_txt}>
           <h1>GetWell</h1>
           <p>Lorem ipsum</p>
           <div>Button</div>
         </div>
-        <div className="intro-pic">
+        <div className={styles.intro_pic}>
 
         </div>
       </section>
-      <section className="key_feat"></section>
-      <section className="our_team"></section>
-      <section className="insp"></section>
+      <section className={styles.key_feat}></section>
+      <section className={styles.our_team}></section>
+      <section className={styles.insp}></section>
     </div>
   );
 }
