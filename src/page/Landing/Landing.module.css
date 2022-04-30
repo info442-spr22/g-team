@@ -84,3 +84,30 @@
   text-align: left;
   font-size: 20px;
 }
+
+/* Inspiration */
+
+.insp {
+  height: 75vh;
+  background-color: var(--landing-section-three-color);
+  display: flex;
+  justify-content: center;
+}
+
+.insp span {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+}
+
+.insp h3 {
+  font-size: 45px;
+}
+
+.insp p {
+  text-align: left;
+  font-size: 20px;
+}
