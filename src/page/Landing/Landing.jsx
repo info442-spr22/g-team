@@ -4,6 +4,7 @@ import landing_splash from '../../resources/images/landing_splash.svg';
 import palette from '../../resources/images/palette.svg';
 import lightbulb from '../../resources/images/lightbulb.svg';
 import pencil from '../../resources/images/pencil.svg';
+import temp_team_pic from '../../resources/images/temp_team_pic.svg';
 
 function Landing() {
   return(
@@ -43,7 +44,36 @@ function Landing() {
         </div>
       </section>
       <section className={styles.our_team}>
-        <h2>Our Team</h2>
+          <h2>Our Team</h2>
+          <div>
+            <div>
+              <img src={temp_team_pic} alt={"Temporary spot for member"} />
+              <h2>Daniel Cavazos</h2>
+              <p>Short description about self</p>
+            </div>
+            <div>
+              <img src={temp_team_pic} alt={"Temporary spot for member"} />
+              <h2>Sharlene Fang</h2>
+              <p>Short description about self</p>
+            </div>
+            <div>
+              <img src={temp_team_pic} alt={"Temporary spot for member"} />
+              <h2>Shane Fretwell</h2>
+              <p>Short description about self</p>
+            </div>
+          </div>
+          <div>
+            <div>
+              <img src={temp_team_pic} alt={"Temporary spot for member"} />
+              <h2>Niha Gaddam</h2>
+              <p>Short description about self</p>
+            </div>
+            <div>
+              <img src={temp_team_pic} alt={"Temporary spot for member"} />
+              <h2>Kexin Pei</h2>
+              <p>Short description about self</p>
+            </div>
+          </div>
       </section>
       <section className={styles.insp}>
         <span>
