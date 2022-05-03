@@ -1,0 +1,148 @@
+@import "../../theme/colors.css";
+
+/* Intro Section */
+
+.intro {
+  height: 100vh;
+  width: 80%;
+  margin:auto;
+}
+
+.intro_txt {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.intro_txt h1 {
+  color: var(--color-head);
+  font-size: 80px;
+  margin-bottom: 0px;
+}
+
+.intro_txt p {
+  text-align: left;
+}
+
+.intro_txt p, .intro_txt div {
+  font-size: 20px;
+}
+
+.intro_txt div {
+  background-color: var(--button-color);
+  height: 60px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+.intro_txt, .intro_txt div {
+  justify-content: center;
+}
+
+.intro, .intro_txt, .intro_txt div {
+  display: flex;
+}
+
+.intro_txt, .intro_pic {
+  flex: 1;
+  margin: 10px;
+}
+
+.intro_txt, .intro_pic, .intro_pic img {
+  height: 85vh;
+}
+
+/* Key Features */
+
+.key_feat {
+  height: 110vh;
+  background-color: var(--landing-section-two-color);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.key_feat > h2 {
+  margin-bottom: 15vh;
+  font-size: 55px;
+}
+
+.features, .key_feat {
+  display: flex;
+}
+
+.features div {
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
+.features img {
+  height: 75px;
+  width: 75px;
+}
+
+.features p {
+  text-align: left;
+  font-size: 20px;
+}
+
+/* Our Team Section */
+.our_team {
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+}
+
+.our_team > div {
+  width: 60vw;
+  display: flex;
+  flex-direction: row;
+}
+
+.our_team, .our_team > div {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.our_team img {
+  height: 100px;
+  min-height: 15vh;
+  width: auto;
+}
+
+.our_team > h2 {
+  font-size: 55px;
+}
+
+.out_team p {
+  text-align: left;
+  font-size: 20px;
+}
+
+
+/* Inspiration */
+
+.insp {
+  height: 75vh;
+  background-color: var(--landing-section-three-color);
+}
+
+.insp span {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+  margin: auto;
+}
+
+.isnp, .insp span {
+  display: flex;
+  justify-content: center;
+}
+
+.insp h3 {
+  font-size: 45px;
+}
+
+.insp p {
+  text-align: left;
+  font-size: 20px;
+}
