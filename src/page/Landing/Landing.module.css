@@ -14,7 +14,7 @@
 }
 
 .intro_txt h1 {
-  color: var(--heading-color);
+  color: var(--color-head);
   font-size: 80px;
   margin-bottom: 0px;
 }
@@ -45,10 +45,6 @@
 .intro_txt, .intro_pic {
   flex: 1;
   margin: 10px;
-}
-
-.intro_pic {
-  margin-top: calc(10px + var(--nav-bar-height));
 }
 
 .intro_txt, .intro_pic, .intro_pic img {
@@ -137,7 +133,7 @@
   margin: auto;
 }
 
-.insp, .insp span {
+.isnp, .insp span {
   display: flex;
   justify-content: center;
 }

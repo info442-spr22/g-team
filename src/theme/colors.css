@@ -10,13 +10,11 @@
   --landing-section-two-color: var(--color-one);
 
   --landing-section-three-color: var(--color-four);
+
   --button-color: var(--color-one);
-  --button-text-color: var(--color-three);
 
-  --button-variant-color: var(--page-background);
-  --button-variant-border-color: var(--color-one);
-  --button-variant-text-color: var(--color-three);
+  --button-color-variant: var(--page-background);
 
-  --heading-color: var(--color-three);
-  --link-text-color: var(--color-three);
+  --color-head: var(--color-three);
+  --nav-text: var(--color-three);
 }
