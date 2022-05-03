@@ -9,12 +9,13 @@ Props {
 }
 */
 
-export default function NavBar(props) {
+// export default function NavBar(props) {
+export default function NavBar({ authenticated }) {
   let links = [
     {to: urls.LANDING, text: 'Home'},
     {to: urls.SCRAPBOOK, text: 'Scrapbook'},
   ]
-  if (props.authenticated) {
+  if (authenticated) {
     links.push({ to: urls.PROFILE, text: 'Profile' })
   }
 
@@ -34,7 +35,7 @@ export default function NavBar(props) {
     <div className={styles.bar}>
       <h1 className={styles.title}>GetWell</h1>
       {linkElements}
-      {!props.authenticated &&
+      {!authenticated &&
         <>
           <button className={styles.button + ' ' + styles.variant}>
             <Link to={'/' + urls.AUTH}>Log In</Link>

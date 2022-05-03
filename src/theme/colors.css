@@ -1,18 +1,24 @@
 :root {
-  --page-background: #FFFFFF;
-  --color-one: #FEB930;
-  --color-two: #CEE1CE;
-  --color-three: #1E2F4D;
+  --page-background: #F9FAFA;
+  --color-one: #FEB930; /* orange-yellow */
+  --color-two: #FFE2A4; /* light orange-yellow */
+  --color-three: #1E2F4D; /* dark-blue */
+  --color-four: #CCDDEF; /* light-blue */
 
   --landing-section-one-color: var(--page-background);
+
   --landing-section-two-color: var(--color-one);
 
+  --landing-section-three-color: var(--color-four);
   --button-color: var(--color-one);
   --button-text-color: var(--color-three);
 
   --button-variant-color: var(--page-background);
+  /* TODO: Remove dupe */
+  --button-color-variant: var(--page-background);
   --button-variant-border-color: var(--color-one);
   --button-variant-text-color: var(--color-three);
 
+  --heading-color: var(--color-three);
   --link-text-color: var(--color-three);
 }
