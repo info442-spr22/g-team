@@ -2,8 +2,17 @@
   --page-background: #FFFFFF;
   --color-one: #FEB930;
   --color-two: #CEE1CE;
+  --color-three: #1E2F4D;
 
   --landing-section-one-color: var(--page-background);
   --landing-section-two-color: var(--color-one);
-  --button-color: var(--color-one)
+
+  --button-color: var(--color-one);
+  --button-text-color: var(--color-three);
+
+  --button-variant-color: var(--page-background);
+  --button-variant-border-color: var(--color-one);
+  --button-variant-text-color: var(--color-three);
+
+  --link-text-color: var(--color-three);
 }
