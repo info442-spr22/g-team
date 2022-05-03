@@ -5,11 +5,12 @@ import palette from '../../resources/images/palette.svg';
 import lightbulb from '../../resources/images/lightbulb.svg';
 import pencil from '../../resources/images/pencil.svg';
 import temp_team_pic from '../../resources/images/temp_team_pic.svg';
+import NavBar from '../../component/page-element/NavBar/NavBar'
 
 function Landing() {
   return(
     <div>
-      <h2>Landing Page</h2>
+      <NavBar authenticated={false} />
       <section className={styles.intro}>
         <div className={styles.intro_txt}>
           <h1>GetWell</h1>
