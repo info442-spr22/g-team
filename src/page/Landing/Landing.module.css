@@ -47,6 +47,10 @@
   margin: 10px;
 }
 
+.intro_pic {
+  margin-top: calc(10px + var(--nav-bar-height));
+}
+
 .intro_txt, .intro_pic, .intro_pic img {
   height: 85vh;
 }

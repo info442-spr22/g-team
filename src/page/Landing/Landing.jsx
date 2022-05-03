@@ -11,7 +11,6 @@ function Landing() {
   return(
     <div>
       <NavBar authenticated={false} />
-      <h2>Landing Page</h2>
       <section className={styles.intro}>
         <div className={styles.intro_txt}>
           <h1>GetWell</h1>

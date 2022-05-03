@@ -14,8 +14,6 @@
   --button-text-color: var(--color-three);
 
   --button-variant-color: var(--page-background);
-  /* TODO: Remove dupe */
-  --button-color-variant: var(--page-background);
   --button-variant-border-color: var(--color-one);
   --button-variant-text-color: var(--color-three);
 
