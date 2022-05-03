@@ -9,7 +9,6 @@ Props {
 }
 */
 
-// export default function NavBar(props) {
 export default function NavBar({ authenticated }) {
   let links = [
     {to: urls.LANDING, text: 'Home'},
