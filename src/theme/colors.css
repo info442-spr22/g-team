@@ -4,6 +4,7 @@
   --color-two: #FFE2A4; /* light orange-yellow */
   --color-three: #1E2F4D; /* dark-blue */
   --color-four: #CCDDEF; /* light-blue */
+  --color-five: #6ACF66; /* light-green */
 
   --landing-section-one-color: var(--page-background);
 
@@ -19,4 +20,6 @@
 
   --heading-color: var(--color-three);
   --link-text-color: var(--color-three);
+
+  --default-shape-color: var(--color-five);
 }
