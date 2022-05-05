@@ -9,11 +9,12 @@ import Sharlene from '../../resources/images/Sharlene.jpg';
 import Niha from '../../resources/images/Niha.jpg';
 import Shane from '../../resources/images/Shane.jpg';
 import Daniel from '../../resources/images/Daniel.jpg';
+import NavBar from '../../component/page-element/NavBar/NavBar'
 
 function Landing() {
   return(
     <div>
-      <h2>Landing Page</h2>
+      <NavBar authenticated={false} />
       <section className={styles.intro}>
         <div className={styles.intro_txt}>
           <h1>GetWell</h1>
