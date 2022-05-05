@@ -11,7 +11,6 @@ const Scrapbook = () => {
         const ctx = canvas.getContext('2d');
         ctx.clearReact(0, 0, canvas.width, canvas.height);
 
-        const Canvas = canvas(canvas);
 
     });
 
@@ -21,12 +20,20 @@ const Scrapbook = () => {
 
     const handleMouseMove = (event) => {
         if(!drawing) return;
+
+        const { clientX, clientY} = event;
+        console.log(clientX,clientY);
     };
 
-    const handleMouseUp = () => {}
+    const handleMouseUp = () => {
+        setDrawing(false);
+    };
 
     return(
-        <canvas id="canvas" width = {window.innerWidth} height= {window.innerHeight}>
+        <canvas id="canvas" width = {window.innerWidth} height= {window.innerHeight}
+        onMouseDown = {handleMouseDown}
+        onMouseMove = {handleMouseMove}
+        onMouseUp = {handleMouseUp}>
             Canvas
         </canvas>
     );
