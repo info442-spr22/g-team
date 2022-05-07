@@ -1,4 +1,4 @@
-@import "../../theme/colors.css";
+@import "../../../theme/colors.css";
 
 .sticker {
   fill: var(--default-shape-color);

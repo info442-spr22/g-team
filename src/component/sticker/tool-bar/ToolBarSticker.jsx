@@ -1,14 +1,14 @@
 import React from 'react';
-import styles from './ObjectToolBar.module.css';
+import styles from './ToolBarSticker.module.css';
 
-function ObjectToolBarStickers(props) {
+function ToolBarSticker(props) {
 
   // select functionality
   function select(event) {
     console.log("Click select functionality TBD");
   }
 
-  function Circle(props) {
+  function Circle() {
     return(
       <svg height = "30" width = "30" className={styles.sticker} onClick={select}>
         <circle cx="15" cy="15" r="15"/>
@@ -16,11 +16,11 @@ function ObjectToolBarStickers(props) {
     );
   }
 
-  if (props.type === "circle") {
-    return <Circle />;
-  } else {
-    return <h2>Error Message TBD</h2>;
+  switch (props.type) {
+    case ('circle'): return <Circle />
+    default:
+      return <h2>Error Message TBD</h2>;
   }
 }
 
-export default ObjectToolBarStickers;
+export default ToolBarSticker;
