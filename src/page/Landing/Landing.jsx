@@ -4,11 +4,11 @@ import landing_splash from '../../resources/images/landing_splash.svg';
 import palette from '../../resources/images/palette.svg';
 import lightbulb from '../../resources/images/lightbulb.svg';
 import pencil from '../../resources/images/pencil.svg';
-import temp_team_pic from '../../resources/images/temp_team_pic.svg';
 import Sharlene from '../../resources/images/Sharlene.jpg';
 import Niha from '../../resources/images/Niha.jpg';
 import Shane from '../../resources/images/Shane.jpg';
 import Daniel from '../../resources/images/Daniel.jpg';
+import Kexin from '../../resources/images/Kexin.jpg';
 import NavBar from '../../component/page-element/NavBar/NavBar'
 
 function Landing() {
@@ -56,7 +56,7 @@ function Landing() {
               <p>Developer</p>
             </div>
             <div>
-              <img src={temp_team_pic} alt={"Kexin"} />
+              <img src={Kexin} alt={"Kexin"} />
               <h2>Kexin Pei</h2>
               <p>Developer</p>
             </div>
