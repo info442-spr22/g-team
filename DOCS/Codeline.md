@@ -5,8 +5,12 @@
    - `src`
      - `component`: React components that aren't full pages
        - `sticker`
-         - `Sticker.jsx`
-         - `Sticker.module.css`: Only add a .module.css file if needed
+         - `canvas`
+           - `Sticker.jsx`
+           - `Sticker.module.css`: Only add a .module.css file if needed for that component
+         - `toolbar`
+           - `Sticker.jsx`
+           - `Sticker.module.css`
        - `tool`
          - `SelectMove`
            - `SelectMove.jsx`
