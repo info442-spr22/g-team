@@ -1,0 +1,12 @@
+.btn {
+    color: var(--variant-text-color);
+    background-color: var(--scrapbook-bar-background); 
+    border-color: var(--scrapbook-bar-background);
+  }
+  
+.btn:hover {
+    color: var(--variant-text-color);
+    background-color: var(--scrapbook-tool-selection);
+    border-color: var(--variant-text-color);
+  }
+  
