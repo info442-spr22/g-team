@@ -16,6 +16,26 @@ function ToolBarSticker(props) {
     );
   }
 
+  function Star() {
+    return (
+      <svg width="48" height="45" className={styles.sticker} onClick={select}>
+        <path fill="white" d="
+          M 24 0
+          L 18 18
+          H 0
+          L 15 28
+          L 9 45
+          L 24 35
+          L 38 45
+          L 33 28
+          L 48 18
+          H 30
+          L 24 0 Z
+          " />
+      </svg>
+    )
+  }
+
   switch (props.type) {
     case ('circle'): return <Circle />
     default:
