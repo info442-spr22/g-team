@@ -10,7 +10,7 @@ export default function ActionBar(props) {
     <div className={styles.wrapper}>
     <div className={styles.actionBar}>
       <div className={styles.selectMoveTool}>
-        <button type="button" class="btn" Click={() => setSelected(true)}>
+        <button id="selectMove" type="button" class="btn" Click={() => setSelected(true)}>
           <CursorFill />
         </button>
         </div>
