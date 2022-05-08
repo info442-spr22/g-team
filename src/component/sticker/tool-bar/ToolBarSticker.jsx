@@ -16,8 +16,17 @@ function ToolBarSticker(props) {
     );
   }
 
+  function Ellipse() {
+    return(
+      <svg height = "30" width = "30" className={styles.sticker} onClick={select}>
+        <ellipse cx="15" cy="15" rx="15" ry="10"/>
+      </svg>
+    );
+  }
+
   switch (props.type) {
-    case ('circle'): return <Circle />
+    case ('circle'): return <Circle />;
+    case ('ellipse'): return <Ellipse />;
     default:
       return <h2>Error Message TBD</h2>;
   }
