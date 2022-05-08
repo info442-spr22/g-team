@@ -2,7 +2,7 @@
 .wrapper {
   position: fixed;
   height: 100vh;
-  padding-top: 300px;
+  padding-top: 550px;
   padding-left: 250px;
   display: flex;
   flex-direction: column;
@@ -16,7 +16,19 @@
   border-radius: 20px;
 }
 
-.Button {
-  padding-right: 200px;
-  background-color: var(scrapbook-tool-selection);
+.selectMoveTool {
+  padding-right: 970px;
+  padding-top: 5px;
+}
+
+.btn {
+  color: var(--variant-text-color);
+  background-color: var(--scrapbook-bar-background); 
+  border-color: var(--scrapbook-bar-background);
+}
+
+.btn:hover {
+  color: var(--variant-text-color);
+  background-color: var(--scrapbook-tool-selection);
+  border-color: var(--variant-text-color);
 }
