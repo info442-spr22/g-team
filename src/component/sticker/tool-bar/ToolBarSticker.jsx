@@ -16,8 +16,17 @@ function ToolBarSticker(props) {
     );
   }
 
+  function Rectangle() {
+    return(
+      <svg height = "30" width = "30" className={styles.sticker} onClick={select}>
+        <rect width="30" height="20"/>
+      </svg>
+    );
+  }
+
   switch (props.type) {
-    case ('circle'): return <Circle />
+    case ('circle'): return <Circle />;
+    case ('rectangle'): return <Rectangle />;
     default:
       return <h2>Error Message TBD</h2>;
   }
