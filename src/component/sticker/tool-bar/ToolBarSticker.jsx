@@ -16,8 +16,22 @@ function ToolBarSticker(props) {
     );
   }
 
+  function Triangle() {
+    return (
+      <svg width="16" height="14" className={styles.sticker} onClick={select}>
+        <path d="
+          M 8 0
+          L 16 14
+          H 0
+          Z
+          " />
+      </svg>
+    )
+  }
+
   switch (props.type) {
     case ('circle'): return <Circle />
+    case ('triangle'): return <Triangle />
     default:
       return <h2>Error Message TBD</h2>;
   }
