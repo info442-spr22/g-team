@@ -1,7 +1,7 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import NavBar from '../../component/page-element/NavBar/NavBar'
 import PropertiesSidebar from '../../component/page-element/PropertiesSidebar/PropertiesSidebar'
-
+import ActionBar from '../../component/page-element/ActionBar/ActionBar'
 
 
 const Scrapbook = () => {
@@ -35,12 +35,14 @@ const Scrapbook = () => {
         <>
             <NavBar authenticated={true} />
             <PropertiesSidebar />
+            <ActionBar />
             <canvas id="canvas" width = {window.innerWidth} height= {window.innerHeight}
                     onMouseDown = {handleMouseDown}
                     onMouseMove = {handleMouseMove}
                     onMouseUp = {handleMouseUp}>
                 Canvas
             </canvas>
+           
         </>
     );
 };

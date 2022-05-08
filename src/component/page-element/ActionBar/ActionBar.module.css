@@ -1,7 +1,22 @@
 
 .wrapper {
-  
+  position: fixed;
+  height: 100vh;
+  padding-top: 300px;
+  padding-left: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
 .actionBar {
+  background-color: var(--scrapbook-bar-background);
   height: 48px;
+  width: 150vh;
+  border-radius: 20px;
+}
+
+.Button {
+  padding-right: 200px;
+  background-color: var(scrapbook-tool-selection);
 }

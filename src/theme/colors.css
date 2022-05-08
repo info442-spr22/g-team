@@ -5,6 +5,7 @@
   --color-three: #1E2F4D; /* dark-blue */
   --color-four: #CCDDEF; /* light-blue */
   --color-five: #E9E9EA; /* light-grey */
+  --color-six: #DAF7A2;  /* light-green */
 
   --landing-section-one-color: var(--page-background);
 
@@ -22,4 +23,5 @@
   --link-text-color: var(--color-three);
 
   --scrapbook-bar-background: var(--color-five);
+  --scrapbook-tool-selection: var(--color-six);
 }

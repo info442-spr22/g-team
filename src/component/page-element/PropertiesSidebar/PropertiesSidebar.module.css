@@ -2,7 +2,8 @@
 .wrapper {
   position: fixed;
   height: 100vh;
-  padding: 36px;
+  padding-bottom: 40px;
+  padding-left: 36px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,7 +11,7 @@
 
 .sideBar {
   background-color: var(--scrapbook-bar-background);
-  height: calc(100vh - 3 * var(--nav-bar-height));
+  height: calc(100vh - 2 * var(--nav-bar-height));
   width: 200px;
   border-radius: 20px;
 }
