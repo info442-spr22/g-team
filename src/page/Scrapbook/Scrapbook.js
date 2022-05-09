@@ -26,8 +26,6 @@ const Scrapbook = () => {
     const [windowDimensions, setWindowDimensions] = React.useState({})
     const [canvasPosition, setCanvasPosition] = React.useState({x: 0, y:0})
     const [selectedSticker, setSelectedSticker] = React.useState('line')
-    console.log(selectedSticker)
-    // let selectedSticker = 'arrow'
 
     let canvasRef = React.useCallback(canvas => {
         if (canvas !== null) {
