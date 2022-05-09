@@ -52,6 +52,7 @@ function ToolBarSticker(props) {
     );
   }
 
+
   function Line() {
     return (
       <svg
@@ -140,6 +141,7 @@ function ToolBarSticker(props) {
       </svg>
     )
   }
+
 
   function Square() {
     return(

@@ -12,11 +12,13 @@ export default function ActionBar(props) {
   button.addEventListener('click', () => button.style.borderColor = '#1E2F4D')*/
 
   let stickers = stickerHotKeys.map( ({name}) =>
-    <ToolBarSticker
-      type={name}
-      setSelectedSticker={props.setSelectedSticker}
-      key={name}
-    />
+    <button id="selectMove" type="button" className="btn selectMove">
+      <ToolBarSticker
+        type={name}
+        setSelectedSticker={props.setSelectedSticker}
+        key={name}
+      />
+    </button>
   )
 
   return(
