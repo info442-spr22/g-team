@@ -21,6 +21,7 @@ export default function ActionBar() {
           <ToolBarSticker type={'ellipse'} />
           <ToolBarSticker type={'line'} />
           <ToolBarSticker type={'arrow'} />
+          <ToolBarSticker type={'triangle'} />
         </div>
       </div>
     </div>
