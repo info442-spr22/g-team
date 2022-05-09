@@ -6,7 +6,7 @@ function ToolBarSticker(props) {
   // select functionality
   function select(event) {
     if (props.hotkey === event.key) {
-      props.select()
+      props.setSelectedSticker(props.type)
     }
   }
 
@@ -30,7 +30,7 @@ function ToolBarSticker(props) {
 
   function Circle() {
     return(
-      <svg width="30" height="30" className={styles.sticker}>
+      <svg viewBox={"0 0 30 30"} className={styles.sticker}>
         <circle cx="15" cy="15" r="15"/>
       </svg>
     );
@@ -38,7 +38,7 @@ function ToolBarSticker(props) {
 
   function Ellipse() {
     return(
-      <svg height="30" width="30" className={styles.sticker}>
+      <svg viewBox={"0 0 30 30"} className={styles.sticker}>
         <ellipse cx="15" cy="15" rx="15" ry="10"/>
       </svg>
     );
@@ -46,16 +46,17 @@ function ToolBarSticker(props) {
 
   function Rectangle() {
     return(
-      <svg width="30" height="20" className={styles.sticker}>
+      <svg viewBox={"0 0 30 20"} className={styles.sticker}>
         <rect width="30" height="20"/>
       </svg>
     );
   }
 
+
   function Line() {
     return (
       <svg
-        width="32" height="32" className={styles.sticker}
+        viewBox={"0 0 32 32"} className={styles.sticker}
         strokeLinecap="round" strokeWidth="2">
 
         <path
@@ -72,7 +73,7 @@ function ToolBarSticker(props) {
   function Arrow() {
     return (
       <svg
-        width="32" height="32" className={styles.sticker}
+        viewBox={"0 0 32 32"} className={styles.sticker}
         strokeLinecap="round" strokeWidth="2"
       >
         <path
@@ -96,7 +97,7 @@ function ToolBarSticker(props) {
 
   function Triangle() {
     return (
-      <svg width="16" height="14" className={styles.sticker}>
+      <svg viewBox={"0 0 16 14"} className={styles.sticker}>
         <path d="
           M 8 0
           L 16 14
@@ -129,7 +130,7 @@ function ToolBarSticker(props) {
 
   function Heart() {
     return(
-      <svg width="32" height="32" className={styles.sticker}>
+      <svg viewBox={"0 0 32 32"} className={styles.sticker}>
         <path d="
           M 0,10
           A 5,5 0,0,1 16,10
@@ -141,9 +142,10 @@ function ToolBarSticker(props) {
     )
   }
 
+
   function Square() {
     return(
-      <svg width="30" height="30" className={styles.sticker}>
+      <svg viewBox={"0 0 30 30"} className={styles.sticker}>
         <rect width="30" height="30"/>
       </svg>
     )
@@ -151,21 +153,39 @@ function ToolBarSticker(props) {
 
   let sticker;
   switch (props.type) {
-    case ('circle'): return <Circle />
-    case ('line'): return <Line />
-    case ('ellipse'): return <Ellipse />
-    case ('arrow'): return <Arrow />
-    case ('triangle'): return <Triangle />
-    case ('star'): return <Star />
-    case ('heart'): return <Heart />
-    case ('square'): return <Square />;
-    case ('rectangle'): return <Rectangle />;
+    case ('circle'):
+      sticker = <Circle />
+      break
+    case ('line'):
+      sticker = <Line />
+      break
+    case ('ellipse'):
+      sticker = <Ellipse />
+      break
+    case ('arrow'):
+      sticker = <Arrow />
+      break
+    case ('triangle'):
+      sticker = <Triangle />
+      break
+    case ('star'):
+      sticker = <Star />
+      break
+    case ('heart'):
+      sticker = <Heart />
+      break
+    case ('square'):
+      sticker = <Square />;
+      break
+    case ('rectangle'):
+      sticker = <Rectangle />;
+      break
     default:
       return <h2>Error Message TBD</h2>
   }
 
   return (
-    <div onClick={select}>
+    <div onClick={() => {props.setSelectedSticker(props.type)}} ref={handleKeyPress}>
       {sticker}
     </div>
   )

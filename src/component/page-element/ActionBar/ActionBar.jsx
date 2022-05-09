@@ -1,32 +1,38 @@
 import React from "react"
 import {CursorFill} from 'react-bootstrap-icons'
+import {stickerHotKeys} from '../../../page/Scrapbook/Scrapbook'
 import styles from "./ActionBar.module.css"
 import ToolBarSticker from '../../sticker/tool-bar/ToolBarSticker'
 
 
-export default function ActionBar() {
+export default function ActionBar(props) {
   /*let button = document.getElementById('selectMove');
 
   button.addEventListener('click', () => button.style.backgroundColor = '#DAF7A2')
   button.addEventListener('click', () => button.style.borderColor = '#1E2F4D')*/
 
+  let stickers = stickerHotKeys.map( ({name, hotkey}) =>
+    <button id="selectMove" type="button" className="btn selectMove">
+      <ToolBarSticker
+        type={name}
+        setSelectedSticker={(sticker) => {
+          console.log(sticker)
+          props.setSelectedSticker(sticker)
+        }}
+        hotkey={hotkey}
+      />
+    </button>
+  )
+
   return(
     <div className={styles.wrapper}>
       <div className={styles.actionBar}>
-        <div>
-          <button id="selectMove" type="button" class="btn selectMove">
-            <CursorFill />
-          </button>
-        </div>
-        <ToolBarSticker type={'circle'} />
-        <ToolBarSticker type={'ellipse'} />
-        <ToolBarSticker type={'square'} />
-        <ToolBarSticker type={'rectangle'} />
-        <ToolBarSticker type={'line'} />
-        <ToolBarSticker type={'arrow'} />
-        <ToolBarSticker type={'triangle'} />
-        <ToolBarSticker type={'star'} />
-        <ToolBarSticker type={'heart'} />
+        {/*<div>*/}
+        {/*  <button id="selectMove" type="button" class="btn selectMove">*/}
+        {/*    <CursorFill />*/}
+        {/*  </button>*/}
+        {/*</div>*/}
+        {stickers}
       </div>
     </div>
   );
