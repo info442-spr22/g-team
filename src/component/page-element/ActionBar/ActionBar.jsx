@@ -17,16 +17,16 @@ export default function ActionBar() {
           <button id="selectMove" type="button" class="btn selectMove">
             <CursorFill />
           </button>
-          <ToolBarSticker type={'circle'} />
-          <ToolBarSticker type={'ellipse'} />
-          <ToolBarSticker type={'square'} />
-          <ToolBarSticker type={'rectangle'} />
-          <ToolBarSticker type={'line'} />
-          <ToolBarSticker type={'arrow'} />
-          <ToolBarSticker type={'triangle'} />
-          <ToolBarSticker type={'star'} />
-          <ToolBarSticker type={'heart'} />
         </div>
+        <ToolBarSticker type={'circle'} />
+        <ToolBarSticker type={'ellipse'} />
+        <ToolBarSticker type={'square'} />
+        <ToolBarSticker type={'rectangle'} />
+        <ToolBarSticker type={'line'} />
+        <ToolBarSticker type={'arrow'} />
+        <ToolBarSticker type={'triangle'} />
+        <ToolBarSticker type={'star'} />
+        <ToolBarSticker type={'heart'} />
       </div>
     </div>
   );
