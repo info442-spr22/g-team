@@ -14,7 +14,7 @@ export const stickerHotKeys = [
     {"name": "square", "hotkey": "s"},
     {"name": "rectangle", "hotkey": "r"},
     {"name": "line", "hotkey": "l"},
-    // {"name": "arrow", "hotkey": "a"},
+    {"name": "arrow", "hotkey": "a"},
     {"name": "triangle", "hotkey": "T"},
     {"name": "star", "hotkey": "x"},
     {"name": "heart", "hotkey": "h"}
