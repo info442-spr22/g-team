@@ -10,9 +10,9 @@ function ToolBarSticker(props) {
 
   function Circle() {
     return(
-      <svg width="30" height="30" className={styles.sticker} onClick={select}>
-        <circle cx="15" cy="15" r="15"/>
-      </svg>
+        <svg width="30" height="30" className={styles.sticker} onClick={select}>
+          <circle cx="15" cy="15" r="15"/>
+        </svg>
     );
   }
 
@@ -32,44 +32,10 @@ function ToolBarSticker(props) {
     );
   }
 
-  function Line() {
-    return (
-      <svg
-        width="32" height="32" className={styles.sticker} onClick={select}
-        strokeLinecap="round" strokeWidth="2">
-
-        <path
-          fill="none"
-          stroke="black"
-          d="
-            M 2 30
-            L 30 2
-          " />
-      </svg>
-    )
-  }
-
-  function Arrow() {
-    return (
-      <svg
-        width="32" height="32" className={styles.sticker} onClick={select}
-        strokeLinecap="round" strokeWidth="2"
-      >
-        <path
-          fill="none"
-          stroke="black"
-          d="
-            M 2 30
-            L 30 2
-          " />
-        <path
-          fill="none"
-          stroke="black"
-          d="
-            M 20 2
-            H 30
-            V 12
-          " />
+  function Square() {
+    return(
+      <svg width="30" height="30" className={styles.sticker} onClick={select}>
+        <rect width="30" height="30"/>
       </svg>
     )
   }
@@ -121,10 +87,44 @@ function ToolBarSticker(props) {
     )
   }
 
-  function Square() {
-    return(
-      <svg width="30" height="30" className={styles.sticker} onClick={select}>
-        <rect width="30" height="30"/>
+  function Line() {
+    return (
+      <svg
+        width="32" height="32" className={styles.sticker} onClick={select}
+        strokeLinecap="round" strokeWidth="2">
+
+        <path
+          fill="none"
+          stroke="black"
+          d="
+            M 2 30
+            L 30 2
+          " />
+      </svg>
+    )
+  }
+
+  function Arrow() {
+    return (
+      <svg
+        width="32" height="32" className={styles.sticker} onClick={select}
+        strokeLinecap="round" strokeWidth="2"
+      >
+        <path
+          fill="none"
+          stroke="black"
+          d="
+            M 2 30
+            L 30 2
+          " />
+        <path
+          fill="none"
+          stroke="black"
+          d="
+            M 20 2
+            H 30
+            V 12
+          " />
       </svg>
     )
   }

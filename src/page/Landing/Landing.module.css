@@ -5,7 +5,7 @@
 .intro {
   height: 100vh;
   width: 80%;
-  margin:auto;
+  margin: auto;
 }
 
 .intro_txt {
@@ -40,6 +40,10 @@
 
 .intro, .intro_txt, .intro_txt div {
   display: flex;
+}
+
+.call_to_action p {
+  margin-top: 15px;
 }
 
 .intro_txt, .intro_pic {
@@ -134,7 +138,7 @@
 /* Inspiration */
 
 .insp {
-  height: 75vh;
+  height: 100vh;
   background-color: var(--landing-section-three-color);
 }
 

@@ -18,15 +18,33 @@ export default function ActionBar() {
             <CursorFill />
           </button>
         </div>
-        <ToolBarSticker type={'circle'} />
-        <ToolBarSticker type={'ellipse'} />
-        <ToolBarSticker type={'square'} />
-        <ToolBarSticker type={'rectangle'} />
-        <ToolBarSticker type={'line'} />
-        <ToolBarSticker type={'arrow'} />
-        <ToolBarSticker type={'triangle'} />
-        <ToolBarSticker type={'star'} />
-        <ToolBarSticker type={'heart'} />
+        <button id="selectMove" type="button" class="btn selectMove">
+          <ToolBarSticker type={'circle'} />
+        </button>
+        <button id="selectMove" type="button" class="btn selectMove">
+          <ToolBarSticker type={'ellipse'} />
+        </button>
+        <button id="selectMove" type="button" class="btn selectMove">
+          <ToolBarSticker type={'square'} />
+        </button>
+        <button id="selectMove" type="button" class="btn selectMove">
+          <ToolBarSticker type={'rectangle'} />
+        </button>
+        <button id="selectMove" type="button" class="btn selectMove">
+          <ToolBarSticker type={'line'} />
+        </button>
+        <button id="selectMove" type="button" class="btn selectMove">
+          <ToolBarSticker type={'arrow'} />
+        </button>
+        <button id="selectMove" type="button" class="btn selectMove">
+          <ToolBarSticker type={'triangle'} />
+        </button>
+        <button id="selectMove" type="button" class="btn selectMove">
+          <ToolBarSticker type={'star'} />
+        </button>
+        <button id="selectMove" type="button" class="btn selectMove">
+          <ToolBarSticker type={'heart'} />
+        </button>
       </div>
     </div>
   );
