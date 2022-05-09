@@ -13,8 +13,32 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
     case ('line'):
       roughElement = generator.line(x1, y1, x2, y2)
       break
-    // case ('arrow'):
-    //   break
+    case ('arrow'):
+      let armLength = 0.3 * Math.sqrt(width * width + height * height)
+      let angle = Math.atan(height / width)
+      let arrowheadAngle = Math.PI / 4
+      if (x1 <= x2) {
+        if (y1 <= y2) {
+          // angle = angle
+        } else {
+          angle = angle * -1
+        }
+      } else {
+        angle = angle + Math.PI
+        if (y1 <= y2) {
+          angle = angle * -1
+        } else {
+          // angle = angle
+        }
+      }
+      let points = [ [x1, y1], [x2, y2],
+        [ x2 - Math.cos(angle + arrowheadAngle) * armLength, y2 - Math.sin(angle + arrowheadAngle) * armLength ],
+        [ x2, y2 ],
+        [ x2 - Math.cos(angle - arrowheadAngle) * armLength, y2 - Math.sin(angle - arrowheadAngle) * armLength ],
+        [ x2, y2 ],
+      ]
+      roughElement = generator.linearPath(points)
+      break
     case ('circle'):
       roughElement = generator.circle(leftX + width / 2, topY + height / 2, longerSide)
       break
