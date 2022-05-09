@@ -27,8 +27,17 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
       break
     // case ('star'):
     //   break
-    // case ('heart'):
-    //   break
+    case ('heart'):
+      let xScale = width / 32
+      let yScale = height / 32
+      roughElement = generator.path(`
+        M ${leftX},${topY + 10 * yScale}
+        A ${5 * xScale / 2},${5 * xScale / 2} 0,0,1 ${leftX + 16 * xScale},${topY + 10 * yScale}
+        A ${5 * xScale / 2},${5 * xScale / 2} 0,0,1 ${leftX + width},${topY + 10 * yScale}
+        Q ${leftX + width},${topY + 20 * yScale} ${leftX + 16 * xScale},${topY + 30 * yScale}
+        Q ${leftX},${topY + 20 * yScale} ${leftX},${topY + 10 * yScale} z
+      `)
+      break
     case ('square'):
       if (x1 <= x2) {
         if (y1 <= y2) {
