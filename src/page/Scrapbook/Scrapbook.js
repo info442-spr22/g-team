@@ -16,7 +16,7 @@ const stickerHotKeys = [
     {"name": "line", "hotkey": "l"},
     // {"name": "arrow", "hotkey": "a"},
     {"name": "triangle", "hotkey": "shift + t"},
-    // {"name": "star", "hotkey": "x"},
+    {"name": "star", "hotkey": "x"},
     // {"name": "heart", "hotkey": "h"}
 ]
 
@@ -25,7 +25,7 @@ const Scrapbook = () => {
     const [drawing, setDrawing] = useState(false);
     const [windowDimensions, setWindowDimensions] = React.useState({})
     const [canvasPosition, setCanvasPosition] = React.useState({x: 0, y:0})
-    let selectedSticker = 'arrow'
+    let selectedSticker = 'star'
 
     let canvasRef = React.useCallback(canvas => {
         if (canvas !== null) {
