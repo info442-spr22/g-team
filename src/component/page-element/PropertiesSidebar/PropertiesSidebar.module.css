@@ -1,0 +1,11 @@
+
+.wrapper {
+  padding-left: 36px;
+}
+
+.sideBar {
+  background-color: var(--scrapbook-bar-background);
+  height: calc(100vh - 3 * var(--nav-bar-height));
+  width: 200px;
+  border-radius: 20px;
+}

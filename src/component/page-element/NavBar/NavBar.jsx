@@ -24,7 +24,7 @@ export default function NavBar({ authenticated }) {
     <NavLink
       to={'/' + link.to}
       className={({ isActive }) => isActive ? activeClass : styles.link}
-      key={link.id}
+      key={link.text}
     >
       {link.text}
     </NavLink>
