@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {CursorFill} from 'react-bootstrap-icons';
 import styles from "./ActionBar.module.css"
+import ToolBarSticker from '../../sticker/tool-bar/ToolBarSticker'
 
 
 export default function ActionBar() {
@@ -17,6 +18,15 @@ export default function ActionBar() {
             <CursorFill />
           </button>
         </div>
+        <ToolBarSticker type={'circle'} />
+        <ToolBarSticker type={'ellipse'} />
+        <ToolBarSticker type={'square'} />
+        <ToolBarSticker type={'rectangle'} />
+        <ToolBarSticker type={'line'} />
+        <ToolBarSticker type={'arrow'} />
+        <ToolBarSticker type={'triangle'} />
+        <ToolBarSticker type={'star'} />
+        <ToolBarSticker type={'heart'} />
       </div>
     </div>
   );
