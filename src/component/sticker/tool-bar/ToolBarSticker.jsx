@@ -110,7 +110,15 @@ function ToolBarSticker(props) {
           Q 0,20 0,10 z
           "/>
       </svg>
-    );
+    )
+  }
+
+  function Square() {
+    return(
+      <svg height = "30" width = "30" className={styles.sticker} onClick={select}>
+        <rect width="30" height="30"/>
+      </svg>
+    )
   }
 
   switch (props.type) {
@@ -121,6 +129,7 @@ function ToolBarSticker(props) {
     case ('triangle'): return <Triangle />
     case ('star'): return <Star />
     case ('heart'): return <Heart />
+    case ('square'): return <Square />;
     default:
       return <h2>Error Message TBD</h2>
   }
