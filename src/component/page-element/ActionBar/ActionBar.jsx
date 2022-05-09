@@ -11,13 +11,13 @@ export default function ActionBar() {
 
   return(
     <div className={styles.wrapper}>
-    <div className={styles.actionBar}>
-      <div className={styles.selectMoveTool}>
-        <button id="selectMove" type="button" class="btn selectMove">
-          <CursorFill />
-        </button>
+      <div className={styles.actionBar}>
+        <div>
+          <button id="selectMove" type="button" class="btn selectMove">
+            <CursorFill />
+          </button>
         </div>
+      </div>
     </div>
-  </div>
   );
 }

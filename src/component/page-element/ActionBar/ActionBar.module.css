@@ -1,23 +1,18 @@
-
 .wrapper {
-  position: fixed;
-  height: 100vh;
-  padding-top: 550px;
-  padding-left: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  width: 100%;
+  padding: 0 24px;
 }
 
 .actionBar {
   background-color: var(--scrapbook-bar-background);
   height: 48px;
-  width: 150vh;
+  width: 100%;
+  box-sizing: border-box;
+
   border-radius: 20px;
-}
 
-.selectMoveTool {
-  padding-right: 970px;
-  padding-top: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
-
