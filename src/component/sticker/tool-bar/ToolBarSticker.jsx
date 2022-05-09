@@ -28,8 +28,8 @@ function ToolBarSticker(props) {
     return (
       <svg
         width="32" height="32" className={styles.sticker} onClick={select}
-        strokeLinecap="round" strokeWidth="4"
-      >
+        strokeLinecap="round" strokeWidth="2">
+
         <path
           fill="none"
           stroke="black"
@@ -41,10 +41,36 @@ function ToolBarSticker(props) {
     )
   }
 
+  function Arrow() {
+    return (
+      <svg
+        width="32" height="32" className={styles.sticker} onClick={select}
+        strokeLinecap="round" strokeWidth="2"
+      >
+        <path
+          fill="none"
+          stroke="black"
+          d="
+            M 2 30
+            L 30 2
+          " />
+        <path
+          fill="none"
+          stroke="black"
+          d="
+            M 20 2
+            H 30
+            V 12
+          " />
+      </svg>
+    )
+  }
+
   switch (props.type) {
     case ('circle'): return <Circle />
     case ('line'): return <Line />
     case ('ellipse'): return <Ellipse />;
+    case ('arrow'): return <Arrow />
     default:
       return <h2>Error Message TBD</h2>;
   }
