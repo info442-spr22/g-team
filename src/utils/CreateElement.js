@@ -12,10 +12,10 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
     // case ('arrow'):
     //   break
     case ('circle'):
-      roughElement = generator.circle(x1 + (x2 - x1) / 2, y1 + (y2 - y1) / 2, longerSide)
+      roughElement = generator.circle(x1 + width / 2, y1 + height / 2, longerSide)
       break
     case ('ellipse'):
-      roughElement = generator.ellipse(leftX + (x2 - x1) / 2, topY + (y2 - y1) / 2, (x2 - x1))
+      roughElement = generator.ellipse(leftX + (width / 2), topY + (height / 2), width, height)
       break
     case ('triangle'):
       let rightX = x1 < x2 ? x2 : x1

@@ -151,21 +151,39 @@ function ToolBarSticker(props) {
 
   let sticker;
   switch (props.type) {
-    case ('circle'): return <Circle />
-    case ('line'): return <Line />
-    case ('ellipse'): return <Ellipse />
-    case ('arrow'): return <Arrow />
-    case ('triangle'): return <Triangle />
-    case ('star'): return <Star />
-    case ('heart'): return <Heart />
-    case ('square'): return <Square />;
-    case ('rectangle'): return <Rectangle />;
+    case ('circle'):
+      sticker = <Circle />
+      break
+    case ('line'):
+      sticker = <Line />
+      break
+    case ('ellipse'):
+      sticker = <Ellipse />
+      break
+    case ('arrow'):
+      sticker = <Arrow />
+      break
+    case ('triangle'):
+      sticker = <Triangle />
+      break
+    case ('star'):
+      sticker = <Star />
+      break
+    case ('heart'):
+      sticker = <Heart />
+      break
+    case ('square'):
+      sticker = <Square />;
+      break
+    case ('rectangle'):
+      sticker = <Rectangle />;
+      break
     default:
       return <h2>Error Message TBD</h2>
   }
 
   return (
-    <div onClick={select}>
+    <div onClick={() => {props.setSelectedSticker(props.type)}}>
       {sticker}
     </div>
   )

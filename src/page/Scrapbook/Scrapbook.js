@@ -8,14 +8,14 @@ import createElement from '../../utils/CreateElement'
 
 const generator = rough.generator();
 
-const stickerHotKeys = [
+export const stickerHotKeys = [
     {"name": "circle", "hotkey": "c"},
     {"name": "ellipse", "hotkey": "e"},
     {"name": "square", "hotkey": "s"},
     {"name": "rectangle", "hotkey": "r"},
     {"name": "line", "hotkey": "l"},
     // {"name": "arrow", "hotkey": "a"},
-    {"name": "triangle", "hotkey": "shift + t"},
+    {"name": "triangle", "hotkey": "shift + t"}//,
     // {"name": "star", "hotkey": "x"},
     // {"name": "heart", "hotkey": "h"}
 ]
@@ -25,7 +25,9 @@ const Scrapbook = () => {
     const [drawing, setDrawing] = useState(false);
     const [windowDimensions, setWindowDimensions] = React.useState({})
     const [canvasPosition, setCanvasPosition] = React.useState({x: 0, y:0})
-    let selectedSticker = 'arrow'
+    const [selectedSticker, setSelectedSticker] = React.useState('line')
+    console.log(selectedSticker)
+    // let selectedSticker = 'arrow'
 
     let canvasRef = React.useCallback(canvas => {
         if (canvas !== null) {
@@ -109,7 +111,9 @@ const Scrapbook = () => {
                             Canvas
                         </canvas>
                     </div>
-                    <ActionBar />
+                    <ActionBar
+                      setSelectedSticker={setSelectedSticker}
+                    />
                 </div>
             </div>
         </>
