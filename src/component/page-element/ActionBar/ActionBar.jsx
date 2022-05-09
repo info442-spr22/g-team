@@ -23,6 +23,7 @@ export default function ActionBar() {
           <ToolBarSticker type={'arrow'} />
           <ToolBarSticker type={'triangle'} />
           <ToolBarSticker type={'star'} />
+          <ToolBarSticker type={'heart'} />
         </div>
       </div>
     </div>
