@@ -4,6 +4,9 @@
   --color-two: #FFE2A4; /* light orange-yellow */
   --color-three: #1E2F4D; /* dark-blue */
   --color-four: #CCDDEF; /* light-blue */
+  --color-five: #E9E9EA; /* light-grey */
+  --color-six: #DAF7A2;  /* light-green */
+  --color-seven: #6ACF66; /* neon-green */
 
   --landing-section-one-color: var(--page-background);
 
@@ -19,4 +22,8 @@
 
   --heading-color: var(--color-three);
   --link-text-color: var(--color-three);
+
+  --scrapbook-bar-background: var(--color-five);
+  --scrapbook-tool-selection: var(--color-six);
+  --default-shape-color: var(--color-seven);
 }

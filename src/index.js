@@ -4,6 +4,8 @@ import './index.css';
 import './theme/colors.css'
 import './theme/fonts.css'
 import './theme/sizes.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './custom.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
@@ -13,6 +15,7 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

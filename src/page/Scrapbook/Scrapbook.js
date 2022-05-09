@@ -1,6 +1,9 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import styles from './Scrapbook.module.css'
 import rough from "roughjs/bundled/rough.esm";
 import NavBar from '../../component/page-element/NavBar/NavBar'
+import PropertiesSidebar from '../../component/page-element/PropertiesSidebar/PropertiesSidebar'
+import ActionBar from '../../component/page-element/ActionBar/ActionBar'
 
 const generator = rough.generator();
 
@@ -75,17 +78,25 @@ const Scrapbook = () => {
     }
 
     return(
-            <canvas id="canvas" width = {window.innerWidth} height= {window.innerHeight}
-                onMouseDown = {handleMouseDown}
-                onMouseMove = {handleMouseMove}
-                onMouseUp = {handleMouseUp}
-            >
-                Canvas
-            </canvas>
+        <>
+            <NavBar authenticated={true} />
+            <div className={styles.pageContents}>
+                <PropertiesSidebar />
+                <div className={styles.rightWrapper}>
+                    <div className={styles.canvasWrapper}>
+                        <canvas ref={canvasRef} id="canvas" width={'800'} height={'550'}
+                                onMouseDown = {handleMouseDown}
+                                onMouseMove = {handleMouseMove}
+                                onMouseUp = {handleMouseUp}
+                                >
+                            Canvas
+                        </canvas>
+                    </div>
+                    <ActionBar />
+                </div>
+            </div>
+        </>
     )
 }
 
 export default Scrapbook
-
-
-

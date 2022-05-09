@@ -87,6 +87,9 @@
 .features p {
   text-align: left;
   font-size: 20px;
+  text-align: center;
+  margin-right: 45px;
+  margin-left: 45px;
 }
 
 /* Our Team Section */
@@ -117,9 +120,14 @@
   font-size: 55px;
 }
 
-.out_team p {
-  text-align: left;
-  font-size: 20px;
+.our_team h2 {
+  margin-bottom: 5px;
+}
+
+.our_team p {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 0px;
 }
 
 
@@ -140,13 +148,14 @@
 .insp, .insp span {
   display: flex;
   justify-content: center;
+  padding: 150px 0;
 }
 
 .insp h3 {
-  font-size: 45px;
+  font-size: 40px;
 }
 
 .insp p {
   text-align: left;
-  font-size: 20px;
+  font-size: 18px;
 }
