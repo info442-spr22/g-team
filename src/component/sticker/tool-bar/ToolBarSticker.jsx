@@ -10,7 +10,7 @@ function ToolBarSticker(props) {
 
   function Circle() {
     return(
-      <svg height = "30" width = "30" className={styles.sticker} onClick={select}>
+      <svg width="30" height="30" className={styles.sticker} onClick={select}>
         <circle cx="15" cy="15" r="15"/>
       </svg>
     );
@@ -18,8 +18,16 @@ function ToolBarSticker(props) {
 
   function Ellipse() {
     return(
-      <svg height = "30" width = "30" className={styles.sticker} onClick={select}>
+      <svg height="30" width="30" className={styles.sticker} onClick={select}>
         <ellipse cx="15" cy="15" rx="15" ry="10"/>
+      </svg>
+    );
+  }
+
+  function Rectangle() {
+    return(
+      <svg width="30" height="20" className={styles.sticker} onClick={select}>
+        <rect width="30" height="20"/>
       </svg>
     );
   }
@@ -101,7 +109,7 @@ function ToolBarSticker(props) {
 
   function Heart() {
     return(
-      <svg height = "32" width = "32" className={styles.sticker} onClick={select}>
+      <svg width="32" height="32" className={styles.sticker} onClick={select}>
         <path d="
           M 0,10
           A 5,5 0,0,1 16,10
@@ -115,7 +123,7 @@ function ToolBarSticker(props) {
 
   function Square() {
     return(
-      <svg height = "30" width = "30" className={styles.sticker} onClick={select}>
+      <svg width="30" height="30" className={styles.sticker} onClick={select}>
         <rect width="30" height="30"/>
       </svg>
     )
@@ -130,6 +138,7 @@ function ToolBarSticker(props) {
     case ('star'): return <Star />
     case ('heart'): return <Heart />
     case ('square'): return <Square />;
+    case ('rectangle'): return <Rectangle />;
     default:
       return <h2>Error Message TBD</h2>
   }

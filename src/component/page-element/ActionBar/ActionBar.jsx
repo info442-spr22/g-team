@@ -20,6 +20,7 @@ export default function ActionBar() {
           <ToolBarSticker type={'circle'} />
           <ToolBarSticker type={'ellipse'} />
           <ToolBarSticker type={'square'} />
+          <ToolBarSticker type={'rectangle'} />
           <ToolBarSticker type={'line'} />
           <ToolBarSticker type={'arrow'} />
           <ToolBarSticker type={'triangle'} />
