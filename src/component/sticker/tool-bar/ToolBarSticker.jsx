@@ -6,7 +6,7 @@ function ToolBarSticker(props) {
   // select functionality
   function select(event) {
     if (props.hotkey === event.key) {
-      props.select()
+      props.setSelectedSticker(props.type)
     }
   }
 
@@ -185,7 +185,7 @@ function ToolBarSticker(props) {
   }
 
   return (
-    <div onClick={() => {props.setSelectedSticker(props.type)}}>
+    <div onClick={() => {props.setSelectedSticker(props.type)}} ref={handleKeyPress}>
       {sticker}
     </div>
   )
