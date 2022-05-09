@@ -4,20 +4,28 @@ import rough from "roughjs/bundled/rough.esm";
 import NavBar from '../../component/page-element/NavBar/NavBar'
 import PropertiesSidebar from '../../component/page-element/PropertiesSidebar/PropertiesSidebar'
 import ActionBar from '../../component/page-element/ActionBar/ActionBar'
+import createElement from '../../utils/CreateElement'
 
 const generator = rough.generator();
 
-// allow users to draw line element for now, use as testing
-function createElement(x1, y1, x2, y2) {
-    const roughElement = generator.line(x1, y1, x2, y2);
-    return {x1, y1, x2, y2, roughElement };
-}
+const stickerHotKeys = [
+    {"name": "circle", "hotkey": "c"},
+    {"name": "ellipse", "hotkey": "e"},
+    {"name": "square", "hotkey": "s"},
+    {"name": "rectangle", "hotkey": "r"},
+    {"name": "line", "hotkey": "l"},
+    // {"name": "arrow", "hotkey": "a"},
+    {"name": "triangle", "hotkey": "shift + t"},
+    // {"name": "star", "hotkey": "x"},
+    // {"name": "heart", "hotkey": "h"}
+]
 
 const Scrapbook = () => {
     const [elements, setElements] = useState([]);
     const [drawing, setDrawing] = useState(false);
     const [windowDimensions, setWindowDimensions] = React.useState({})
     const [canvasPosition, setCanvasPosition] = React.useState({x: 0, y:0})
+    let selectedSticker = 'arrow'
 
     let canvasRef = React.useCallback(canvas => {
         if (canvas !== null) {
@@ -53,8 +61,11 @@ const Scrapbook = () => {
         // Starting pt is clientX, clintY and first create element end pt is same as start pt
         const { clientX, clientY} = event;
         const element = createElement(
+          generator,
           clientX - canvasPosition.x, clientY - canvasPosition.y,
-          clientX - canvasPosition.x, clientY - canvasPosition.y
+          clientX - canvasPosition.x, clientY - canvasPosition.y,
+          selectedSticker,
+          {}
         );
         setElements((prevState) => [...prevState, element])
     };
@@ -65,7 +76,13 @@ const Scrapbook = () => {
         const { clientX, clientY} = event
         const index = elements.length - 1
         const { x1, y1 } = elements[index]
-        const updatedElement = createElement(x1, y1, clientX - canvasPosition.x, clientY - canvasPosition.y)
+        const updatedElement = createElement(
+          generator,
+          x1, y1,
+          clientX - canvasPosition.x, clientY - canvasPosition.y,
+          selectedSticker,
+          {}
+          )
 
         const elementsCopy = [...elements]
         elementsCopy[index] = updatedElement
