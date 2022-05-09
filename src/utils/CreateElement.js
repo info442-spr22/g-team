@@ -7,6 +7,8 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
   let longerSide = width > height ? width : height
   let rightX = x1 < x2 ? x2 : x1
   let botY = y1 < y2 ? y2 : y1
+  let xScale
+  let yScale
   switch (stickerType) {
     case ('line'):
       roughElement = generator.line(x1, y1, x2, y2)
@@ -26,8 +28,8 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
       )
       break
     case ('star'):
-      let xScale = Math.abs(x1 - x2) / 45
-      let yScale = Math.abs(y1 - y2) / 45
+      xScale = Math.abs(x1 - x2) / 45
+      yScale = Math.abs(y1 - y2) / 45
       roughElement = generator.path(
         "M " + [xScale * 24 + leftX, yScale * 0 + topY] +
         " L " + [xScale * 18 + leftX, yScale * 18 + topY] +
@@ -43,8 +45,8 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
       )
       break
     case ('heart'):
-      let xScale = width / 32
-      let yScale = height / 32
+      xScale = width / 32
+      yScale = height / 32
       roughElement = generator.path(`
         M ${leftX},${topY + 10 * yScale}
         A ${5 * xScale / 2},${5 * xScale / 2} 0,0,1 ${leftX + 16 * xScale},${topY + 10 * yScale}
