@@ -1,12 +1,12 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
+import rough from "roughjs/bundled/rough.esm";
 
-
-
+const generator = rough.generator();
 
 // allow users to draw line element for now, use as testing
 function createElement(x1, y1, x2, y2) {
-
-    return {x1, y1, x2, y2};
+    const roughElement = generator.line(x1, y1, x2, y2);
+    return {x1, y1, x2, y2, roughElement };
 }
 
 const Scrapbook = () => {
@@ -15,10 +15,16 @@ const Scrapbook = () => {
 
     useLayoutEffect(() => {
         const canvas = document.getElementById("canvas");
-        const ctx = canvas.getContext('2d');
+        const ctx = canvas.getContext("2d");
 
         // Re-rendering everytime clicks
         ctx.clearReact(0, 0, canvas.width, canvas.height);
+
+        const roughCanvas = rough.canvas(canvas);
+
+
+
+        elements.forEach(({ roughElement }) => roughCanvas.draw(roughElement));
 
     }, [elements]);
 
@@ -29,7 +35,7 @@ const Scrapbook = () => {
         // Starting pt is clientX, clintY and first create element end pt is same as start pt
         const { clientX, clientY} = event;
         const element = createElement(clientX, clientY, clientX, clientY);
-        setElements(prevState => [...prevState, element]);
+        setElements((prevState) => [...prevState, element]);
     };
 
     const handleMouseMove = (event) => {
@@ -43,6 +49,7 @@ const Scrapbook = () => {
         const elementsCopy = [...elements];
         elementsCopy[index] = updatedElement;
         setElements(elementsCopy);
+
     };
 
     const handleMouseUp = () => {
@@ -50,12 +57,13 @@ const Scrapbook = () => {
     };
 
     return(
-        <canvas id="canvas" width = {window.innerWidth} height= {window.innerHeight}
-        onMouseDown = {handleMouseDown}
-        onMouseMove = {handleMouseMove}
-        onMouseUp = {handleMouseUp}>
-            Canvas
-        </canvas>
+            <canvas id="canvas" width = {window.innerWidth} height= {window.innerHeight}
+                onMouseDown = {handleMouseDown}
+                onMouseMove = {handleMouseMove}
+                onMouseUp = {handleMouseUp}
+            >
+                Canvas
+            </canvas>
     );
 };
 
