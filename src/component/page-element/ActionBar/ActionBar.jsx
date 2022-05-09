@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {CursorFill} from 'react-bootstrap-icons';
+import React from "react"
+import {CursorFill} from 'react-bootstrap-icons'
 import styles from "./ActionBar.module.css"
 import ToolBarSticker from '../../sticker/tool-bar/ToolBarSticker'
 
