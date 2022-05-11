@@ -15,4 +15,10 @@
   stroke: var(--highlight-shape-color);
   stroke-width: 1px;
 }
+
+#clear {
+  margin-bottom: 24px;
+  margin-left: auto;
+  display: flex;
+}
   

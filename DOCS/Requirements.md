@@ -1,43 +1,8 @@
 # Requirements
 
-## Create Account / Log-In (Core)
-A.
-<ol>
-  <li>These are two pages that each have a form with the following appearance:</li>
-  <ol>
-    <li>The form on both pages will be centered in the available space</li>
-    <li>Both pages will have input fields for email and password</li>
-    <li>The create account page will have a second password input</li>
-  </ol>
-  <li>These pages will have the following behavior:</li>
-  <ol>
-    <li>Form validation for the email to be in valid email format</li>
-    <li>Form validation for the password to be at least 6 characters</li>
-    <li>If any form validation fails, then a message describing the failure will be shown to the user, and the portion(s) of the form that are in error will be highlighted red</li>
-  </ol>
-<li>For the login page:</li>
-  <ol>
-  <li>Authenticate the user with Firebase when the form is submitted with valid input</li>
-  <li>When the Log In button is clicked, it is disabled and a loading icon is displayed inside of the button while the information is being submitted</li>
-  <li>By default, the user is brought to the scrapbook page after successful authentication</li>
-  <li>If they were redirected to the login/create account pages because they attempted to take an action that requires authentication, then after successful authentication, the user is redirected to the page they were on when they attempted that action</li>
-  <li>If they were redirected to the login/create account pages because they attempted to navigate to a page that requires authentication, then after   successful authentication, the user is redirected to the page they attempted to navigate to</li>
-<li>(stretch) There should be an option to reset password if the user forgets their password</li>
-     <ol>
-       <li>Users that click on “reset password” link will be redirected to password recovery page (stretch)</li>
-       <li>Users will need to input their email address to receive a recovery code that they can use to reset their password (stretch)</li>
-     </ol>
-   </ol>
-<li>For the create account page:</li>
-  <ol>
-  <li>Form validation for the two password entry inputs to contain the same value on submission</li>
-  <li>An error message should appear if the email has been used to make an account already</li>
-  <li>Once user has filled in forms with acceptable entries (email address, name, and password), clicking on the “Create account” button will lead them to the Scrapbooking page or Gallery page (if they were trying to save work without being logged in)</li>
-   </ol>
-</ol>
 
 ## Landing Page (Core)
-B.
+A.
 <ol>
 <li>Should be the first page users see</li>
 <li>User must be able to scroll through landing page</li>
@@ -47,18 +12,9 @@ B.
   </ol>
 <li>User can access navigation bar at the top of the page</li>
   <ol>
-  <li>If signed in:</li>
       <ol>
     <li>Click on “Scrapbook” to enter Scrapbook page</li>
-    <li>Click on “Profile” to enter Profile page</li>
       </ol>
-  <li>If not signed in or no account:</li>
-      <ol>
-    <li>Click on “Scrapbook” to enter Scrapbook page</li>
-    <li>Click on “Sign in” to enter Sign-In/Log-In page</li>
-      </ol>
-   </ol>
-<li>Users can use “Start Scrapbooking” button to enter “Scrapbook” page</li>
 <li>Users can read about features about product</li>
   <ol>
      <li>There will be a section underneath the Product name and description that introduces the main features about the product</li>
@@ -71,7 +27,7 @@ B.
 </ol>
 
 ## Scrapbook (Core)
-C.
+B.
 <ol>
 <li>This page consists of a canvas, an 'object properties' sidebar, and an action bar</li>
 <li>By default, the select + move tool is highlighted with a change of color and an outline around the symbol.</li>
@@ -143,16 +99,16 @@ C.
       <li>Text boxes</li>
       <li>Custom stickers (Stretch)</li>
       </ol>
-<li>Users can click the save button to save content to gallery</li>
+<li>Users can click the save button to save content to gallery (Stretch) </li>
      <ol>
-     <li>Users need an account to save to the gallery.</li>
+     <li>Users need an account to save to the gallery (Stretch) </li>
        <ol>
-        <li>If the user does not have an account they will instead be prompted to create one</li>
+        <li>If the user does not have an account they will instead be prompted to create one (Stretch)</li>
           <ol>
-          <li>A pop up will let users know that they need an account</li>
-          <li>The pop up will include a sign up button and pressing that will lead them to the sign-up/login page</li>
+          <li>A pop up will let users know that they need an account (Stretch)</li>
+          <li>The pop up will include a sign up button and pressing that will lead them to the sign-up/login page (Stretch)</li>
           </ol>
-        <li>If user has account and is signed in, a pop up will appear to let them know their piece has been saved (detailed in Save to Gallery section)</li>
+        <li>If user has account and is signed in, a pop up will appear to let them know their piece has been saved - detailed in Save to Gallery section (Stretch)</li>
        </ol>
      </ol>
 <li>Can click the clear button to remove all content from page</li>
@@ -186,32 +142,8 @@ C.
        </ol>
 </ol>
 
-## Save to Gallery (Core)
-D.
-<ol>
-<li>Users are signed in</li>
-<li>Within the Scrapbook page, users can click on the “Save” button to save a piece</li>
-  <ol>
-    <li>Clicking the button will prompt a pop up</li>
-    <ol>
-      <li>Pop up will confirm to user that their work has been saved to gallery</li>
-        <ol>
-        <li>User can press “OK” to remove pop up</li>
-        <li>User can press “X” in top corner to exit pop up</li>
-        <li>User can press “Go to gallery” to navigate to profile/gallery</li>
-        <li>User can press “Share” to share content (detailed in View Art Pieces/Share Them 8a)</li>
-        </ol>
-     <li>Pop up will say that an error has occurred and work has not been saved</li>
-        <ol>
-        <li>User can press “Retry” to try saving again (pops up until success)</li>
-        <li>User can press “X” in top corner to exit pop up</li>
-        </ol>
-    </ol>
-   </ol>
-</ol>
-
 ## Pre-created Stickers (Core)
-E.
+C.
 <ol>
 <li>Users can view all pre-created stickers under the “Stickers” section on the 'object properties' sidebar on the Scrapbook page.</li>
 <li>Users can select any of the following stickers:</li>
@@ -284,36 +216,35 @@ E.
 </ol>
 
 ## Nav Bar (Core)
-F.
+D.
 <ol>
 <li>On left side of nav bar, the name of product will be displayed</li>
   <ol>
   <li>Clicking on the product name will lead users to the About Us page (stretch)</li>
   </ol>
-<li>On right side of nav bar, there will be two buttons to help users navigate to different pages. The options will differ depending on whether or not the user is logged in or not</li>
+<li>On right side of nav bar, there will be two buttons to help users navigate to different pages. The options will differ depending on whether or not the user is logged in or not (Stretch)</li>
   <ol>
-  <li>If logged in:</li>
+  <li>If logged in: (Stretch)</li>
     <ol>
       <li>Click on “Scrapbook” to enter Scrapbook page</li>
-      <li>Click on “Profile” to enter Profile page</li>
+      <li>Click on “Profile” to enter Profile page (Stretch)</li>
     </ol>
-    <li>If not signed in or no account:</li>
+    <li>If not signed in or no account: (Stretch)</li>
     <ol>
       <li>Click on “Scrapbook” to enter Scrapbook page</li>
-      <li>Click on “Sign in” to enter Sign-In/Log-In page</li>
+      <li>Click on “Sign in” to enter Sign-In/Log-In page (Stretch)</li>
     </ol>
   </ol>
 </ol>
 
 ## Sharing Content to Social Media (Core)
-G.
+E.
 <ol>
 <li>When to prompt sharing:</li>
   <ol>
   <li>When saving gallery</li>
   <li>When looking at art in detail (stretch)</li>
   </ol>
-<li>A user can share to social media after being prompted when saving to the gallery (see Save to Gallery 2.a.i.4)</li>
 <li>A user can share to social media by clicking the share button on the view art piece preview (see View Art Piece/Share (stretch) page) (stretch)</li>
 <li>When a user starts the share process, a medium sized pop-up window appears with social media icons.</li>
 <li>When a user clicks on one of these social media icons, they will be redirected to this platform to share their art piece.</li>
@@ -321,7 +252,68 @@ G.
 <li>If the user clicks on the x in the top right corner, they will abort the sharing to social media process and exit the pop-up window.</li>
 </ol>
 
-## Gallery (Core)
+
+## Save to Gallery (Stretch)
+F.
+<ol>
+<li>Users are signed in</li>
+<li>Within the Scrapbook page, users can click on the “Save” button to save a piece</li>
+  <ol>
+    <li>Clicking the button will prompt a pop up</li>
+    <ol>
+      <li>Pop up will confirm to user that their work has been saved to gallery</li>
+        <ol>
+        <li>User can press “OK” to remove pop up</li>
+        <li>User can press “X” in top corner to exit pop up</li>
+        <li>User can press “Go to gallery” to navigate to profile/gallery</li>
+        <li>User can press “Share” to share content (detailed in View Art Pieces/Share Them 8a)</li>
+        </ol>
+     <li>Pop up will say that an error has occurred and work has not been saved</li>
+        <ol>
+        <li>User can press “Retry” to try saving again (pops up until success)</li>
+        <li>User can press “X” in top corner to exit pop up</li>
+        </ol>
+    </ol>
+   </ol>
+</ol>
+
+## Create Account / Log-In (Stretch)
+G.
+<ol>
+  <li>These are two pages that each have a form with the following appearance:</li>
+  <ol>
+    <li>The form on both pages will be centered in the available space</li>
+    <li>Both pages will have input fields for email and password</li>
+    <li>The create account page will have a second password input</li>
+  </ol>
+  <li>These pages will have the following behavior:</li>
+  <ol>
+    <li>Form validation for the email to be in valid email format</li>
+    <li>Form validation for the password to be at least 6 characters</li>
+    <li>If any form validation fails, then a message describing the failure will be shown to the user, and the portion(s) of the form that are in error will be highlighted red</li>
+  </ol>
+<li>For the login page:</li>
+  <ol>
+  <li>Authenticate the user with Firebase when the form is submitted with valid input</li>
+  <li>When the Log In button is clicked, it is disabled and a loading icon is displayed inside of the button while the information is being submitted</li>
+  <li>By default, the user is brought to the scrapbook page after successful authentication</li>
+  <li>If they were redirected to the login/create account pages because they attempted to take an action that requires authentication, then after successful authentication, the user is redirected to the page they were on when they attempted that action</li>
+  <li>If they were redirected to the login/create account pages because they attempted to navigate to a page that requires authentication, then after   successful authentication, the user is redirected to the page they attempted to navigate to</li>
+<li>(stretch) There should be an option to reset password if the user forgets their password</li>
+     <ol>
+       <li>Users that click on “reset password” link will be redirected to password recovery page (stretch)</li>
+       <li>Users will need to input their email address to receive a recovery code that they can use to reset their password (stretch)</li>
+     </ol>
+   </ol>
+<li>For the create account page:</li>
+  <ol>
+  <li>Form validation for the two password entry inputs to contain the same value on submission</li>
+  <li>An error message should appear if the email has been used to make an account already</li>
+  <li>Once user has filled in forms with acceptable entries (email address, name, and password), clicking on the “Create account” button will lead them to the Scrapbooking page or Gallery page (if they were trying to save work without being logged in)</li>
+   </ol>
+</ol>
+
+## Gallery (Stretch)
 H.
 <ol>
 <li>The user should be able to access their personal gallery of scrapbooking artwork after clicking on the account tab in the navigation bar at the top.</li>
@@ -348,7 +340,7 @@ H.
   </ol>
 </ol>
 
-## Profile Page - Personal Gallery Showcase (Core)
+## Profile Page - Personal Gallery Showcase (Stretch)
 I.
 <ol>
 <li>After finishing each art piece, users can click the finish button. It would then be able to be seen in the personal gallery.</li>

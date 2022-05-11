@@ -94,6 +94,16 @@ const Scrapbook = () => {
         setDrawing(false);
     }
 
+    /*const useHistory = () => {
+        const[index, setIndex] = useState(0);
+        const[history, setHistory] = useState(0);
+    }
+
+    shift history index to 0 after clicking restart button*/
+
+   
+
+
     return(
         <>
             <NavBar authenticated={true} />

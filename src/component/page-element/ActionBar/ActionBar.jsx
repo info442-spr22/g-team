@@ -1,4 +1,5 @@
 import React from "react"
+import {Button} from 'react-bootstrap'
 import {CursorFill} from 'react-bootstrap-icons'
 import {stickerHotKeys} from '../../../page/Scrapbook/Scrapbook'
 import styles from "./ActionBar.module.css"
@@ -26,6 +27,11 @@ export default function ActionBar(props) {
 
   return(
     <div className={styles.wrapper}>
+      <div>
+    <Button id="clear" type="button" class="btn clear">
+           Restart
+         </Button>
+      </div>
       <div className={styles.actionBar}>
         {/*<div>*/}
         {/*  <button id="selectMove" type="button" class="btn selectMove">*/}
