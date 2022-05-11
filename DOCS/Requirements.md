@@ -247,9 +247,9 @@ E.
   <li>When looking at art in detail (stretch)</li>
   </ol>
 <li>A user can share to social media by clicking the share button on the view art piece preview (see View Art Piece/Share (stretch) page) (stretch)</li>
-<li>When a user starts the share process, a medium sized pop-up window appears with social media icons.</li>
-<li>When a user clicks on one of these social media icons, they will be redirected to this platform to share their art piece.</li>
-<li>If an error occurs during the sharing to social media process, an error message will be displayed  stating “Something went wrong, please try again.”</li>
+<li>When a user starts the share process after clicking on one of social media icons, a medium sized pop-up window appears that requires authentication for the social media platform.</li>
+<li>User will be redirected to the according platform to share their art piece.</li>
+<li>If an error occurs during the sharing to social media process, an error message will be displayed stating “Something went wrong, please try again.”</li>
 <li>If the user clicks on the x in the top right corner, they will abort the sharing to social media process and exit the pop-up window.</li>
 </ol>
 
