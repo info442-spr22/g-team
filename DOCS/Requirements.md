@@ -242,7 +242,7 @@ E.
 <ol>
 <li>When to prompt sharing:</li>
   <ol>
-  <li>When clicking on Twitter and Instagram icons scrapbook page</li>
+  <li>When clicking on Twitter and Instagram icons on the Scrapbook page</li>
   <li>When saving gallery (stretch)</li>
   <li>When looking at art in detail (stretch)</li>
   </ol>
