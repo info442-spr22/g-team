@@ -9,13 +9,9 @@ export default function drawSelectedBox(element, setSelectedBox, generator) {
   const roughCanvas = rough.canvas(canvas)
   let selectorBox;
   switch(type) {
-    case("rectangle"):
-        selectorBox = generator.rectangle(
-          minX - 8, minY - 8, Math.abs(x1 - x2) + 16, Math.abs(y1 - y2) + 16,
-          {strokeLineDash: [10, 10]}
-        )
-        break
-    case("line"):
+    case ("rectangle"):
+    case ("line"):
+    case ("square"):
         selectorBox = generator.rectangle(
           minX - 8, minY - 8, Math.abs(x1 - x2) + 16, Math.abs(y1 - y2) + 16,
           {strokeLineDash: [10, 10]}
