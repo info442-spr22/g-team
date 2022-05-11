@@ -93,6 +93,8 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
           roughElement = generator.rectangle(x1 - longerSide, y1 - longerSide, longerSide, longerSide, {fill: 'black'})
         }
       }
+      x2 = x1 + longerSide
+      y2 = y1 + longerSide
       break
     case ('rectangle'):
       roughElement = generator.rectangle(leftX, topY, width, height, {fill: 'black'})
