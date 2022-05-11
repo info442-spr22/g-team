@@ -242,7 +242,8 @@ E.
 <ol>
 <li>When to prompt sharing:</li>
   <ol>
-  <li>When saving gallery</li>
+  <li>When clicking on share button on scrapbook page</li>
+  <li>When saving gallery (stretch)</li>
   <li>When looking at art in detail (stretch)</li>
   </ol>
 <li>A user can share to social media by clicking the share button on the view art piece preview (see View Art Piece/Share (stretch) page) (stretch)</li>
