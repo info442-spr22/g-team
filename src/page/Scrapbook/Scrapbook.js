@@ -20,6 +20,8 @@ export const stickerHotKeys = [
     {"name": "heart", "hotkey": "h"}
 ]
 
+
+
 const Scrapbook = () => {
     const [elements, setElements] = useState([]);
     const [drawing, setDrawing] = useState(false);
@@ -56,18 +58,23 @@ const Scrapbook = () => {
 
     // mouse tracking
     const handleMouseDown = (event) => {
-        setDrawing(true);
+        // if select is active, do moving, else do drawing
+        if (selectedSticker === "select") {
+            console.log("test");
+        } else {
+            setDrawing(true);
 
-        // Starting pt is clientX, clintY and first create element end pt is same as start pt
-        const { clientX, clientY} = event;
-        const element = createElement(
-          generator,
-          clientX - canvasPosition.x, clientY - canvasPosition.y,
-          clientX - canvasPosition.x, clientY - canvasPosition.y,
-          selectedSticker,
-          {}
-        );
-        setElements((prevState) => [...prevState, element])
+            // Starting pt is clientX, clintY and first create element end pt is same as start pt
+            const { clientX, clientY} = event;
+            const element = createElement(
+            generator,
+            clientX - canvasPosition.x, clientY - canvasPosition.y,
+            clientX - canvasPosition.x, clientY - canvasPosition.y,
+            selectedSticker,
+            {}
+            );
+            setElements((prevState) => [...prevState, element])
+        }
     };
 
     const handleMouseMove = (event) => {

@@ -4,7 +4,6 @@ import {stickerHotKeys} from '../../../page/Scrapbook/Scrapbook'
 import styles from "./ActionBar.module.css"
 import ToolBarSticker from '../../sticker/tool-bar/ToolBarSticker'
 
-
 export default function ActionBar(props) {
   let stickers = stickerHotKeys.map( ({name, hotkey}) =>
     <button id="selectMove" type="button" className="btn selectMove">
@@ -22,9 +21,11 @@ export default function ActionBar(props) {
   return(
     <div className={styles.wrapper}>
       <div className={styles.actionBar}>
-        <button id="selectMove" type="button" class="btn selectMove">
-          <CursorFill />
-        </button>
+        <div onClick={() => {props.setSelectedSticker("select")}}>
+          <button id="selectMove" type="button" class="btn selectMove">
+            <CursorFill />
+          </button>
+        </div>
         {stickers}
       </div>
     </div>
