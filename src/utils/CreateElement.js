@@ -11,7 +11,7 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
   let yScale
   switch (stickerType) {
     case ('line'):
-      roughElement = generator.line(x1, y1, x2, y2)
+      roughElement = generator.line(x1, y1, x2, y2, {fill: 'black'})
       break
     case ('arrow'):
       let armLength = 0.3 * Math.sqrt(width * width + height * height)
@@ -37,18 +37,18 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
         [ x2 - Math.cos(angle - arrowheadAngle) * armLength, y2 - Math.sin(angle - arrowheadAngle) * armLength ],
         [ x2, y2 ],
       ]
-      roughElement = generator.linearPath(points)
+      roughElement = generator.linearPath(points, {fill: 'black'})
       break
     case ('circle'):
-      roughElement = generator.circle(leftX + width / 2, topY + height / 2, longerSide)
+      roughElement = generator.circle(leftX + width / 2, topY + height / 2, longerSide, {fill: 'black'})
       break
     case ('ellipse'):
-      roughElement = generator.ellipse(leftX + (width / 2), topY + (height / 2), width, height)
+      roughElement = generator.ellipse(leftX + (width / 2), topY + (height / 2), width, height, {fill: 'black'})
       break
     case ('triangle'):
       roughElement = generator.path(
         "M " + [((width / 2) + leftX), topY] + " L " + [rightX, botY] + " H " +
-        leftX + " Z"
+        leftX + " Z", {fill: 'black'}
       )
       break
     case ('star'):
@@ -65,7 +65,7 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
         " L " + [xScale * 33 + leftX, yScale * 28 + topY] +
         " L " + [xScale * 48 + leftX, yScale * 18 + topY] +
         " H " + (xScale * 30 + leftX) +
-        " L " + [xScale * 24 + leftX, yScale * 0 + topY] + " Z"
+        " L " + [xScale * 24 + leftX, yScale * 0 + topY] + " Z", {fill: 'black'}
       )
       break
     case ('heart'):
@@ -77,25 +77,25 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
         A ${5 * xScale / 2},${5 * xScale / 2} 0,0,1 ${leftX + width},${topY + 10 * yScale}
         Q ${leftX + width},${topY + 20 * yScale} ${leftX + 16 * xScale},${topY + 30 * yScale}
         Q ${leftX},${topY + 20 * yScale} ${leftX},${topY + 10 * yScale} z
-      `)
+      `, {fill: 'black'})
       break
     case ('square'):
       if (x1 <= x2) {
         if (y1 <= y2) {
-          roughElement = generator.rectangle(x1, y1, longerSide, longerSide)
+          roughElement = generator.rectangle(x1, y1, longerSide, longerSide, {fill: 'black'})
         } else {
-          roughElement = generator.rectangle(x1, y1 - longerSide, longerSide, longerSide)
+          roughElement = generator.rectangle(x1, y1 - longerSide, longerSide, longerSide, {fill: 'black'})
         }
       } else {
         if (y1 <= y2) {
-          roughElement = generator.rectangle(x1 - longerSide, y1, longerSide, longerSide)
+          roughElement = generator.rectangle(x1 - longerSide, y1, longerSide, longerSide, {fill: 'black'})
         } else {
-          roughElement = generator.rectangle(x1 - longerSide, y1 - longerSide, longerSide, longerSide)
+          roughElement = generator.rectangle(x1 - longerSide, y1 - longerSide, longerSide, longerSide, {fill: 'black'})
         }
       }
       break
     case ('rectangle'):
-      roughElement = generator.rectangle(leftX, topY, width, height)
+      roughElement = generator.rectangle(leftX, topY, width, height, {fill: 'black'})
       break
     default:
   }
