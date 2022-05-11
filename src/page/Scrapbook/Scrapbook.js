@@ -5,6 +5,7 @@ import NavBar from '../../component/page-element/NavBar/NavBar'
 import PropertiesSidebar from '../../component/page-element/PropertiesSidebar/PropertiesSidebar'
 import ActionBar from '../../component/page-element/ActionBar/ActionBar'
 import createElement from '../../utils/CreateElement'
+import getElementAtPosition from "../../utils/GetElementAtPosition"
 
 const generator = rough.generator();
 
@@ -24,7 +25,7 @@ export const stickerHotKeys = [
 
 const Scrapbook = () => {
     const [elements, setElements] = useState([]);
-    const [drawing, setDrawing] = useState(false);
+    const [action, setAction] = useState('none');
     const [windowDimensions, setWindowDimensions] = React.useState({})
     const [canvasPosition, setCanvasPosition] = React.useState({x: 0, y:0})
     const [selectedSticker, setSelectedSticker] = React.useState('line')
@@ -58,14 +59,24 @@ const Scrapbook = () => {
 
     // mouse tracking
     const handleMouseDown = (event) => {
+        const { clientX, clientY} = event;
+
         // if select is active, do moving, else do drawing
         if (selectedSticker === "select") {
             console.log("test");
+            const element = getElementAtPosition(
+                clientX - canvasPosition.x,
+                clientY - canvasPosition.y,
+                elements
+            )
+            if (element) {
+                console.log(element)
+                setAction('moving')
+                console.log("moving");
+            }
         } else {
-            setDrawing(true);
-
             // Starting pt is clientX, clintY and first create element end pt is same as start pt
-            const { clientX, clientY} = event;
+
             const element = createElement(
             generator,
             clientX - canvasPosition.x, clientY - canvasPosition.y,
@@ -74,31 +85,33 @@ const Scrapbook = () => {
             {}
             );
             setElements((prevState) => [...prevState, element])
+
+            setAction("drawing");
         }
     };
 
     const handleMouseMove = (event) => {
-        if(!drawing) return;
 
-        const { clientX, clientY} = event
-        const index = elements.length - 1
-        const { x1, y1 } = elements[index]
-        const updatedElement = createElement(
-          generator,
-          x1, y1,
-          clientX - canvasPosition.x, clientY - canvasPosition.y,
-          selectedSticker,
-          {}
-          )
+        if (action === "drawing") {
+            const { clientX, clientY} = event
+            const index = elements.length - 1
+            const { x1, y1 } = elements[index]
+            const updatedElement = createElement(
+            generator,
+            x1, y1,
+            clientX - canvasPosition.x, clientY - canvasPosition.y,
+            selectedSticker,
+            {}
+            )
 
-        const elementsCopy = [...elements]
-        elementsCopy[index] = updatedElement
-        setElements(elementsCopy)
-
+            const elementsCopy = [...elements]
+            elementsCopy[index] = updatedElement
+            setElements(elementsCopy)
+        }
     }
 
     const handleMouseUp = () => {
-        setDrawing(false);
+        setAction("none");
     }
 
     return(
