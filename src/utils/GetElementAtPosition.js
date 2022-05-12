@@ -41,8 +41,9 @@ function isWithinElement(x, y, element) {
       }
       break
     case ("circle"):
+    case ("ellipse"):
       let xRadius = selectInfo.width / 2
-      let yRadius = selectInfo.width / 2
+      let yRadius = selectInfo.height / 2
       let xCenter = selectInfo.x + xRadius
       let yCenter = selectInfo.y + yRadius
       let isLessTopSemi = (

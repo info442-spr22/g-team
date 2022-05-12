@@ -63,6 +63,8 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
       break
     case ('ellipse'):
       roughElement = generator.ellipse(leftX + (width / 2), topY + (height / 2), width, height, {fill: 'black'})
+      selectInfo.x = leftX
+      selectInfo.y = topY
       break
     case ('triangle'):
       roughElement = generator.path(
