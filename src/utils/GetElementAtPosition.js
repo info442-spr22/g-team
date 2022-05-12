@@ -5,13 +5,18 @@ function distance(a, b) {
 function isWithinElement(x, y, element) {
   const {roughElement, x1, x2, y1, y2} = element
   let isWithin;
-  switch (roughElement.shape) {
+  let minX
+  let maxX
+  let minY
+  let maxY
+  let selectInfo = element.selectInfo
+  switch (element.stickerType) {
     case ("rectangle"):
     case ("square"):
-      const minX = Math.min(x1, x2);
-      const maxX = Math.max(x1, x2);
-      const minY = Math.min(y1, y2);
-      const maxY = Math.max(y1, y2);
+      minX = selectInfo.x;
+      maxX = selectInfo.x + selectInfo.width;
+      minY = selectInfo.y;
+      maxY = selectInfo.y + selectInfo.height;
       isWithin = x >= minX && x <= maxX && y >= minY && y <= maxY;
       break
     case ("line"):
@@ -21,12 +26,25 @@ function isWithinElement(x, y, element) {
       const offset = distance(a, b) - (distance(a, c) + distance(b, c));
       isWithin = Math.abs(offset) < 1;
       break
+    case ("arrow"):
+      let points = selectInfo.points
+      isWithin = false
+      // last point is a duplicate for some reason, -1 to avoid
+      for (let i = 1; i < points.length; i=i+2) {
+        const a = {x: points[i][0], y: points[i][1]}
+        const b = {x: points[i-1][0], y: points[i-1][1]}
+        const c = {x, y}
+        const offset = distance(a, b) - (distance(a, c) + distance(b, c));
+        if (Math.abs(offset) < 1) {
+          isWithin = true
+        }
+      }
+      break
     default:
   }
   return isWithin;
 }
 
 export default function getElementAtPosition(x, y, elements) {
-
   return elements.find(element => isWithinElement(x, y, element))
 }

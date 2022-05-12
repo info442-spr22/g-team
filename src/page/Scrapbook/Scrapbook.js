@@ -6,6 +6,7 @@ import PropertiesSidebar from '../../component/page-element/PropertiesSidebar/Pr
 import ActionBar from '../../component/page-element/ActionBar/ActionBar'
 import createElement from '../../utils/CreateElement'
 import getElementAtPosition from "../../utils/GetElementAtPosition"
+import drawSelectedBox from "../../utils/DrawSelectedBox";
 
 const generator = rough.generator();
 
@@ -23,12 +24,15 @@ export const stickerHotKeys = [
 
 
 
+
 const Scrapbook = () => {
     const [elements, setElements] = useState([]);
     const [action, setAction] = useState('none');
     const [windowDimensions, setWindowDimensions] = React.useState({})
     const [canvasPosition, setCanvasPosition] = React.useState({x: 0, y:0})
-    const [selectedSticker, setSelectedSticker] = React.useState('line')
+    const [selectedSticker, setSelectedSticker] = React.useState('select')
+    const [selectedElement, setSelectedElement] = React.useState(null)
+    const [selectedBox, setSelectedBox] = React.useState(null)
 
     let canvasRef = React.useCallback(canvas => {
         if (canvas !== null) {
@@ -63,16 +67,27 @@ const Scrapbook = () => {
 
         // if select is active, do moving, else do drawing
         if (selectedSticker === "select") {
-            console.log("test");
             const element = getElementAtPosition(
                 clientX - canvasPosition.x,
                 clientY - canvasPosition.y,
                 elements
             )
             if (element) {
-                console.log(element)
-                setAction('moving')
-                console.log("moving");
+                setAction('selected')
+                setSelectedElement(element)
+                drawSelectedBox(element, setSelectedBox, generator);
+            } else {
+                // reset action to none
+                setAction('none')
+                // remove the selected element
+                setSelectedElement(null)
+                // redraw canvas without the selection box
+                const canvas = document.getElementById("canvas");
+                const ctx = canvas.getContext("2d");
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                const roughCanvas = rough.canvas(canvas);
+
+                elements.forEach(({ roughElement }) => roughCanvas.draw(roughElement));
             }
         } else {
             // Starting pt is clientX, clintY and first create element end pt is same as start pt
@@ -97,11 +112,11 @@ const Scrapbook = () => {
             const index = elements.length - 1
             const { x1, y1 } = elements[index]
             const updatedElement = createElement(
-            generator,
-            x1, y1,
-            clientX - canvasPosition.x, clientY - canvasPosition.y,
-            selectedSticker,
-            {}
+                generator,
+                x1, y1,
+                clientX - canvasPosition.x, clientY - canvasPosition.y,
+                selectedSticker,
+                {}
             )
 
             const elementsCopy = [...elements]

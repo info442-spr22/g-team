@@ -9,6 +9,8 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
   let botY = y1 < y2 ? y2 : y1
   let xScale
   let yScale
+  let points = null
+  let selectInfo = {x: leftX, y: topY, width: width, height: height}
   switch (stickerType) {
     case ('line'):
       roughElement = generator.line(x1, y1, x2, y2, {fill: 'black'})
@@ -31,13 +33,25 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
           // angle = angle
         }
       }
-      let points = [ [x1, y1], [x2, y2],
+      points = [ [x1, y1], [x2, y2],
         [ x2 - Math.cos(angle + arrowheadAngle) * armLength, y2 - Math.sin(angle + arrowheadAngle) * armLength ],
         [ x2, y2 ],
         [ x2 - Math.cos(angle - arrowheadAngle) * armLength, y2 - Math.sin(angle - arrowheadAngle) * armLength ],
         [ x2, y2 ],
       ]
       roughElement = generator.linearPath(points, {fill: 'black'})
+
+
+      let minX = Math.min.apply(Math, points.map(row => row[0]));
+      let minY = Math.min.apply(Math, points.map(row => row[1]))
+      selectInfo = {
+        points: points,
+        x: minX,
+        y: minY,
+        width: Math.max.apply(Math, points.map(row => row[0])) - minX,
+        height: Math.max.apply(Math, points.map(row => row[1])) - minY
+      }
+
       break
     case ('circle'):
       roughElement = generator.circle(leftX + width / 2, topY + height / 2, longerSide, {fill: 'black'})
@@ -93,14 +107,17 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
           roughElement = generator.rectangle(x1 - longerSide, y1 - longerSide, longerSide, longerSide, {fill: 'black'})
         }
       }
-      x2 = x1 + longerSide
-      y2 = y1 + longerSide
+
+      selectInfo.x = (x1 < x2 ? x1 : x1 - longerSide)
+      selectInfo.y = (y1 < y2 ? y1 : y1 - longerSide)
+      selectInfo.width = longerSide
+      selectInfo.height = longerSide
       break
     case ('rectangle'):
       roughElement = generator.rectangle(leftX, topY, width, height, {fill: 'black'})
       break
     default:
   }
-  return {x1, y1, x2, y2, roughElement };
+  return {x1, y1, x2, y2, selectInfo, stickerType, roughElement };
 }
 
