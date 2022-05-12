@@ -40,6 +40,29 @@ function isWithinElement(x, y, element) {
         }
       }
       break
+    case ("circle"):
+      let xRadius = selectInfo.width / 2
+      let yRadius = selectInfo.width / 2
+      let xCenter = selectInfo.x + xRadius
+      let yCenter = selectInfo.y + yRadius
+      let isLessTopSemi = (
+        y <= yCenter + yRadius *
+          Math.sqrt(1 - (Math.pow(x - xCenter, 2) / Math.pow(xRadius, 2)))
+      )
+      let isMoreBotSemi = (
+        y >= yCenter - yRadius *
+          Math.sqrt(1 - (Math.pow(x - xCenter, 2) / Math.pow(xRadius, 2)))
+      )
+      let isLessRightSemi = (
+        x <= xCenter +   xRadius *
+          Math.sqrt(1 - (Math.pow(y - yCenter, 2) / Math.pow(yRadius, 2)))
+      )
+      let isMoreLeftSemi = (
+        x >= xCenter - xRadius *
+          Math.sqrt(1 - (Math.pow(y - yCenter, 2) / Math.pow(yRadius, 2)))
+      )
+      isWithin = isLessTopSemi && isMoreBotSemi && isLessRightSemi && isMoreLeftSemi
+      break
     default:
   }
   return isWithin;

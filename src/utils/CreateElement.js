@@ -55,6 +55,11 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
       break
     case ('circle'):
       roughElement = generator.circle(leftX + width / 2, topY + height / 2, longerSide, {fill: 'black'})
+
+      selectInfo.x = leftX + width / 2 - longerSide / 2
+      selectInfo.y = topY + height / 2 - longerSide / 2
+      selectInfo.width = longerSide
+      selectInfo.height = longerSide
       break
     case ('ellipse'):
       roughElement = generator.ellipse(leftX + (width / 2), topY + (height / 2), width, height, {fill: 'black'})
