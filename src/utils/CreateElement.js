@@ -71,6 +71,12 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
         "M " + [((width / 2) + leftX), topY] + " L " + [rightX, botY] + " H " +
         leftX + " Z", {fill: 'black'}
       )
+
+      selectInfo.points = [
+        [(width / 2 + leftX), topY],
+        [rightX, botY],
+        [leftX, botY]
+      ]
       break
     case ('star'):
       xScale = Math.abs(x1 - x2) / 45

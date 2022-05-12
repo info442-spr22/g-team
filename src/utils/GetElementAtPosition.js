@@ -9,6 +9,7 @@ function isWithinElement(x, y, element) {
   let maxX
   let minY
   let maxY
+  let points
   let selectInfo = element.selectInfo
   switch (element.stickerType) {
     case ("rectangle"):
@@ -27,7 +28,7 @@ function isWithinElement(x, y, element) {
       isWithin = Math.abs(offset) < 1;
       break
     case ("arrow"):
-      let points = selectInfo.points
+      points = selectInfo.points
       isWithin = false
       // last point is a duplicate for some reason, -1 to avoid
       for (let i = 1; i < points.length; i=i+2) {
@@ -63,6 +64,33 @@ function isWithinElement(x, y, element) {
           Math.sqrt(1 - (Math.pow(y - yCenter, 2) / Math.pow(yRadius, 2)))
       )
       isWithin = isLessTopSemi && isMoreBotSemi && isLessRightSemi && isMoreLeftSemi
+      break
+    case("triangle"):
+      points = selectInfo.points
+      // left diag line
+      let slope = (points[0][1] - points[2][1]) / (points[0][0] - points[2][0])
+      let yInter = points[0][1] - slope * points[0][0]
+      let isXMoreLeft = (
+        x >= (y - yInter) / slope
+      )
+      let isYMoreLeft = (
+        y >= slope * x + yInter
+      )
+      // right diag line
+      slope = (points[0][1] - points[1][1]) / (points[0][0] - points[1][0])
+      yInter = points[0][1] - slope * points[0][0]
+      let isXLessRight = (
+        x <= (y - yInter) / slope
+      )
+      let isYMoreRight = (
+        y >= slope * x + yInter
+      )
+      // bottom line
+      let isYLessBot = (
+        y <= points[2][1]
+      )
+      isWithin = isXMoreLeft && isYMoreLeft && isXLessRight && isYMoreRight && isYLessBot
+      console.log([isWithin, isXMoreLeft , isYMoreLeft, isXLessRight , isYMoreRight , isYLessBot])
       break
     default:
   }
