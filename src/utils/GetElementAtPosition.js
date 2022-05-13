@@ -2,6 +2,42 @@ function distance(a, b) {
   return Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2));
 }
 
+function findSlope(point1, point2) {
+  return (point1[1] - point2[1]) / (point1[0] - point2[0])
+}
+
+function findYInter(point, slope) {
+  return point[1] - slope * point[0]
+}
+
+function checkXToLine(x, y, slope, yInter, checkGreater = true) {
+  return checkGreater ?
+    x >= (y - yInter) / slope :
+    x <= (y - yInter) / slope
+}
+
+function checkYToLine(x, y, slope, yInter, checkGreater = true) {
+  return checkGreater ?
+    y >= slope * x + yInter :
+    y <= slope * x + yInter
+}
+
+function checkCorrectSideLine(x, y, point1, point2, xGreater, yGreater, isHorizontal = false) {
+  let slope = findSlope(point1, point2)
+  let yInter = findYInter(point1, slope)
+  let check
+  if (isHorizontal) {
+    check = checkYToLine(x, y, 0, yInter, yGreater)
+  } else {
+    check = (
+      checkXToLine(x, y, slope, yInter, xGreater) &&
+      checkYToLine(x, y, slope, yInter, yGreater)
+    )
+  }
+
+  return check
+}
+
 function isWithinElement(x, y, element) {
   const {roughElement, x1, x2, y1, y2} = element
   let isWithin;
@@ -10,10 +46,13 @@ function isWithinElement(x, y, element) {
   let minY
   let maxY
   let points
+  let slope
+  let yInter
   let selectInfo = element.selectInfo
   switch (element.stickerType) {
     case ("rectangle"):
     case ("square"):
+      console.log(element)
       minX = selectInfo.x;
       maxX = selectInfo.x + selectInfo.width;
       minY = selectInfo.y;
@@ -68,29 +107,75 @@ function isWithinElement(x, y, element) {
     case("triangle"):
       points = selectInfo.points
       // left diag line
-      let slope = (points[0][1] - points[2][1]) / (points[0][0] - points[2][0])
-      let yInter = points[0][1] - slope * points[0][0]
-      let isXMoreLeft = (
-        x >= (y - yInter) / slope
-      )
-      let isYMoreLeft = (
-        y >= slope * x + yInter
-      )
+      let isLeftLine = checkCorrectSideLine(x, y, points[0], points[2], true, true)
       // right diag line
-      slope = (points[0][1] - points[1][1]) / (points[0][0] - points[1][0])
-      yInter = points[0][1] - slope * points[0][0]
-      let isXLessRight = (
-        x <= (y - yInter) / slope
-      )
-      let isYMoreRight = (
-        y >= slope * x + yInter
-      )
+
+      let isRightLine = checkCorrectSideLine(x, y, points[0], points[1], false, true)
+
       // bottom line
-      let isYLessBot = (
-        y <= points[2][1]
+      let isBotLine = checkCorrectSideLine(x, y, points[1], points[2], true, false, true)
+
+      isWithin = isLeftLine && isRightLine && isBotLine
+      break
+    case("star"):
+      points = selectInfo.points
+
+      // check top triangle
+
+      let isTopTriangle = (
+        checkCorrectSideLine(x, y, points[0], points[1], true, true) && // left line
+        checkCorrectSideLine(x, y, points[0], points[9], false, true) && // right line
+        checkCorrectSideLine(x, y, points[1], points[9], true, false, true) // bottom line
       )
-      isWithin = isXMoreLeft && isYMoreLeft && isXLessRight && isYMoreRight && isYLessBot
-      console.log([isWithin, isXMoreLeft , isYMoreLeft, isXLessRight , isYMoreRight , isYLessBot])
+
+
+      // check lefttop triangle
+      let isLeftTopTriangle = (
+        checkCorrectSideLine(x, y, points[1], points[2], true, true, true) && // top line
+        checkCorrectSideLine(x, y, points[2], points[3], true, false) && // left line
+        checkCorrectSideLine(x, y, points[1], points[3], false, false) // right line
+      )
+
+      // check leftbot triangle
+
+      let isLeftBotTriangle = (
+        checkCorrectSideLine(x, y, points[3], points[4], true, true) && // left line
+        checkCorrectSideLine(x, y, points[4], points[5], false, false) && // right line
+        checkCorrectSideLine(x, y, points[3], points[5], false, true) // top line
+      )
+
+      // check rightbot triangle
+
+      let isRightBotTriangle = (
+        checkCorrectSideLine(x, y, points[5], points[6], true, false) && // left line
+        checkCorrectSideLine(x, y, points[6], points[7], false, true) && // right line
+        checkCorrectSideLine(x, y, points[5], points[7], true, true) // top line
+      )
+
+      // check righttop triangle
+
+      let isRightTopTriangle = (
+        checkCorrectSideLine(x, y, points[7], points[9], true, false) && // left line
+        checkCorrectSideLine(x, y, points[7], points[8], false, false) && // right line
+        checkCorrectSideLine(x, y, points[8], points[9], true, true, true) // top line
+      )
+
+      // check inside pentagon
+
+      let isInsidePenta = (
+        checkCorrectSideLine(x, y, points[1], points[9], true, true, true) && // top line
+        checkCorrectSideLine(x, y, points[1], points[3], true, true) && // topleft line
+        checkCorrectSideLine(x, y, points[3], points[5], true, false) && // botleft line
+        checkCorrectSideLine(x, y, points[5], points[7], false, false) && // botright line
+        checkCorrectSideLine(x, y, points[7], points[9], false, true) // topright line
+      )
+
+
+      isWithin = (
+        isTopTriangle || isLeftTopTriangle || isLeftBotTriangle ||
+        isRightBotTriangle || isRightTopTriangle || isInsidePenta
+      )
+
       break
     default:
   }

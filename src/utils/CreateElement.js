@@ -94,6 +94,22 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
         " H " + (xScale * 30 + leftX) +
         " L " + [xScale * 24 + leftX, yScale * 0 + topY] + " Z", {fill: 'black'}
       )
+      selectInfo.points = [
+        [xScale * 24 + leftX, yScale * 0 + topY],
+        [xScale * 18 + leftX, yScale * 18 + topY],
+        [leftX, yScale * 18 + topY],
+        [xScale * 15 + leftX, yScale * 28 + topY],
+        [xScale * 9 + leftX, yScale * 45 + topY],
+        [xScale * 24 + leftX, yScale * 35 + topY],
+        [xScale * 38 + leftX, yScale * 45 + topY],
+        [xScale * 33 + leftX, yScale * 28 + topY],
+        [xScale * 48 + leftX, yScale * 18 + topY],
+        [xScale * 30 + leftX, yScale * 18 + topY]
+      ]
+
+      selectInfo.width = xScale * 48
+      selectInfo.height = yScale * 45
+
       break
     case ('heart'):
       xScale = width / 32
