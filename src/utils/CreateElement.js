@@ -9,9 +9,11 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
   let botY = y1 < y2 ? y2 : y1
   let xScale
   let yScale
+  let points = null
+  let selectInfo = {x: leftX, y: topY, width: width, height: height}
   switch (stickerType) {
     case ('line'):
-      roughElement = generator.line(x1, y1, x2, y2)
+      roughElement = generator.line(x1, y1, x2, y2, {fill: 'black'})
       break
     case ('arrow'):
       let armLength = 0.3 * Math.sqrt(width * width + height * height)
@@ -31,25 +33,50 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
           // angle = angle
         }
       }
-      let points = [ [x1, y1], [x2, y2],
+      points = [ [x1, y1], [x2, y2],
         [ x2 - Math.cos(angle + arrowheadAngle) * armLength, y2 - Math.sin(angle + arrowheadAngle) * armLength ],
         [ x2, y2 ],
         [ x2 - Math.cos(angle - arrowheadAngle) * armLength, y2 - Math.sin(angle - arrowheadAngle) * armLength ],
         [ x2, y2 ],
       ]
-      roughElement = generator.linearPath(points)
+      roughElement = generator.linearPath(points, {fill: 'black'})
+
+
+      let minX = Math.min.apply(Math, points.map(row => row[0]));
+      let minY = Math.min.apply(Math, points.map(row => row[1]))
+      selectInfo = {
+        points: points,
+        x: minX,
+        y: minY,
+        width: Math.max.apply(Math, points.map(row => row[0])) - minX,
+        height: Math.max.apply(Math, points.map(row => row[1])) - minY
+      }
+
       break
     case ('circle'):
-      roughElement = generator.circle(leftX + width / 2, topY + height / 2, longerSide)
+      roughElement = generator.circle(leftX + width / 2, topY + height / 2, longerSide, {fill: 'black'})
+
+      selectInfo.x = leftX + width / 2 - longerSide / 2
+      selectInfo.y = topY + height / 2 - longerSide / 2
+      selectInfo.width = longerSide
+      selectInfo.height = longerSide
       break
     case ('ellipse'):
-      roughElement = generator.ellipse(leftX + (width / 2), topY + (height / 2), width, height)
+      roughElement = generator.ellipse(leftX + (width / 2), topY + (height / 2), width, height, {fill: 'black'})
+      selectInfo.x = leftX
+      selectInfo.y = topY
       break
     case ('triangle'):
       roughElement = generator.path(
         "M " + [((width / 2) + leftX), topY] + " L " + [rightX, botY] + " H " +
-        leftX + " Z"
+        leftX + " Z", {fill: 'black'}
       )
+
+      selectInfo.points = [
+        [(width / 2 + leftX), topY],
+        [rightX, botY],
+        [leftX, botY]
+      ]
       break
     case ('star'):
       xScale = Math.abs(x1 - x2) / 45
@@ -65,8 +92,24 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
         " L " + [xScale * 33 + leftX, yScale * 28 + topY] +
         " L " + [xScale * 48 + leftX, yScale * 18 + topY] +
         " H " + (xScale * 30 + leftX) +
-        " L " + [xScale * 24 + leftX, yScale * 0 + topY] + " Z"
+        " L " + [xScale * 24 + leftX, yScale * 0 + topY] + " Z", {fill: 'black'}
       )
+      selectInfo.points = [
+        [xScale * 24 + leftX, yScale * 0 + topY],
+        [xScale * 18 + leftX, yScale * 18 + topY],
+        [leftX, yScale * 18 + topY],
+        [xScale * 15 + leftX, yScale * 28 + topY],
+        [xScale * 9 + leftX, yScale * 45 + topY],
+        [xScale * 24 + leftX, yScale * 35 + topY],
+        [xScale * 38 + leftX, yScale * 45 + topY],
+        [xScale * 33 + leftX, yScale * 28 + topY],
+        [xScale * 48 + leftX, yScale * 18 + topY],
+        [xScale * 30 + leftX, yScale * 18 + topY]
+      ]
+
+      selectInfo.width = xScale * 48
+      selectInfo.height = yScale * 45
+
       break
     case ('heart'):
       xScale = width / 32
@@ -77,28 +120,33 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
         A ${5 * xScale / 2},${5 * xScale / 2} 0,0,1 ${leftX + width},${topY + 10 * yScale}
         Q ${leftX + width},${topY + 20 * yScale} ${leftX + 16 * xScale},${topY + 30 * yScale}
         Q ${leftX},${topY + 20 * yScale} ${leftX},${topY + 10 * yScale} z
-      `)
+      `, {fill: 'black'})
       break
     case ('square'):
       if (x1 <= x2) {
         if (y1 <= y2) {
-          roughElement = generator.rectangle(x1, y1, longerSide, longerSide)
+          roughElement = generator.rectangle(x1, y1, longerSide, longerSide, {fill: 'black'})
         } else {
-          roughElement = generator.rectangle(x1, y1 - longerSide, longerSide, longerSide)
+          roughElement = generator.rectangle(x1, y1 - longerSide, longerSide, longerSide, {fill: 'black'})
         }
       } else {
         if (y1 <= y2) {
-          roughElement = generator.rectangle(x1 - longerSide, y1, longerSide, longerSide)
+          roughElement = generator.rectangle(x1 - longerSide, y1, longerSide, longerSide, {fill: 'black'})
         } else {
-          roughElement = generator.rectangle(x1 - longerSide, y1 - longerSide, longerSide, longerSide)
+          roughElement = generator.rectangle(x1 - longerSide, y1 - longerSide, longerSide, longerSide, {fill: 'black'})
         }
       }
+
+      selectInfo.x = (x1 < x2 ? x1 : x1 - longerSide)
+      selectInfo.y = (y1 < y2 ? y1 : y1 - longerSide)
+      selectInfo.width = longerSide
+      selectInfo.height = longerSide
       break
     case ('rectangle'):
-      roughElement = generator.rectangle(leftX, topY, width, height)
+      roughElement = generator.rectangle(leftX, topY, width, height, {fill: 'black'})
       break
     default:
   }
-  return {x1, y1, x2, y2, roughElement };
+  return {x1, y1, x2, y2, selectInfo, stickerType, roughElement };
 }
 
