@@ -233,8 +233,6 @@ function isWithinElement(x, y, element) {
       maxY = minY + botBez.height
       let isInBotBez =  x >= minX && x <= maxX && y >= minY && y <= maxY;
 
-      console.log([isInTopBez, isInBotBez])
-
 
       isWithin = isInCirc1 || isInCirc2 || isInTopBez || isInBotBez
 
