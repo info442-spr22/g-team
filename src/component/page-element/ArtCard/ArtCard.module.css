@@ -1,0 +1,19 @@
+.cardBorder * {
+  box-sizing: border-box;
+}
+
+.cardBorder {
+  width: 350px;
+  height: 275px;
+  padding: 15px;
+  border-radius: 3px;
+  background-color: var(--color-three);
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  border: 1px solid black;
+  background-color: white;
+}
