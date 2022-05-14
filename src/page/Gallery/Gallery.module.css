@@ -1,0 +1,38 @@
+@import "../../theme/colors.css";
+
+.headerWrapper {
+    margin: auto;
+    width: 80%;
+    display: flex;
+  }
+  
+  .header_txt {
+    padding-top: 5rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .header_txt h1 {
+    color: var(--heading-color);
+    font-size: 80px;
+    margin-bottom: 0px;
+  }
+
+  hr { 
+    color: var(--heading-color);
+    width: 85%;
+    display: block; 
+    margin: auto; 
+    overflow: hidden; 
+    border-style: bold; 
+    border-width: 1px;
+}
+
+.artWrapper {
+    width: 80%;
+    display: flex;
+  }
+  
+.artCards {
+
+}
