@@ -39,15 +39,13 @@ function checkCorrectSideLine(x, y, point1, point2, xGreater, yGreater, isHorizo
 }
 
 function isWithinElement(x, y, element) {
-  const {roughElement, x1, x2, y1, y2} = element
+  const {x1, x2, y1, y2} = element
   let isWithin;
   let minX
   let maxX
   let minY
   let maxY
   let points
-  let slope
-  let yInter
   let selectInfo = element.selectInfo
   switch (element.stickerType) {
     case ("rectangle"):

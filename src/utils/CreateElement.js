@@ -5,8 +5,6 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
   let width = Math.abs(x1 - x2)
   let height = Math.abs(y1 - y2)
   let longerSide = width > height ? width : height
-  let rightX = x1 < x2 ? x2 : x1
-  let botY = y1 < y2 ? y2 : y1
   let xScale
   let yScale
   let points = null
@@ -67,6 +65,8 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
       selectInfo.y = topY
       break
     case ('triangle'):
+      let rightX = x1 < x2 ? x2 : x1
+      let botY = y1 < y2 ? y2 : y1
       roughElement = generator.path(
         "M " + [((width / 2) + leftX), topY] + " L " + [rightX, botY] + " H " +
         leftX + " Z", {fill: 'black'}
