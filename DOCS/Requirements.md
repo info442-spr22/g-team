@@ -50,7 +50,7 @@ B.
   <li>If signed in:</li>
       <ol>
     <li>Click on “Scrapbook” to enter Scrapbook page</li>
-    <li>Click on “Profile” to enter Profile page</li>
+    <li>Click on “Gallery” to enter Gallery page</li>
       </ol>
   <li>If not signed in or no account:</li>
       <ol>
@@ -198,7 +198,7 @@ D.
         <ol>
         <li>User can press “OK” to remove pop up</li>
         <li>User can press “X” in top corner to exit pop up</li>
-        <li>User can press “Go to gallery” to navigate to profile/gallery</li>
+        <li>User can press “Go to gallery” to navigate to gallery</li>
         <li>User can press “Share” to share content (detailed in View Art Pieces/Share Them 8a)</li>
         </ol>
      <li>Pop up will say that an error has occurred and work has not been saved</li>
@@ -295,7 +295,7 @@ F.
   <li>If logged in:</li>
     <ol>
       <li>Click on “Scrapbook” to enter Scrapbook page</li>
-      <li>Click on “Profile” to enter Profile page</li>
+      <li>Click on “Gallery” to enter Gallery page</li>
     </ol>
     <li>If not signed in or no account:</li>
     <ol>
@@ -310,10 +310,12 @@ G.
 <ol>
 <li>When to prompt sharing:</li>
   <ol>
-  <li>When saving gallery</li>
+  <li>After pressing Scrapbook share button</li>  
+  <li>When saving to gallery</li>
   <li>When looking at art in detail (stretch)</li>
   </ol>
 <li>A user can share to social media after being prompted when saving to the gallery (see Save to Gallery 2.a.i.4)</li>
+<li>A user can also share to social media after clicking on share button on Scrapbook page.</li>
 <li>A user can share to social media by clicking the share button on the view art piece preview (see View Art Piece/Share (stretch) page) (stretch)</li>
 <li>When a user starts the share process, a medium sized pop-up window appears with social media icons.</li>
 <li>When a user clicks on one of these social media icons, they will be redirected to this platform to share their art piece.</li>
@@ -334,22 +336,40 @@ H.
 <li>Under the profile page, users can scroll down and see their saved pieces</li>
 <li>User can view art pieces in detail by clicking on the card (detailed in View Art Pieces/Share Them section)</li>
 <li>By default, the gallery pieces are sorted by newest (newest on top and oldest on the bottom)</li>
-<li>User can sort their pieces</li>
+<li>User can sort their pieces (Stretch)</li>
   <ol>
-    <li>By clicking on the “Sort by” drop down, a list of filter options will appear</li>
+    <li>By clicking on the “Sort by” drop down, a list of filter options will appear (Stretch)</li>
     <ol>
-    <li>Sort by: oldest (selecting this option sorts the gallery pieces by oldest on top and newest below)</li>
-    <li>Sort by: newest (selecting this option sorts the gallery pieces by newest on top and oldest below)</li>
+    <li>Sort by: oldest (selecting this option sorts the gallery pieces by oldest on top and newest below) (Stretch)</li>
+    <li>Sort by: newest (selecting this option sorts the gallery pieces by newest on top and oldest below) (Stretch)</li>
     </ol>
     <li>Sort by date (would appear in the sort by drop down; stretch)</li>
     <ol>
-    <li>A calendar template would appear and each piece would be organized into a cell of the calendar depending on which day it was saved</li>
+    <li>A calendar template would appear and each piece would be organized into a cell of the calendar depending on which day it was saved (Stretch)</li>
     </ol>
   </ol>
 </ol>
 
-## Profile Page - Personal Gallery Showcase (Core)
+## View Art Pieces/Share Them (Core)
 I.
+<ol>
+<li>The user will be able to click on the artwork in particular that they would like to share to social media.</li>
+<li>A medium sized pop-up window will appear in the center of the page that will contain their artwork and the date it was saved.</li>
+    <ol>
+    <li>If the user accidentally clicked on the artwork or does not want to look at it anymore, there will be a small X in the top right corner that allows the user to click on and close the window.</li>
+    </ol>
+<li>Underneath the pop-up window, there will be two small-sized buttons that say “discard” and “share.”</li>
+    <ol>
+    <li>If the user clicks on the “share” button, another medium sized pop-up window will appear that contains multiple different social media icons, such as twitter, facebook, and instagram.</li>
+    <li>The user will be able to click on one of the social media icons and will be redirected to the corresponding platform to share their content.</li>
+    <li>If an error occurs while attempting to share the artwork, the user will be prompted on the same window to try again, with an error message that says “Something went wrong, please try again.”</li>
+    <li>If the user wants to go back because they do not want to share the content, they will be able to click on a small back arrow on the top left corner of the pop-up window.</li>
+    <li>There will also be a small X in the top right corner that allows the user to click on and close the window.</li>
+    </ol>
+</ol>
+
+## Profile Page - Personal Gallery Showcase (Stretch)
+J.
 <ol>
 <li>After finishing each art piece, users can click the finish button. It would then be able to be seen in the personal gallery.</li>
 <li>On the top half of the profile page, users’ profile picture, display name, and email address would be displayed.</li>
@@ -375,28 +395,10 @@ I.
 </ol>
 
 ## Non-Functional Requirements
-J.
+K.
 <ol>
 <li>User data should be encrypted before transmission to the back-end, and also while at rest in the back-end (these both come with the Firebase services we plan to use)</li>
 <li>Non-accessible features are removed when screen is being read by a screen reader</li>
-</ol>
-
-## View Art Pieces/Share Them (Stretch)
-K.
-<ol>
-<li>The user will be able to click on the artwork in particular that they would like to share to social media.</li>
-<li>A medium sized pop-up window will appear in the center of the page that will contain their artwork and the date it was saved.</li>
-    <ol>
-    <li>If the user accidentally clicked on the artwork or does not want to look at it anymore, there will be a small X in the top right corner that allows the user to click on and close the window.</li>
-    </ol>
-<li>Underneath the pop-up window, there will be two small-sized buttons that say “discard” and “share.”</li>
-    <ol>
-    <li>If the user clicks on the “share” button, another medium sized pop-up window will appear that contains multiple different social media icons, such as twitter, facebook, and instagram.</li>
-    <li>The user will be able to click on one of the social media icons and will be redirected to the corresponding platform to share their content.</li>
-    <li>If an error occurs while attempting to share the artwork, the user will be prompted on the same window to try again, with an error message that says “Something went wrong, please try again.”</li>
-    <li>If the user wants to go back because they do not want to share the content, they will be able to click on a small back arrow on the top left corner of the pop-up window.</li>
-    <li>There will also be a small X in the top right corner that allows the user to click on and close the window.</li>
-    </ol>
 </ol>
 
 ## Create Own Stickers (Stretch)
