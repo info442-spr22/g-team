@@ -64,6 +64,16 @@ const Scrapbook = () => {
     // mouse tracking
     const handleMouseDown = (event) => {
         const { clientX, clientY} = event;
+        // redraw canvas without the selection box
+        // (makes it so user cannot select multiple items at once and
+        // the selection box will not be drawn multiple times)
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const roughCanvas = rough.canvas(canvas);
+
+        elements.forEach(({ roughElement }) => roughCanvas.draw(roughElement));
+
 
         // if select is active, do moving, else do drawing
         if (selectedSticker === "select") {
@@ -81,13 +91,6 @@ const Scrapbook = () => {
                 setAction('none')
                 // remove the selected element
                 setSelectedElement(null)
-                // redraw canvas without the selection box
-                const canvas = document.getElementById("canvas");
-                const ctx = canvas.getContext("2d");
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                const roughCanvas = rough.canvas(canvas);
-
-                elements.forEach(({ roughElement }) => roughCanvas.draw(roughElement));
             }
         } else {
             // Starting pt is clientX, clintY and first create element end pt is same as start pt
