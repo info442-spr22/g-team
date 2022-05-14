@@ -116,11 +116,28 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
       yScale = height / 32
       roughElement = generator.path(`
         M ${leftX},${topY + 10 * yScale}
-        A ${5 * xScale / 2},${5 * xScale / 2} 0,0,1 ${leftX + 16 * xScale},${topY + 10 * yScale}
-        A ${5 * xScale / 2},${5 * xScale / 2} 0,0,1 ${leftX + width},${topY + 10 * yScale}
+        A ${xScale},${yScale} 0,0,1 ${leftX + 16 * xScale},${topY + 10 * yScale}
+        A ${xScale},${yScale} 0,0,1 ${leftX + width},${topY + 10 * yScale}
         Q ${leftX + width},${topY + 20 * yScale} ${leftX + 16 * xScale},${topY + 30 * yScale}
         Q ${leftX},${topY + 20 * yScale} ${leftX},${topY + 10 * yScale} z
       `, {fill: 'black'})
+
+      selectInfo.moved = {x: leftX, y: topY + 10 * yScale}
+      selectInfo.circle1 = {rx: 8 * xScale, ry: 10 * yScale, h: leftX + 8 * xScale, k: topY + 10 * yScale}
+      selectInfo.circle2 = {rx: 8 * xScale, ry: 10 * yScale, h: leftX + width * (3/4), k: topY + 10 * yScale}
+      selectInfo.topBez = {
+        x: leftX,
+        y: topY + 10 * yScale,
+        width: width,
+        height: 15 * yScale
+      }
+      selectInfo.botBez = {
+        x: leftX + 8 * xScale,
+        y: topY + 25 * yScale,
+        width: (leftX + width * (3/4)) - (leftX + 8 * xScale),
+        height: 5 * yScale
+      }
+
       break
     case ('square'):
       if (x1 <= x2) {
