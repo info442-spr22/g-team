@@ -249,5 +249,6 @@ export default function getElementAtPosition(x, y, elements) {
   // if there are the same elements
   //    pop from queue, put at the bottom of the queue, select the popped element
   // if there are old elements that are not in the new queue, they should be deleted
+  // change to elements.filter() to get all elements that fit isWithinElement
   return elements.find(element => isWithinElement(x, y, element))
 }
