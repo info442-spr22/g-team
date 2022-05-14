@@ -5,8 +5,11 @@ function ToolBarSticker(props) {
 
   // select functionality
   function select(event) {
+    console.log(event.key);
     if (props.hotkey === event.key) {
       props.setSelectedSticker(props.type)
+    } else if (event.key === "v") {
+      props.setSelectedSticker("select")
     }
   }
 

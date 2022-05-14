@@ -243,5 +243,11 @@ function isWithinElement(x, y, element) {
 }
 
 export default function getElementAtPosition(x, y, elements) {
+  // find all elements at position, store into a queue
+  // if queue already exists, compare the two
+  // if there are new elements select the first new one
+  // if there are the same elements
+  //    pop from queue, put at the bottom of the queue, select the popped element
+  // if there are old elements that are not in the new queue, they should be deleted
   return elements.find(element => isWithinElement(x, y, element))
 }
