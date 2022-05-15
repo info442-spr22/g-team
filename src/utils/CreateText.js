@@ -1,4 +1,4 @@
-export default function createText(canvas, ctx, x, y, text, textElement = null) {
+export default function createText(ctx, x, y, text, textElement = null) {
   // if there is no passed in element to draw, use default
   if (textElement === null) {
     textElement = {
