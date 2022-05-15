@@ -60,7 +60,6 @@ const Scrapbook = () => {
 
         elements.forEach(({ roughElement }) => roughCanvas.draw(roughElement));
         textElements.forEach((textElement) => createText(
-            canvas,
             ctx,
             textElement.location.x,
             textElement.location.y,
