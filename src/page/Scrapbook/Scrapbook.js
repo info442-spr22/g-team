@@ -1,12 +1,12 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, {useLayoutEffect, useState} from "react"
 import styles from './Scrapbook.module.css'
-import rough from "roughjs/bundled/rough.esm";
+import rough from "roughjs/bundled/rough.esm"
 import NavBar from '../../component/page-element/NavBar/NavBar'
 import PropertiesSidebar from '../../component/page-element/PropertiesSidebar/PropertiesSidebar'
 import ActionBar from '../../component/page-element/ActionBar/ActionBar'
 import createElement from '../../utils/CreateElement'
 import getElementAtPosition from "../../utils/GetElementAtPosition"
-import drawSelectedBox from "../../utils/DrawSelectedBox";
+import drawSelectedBox from "../../utils/DrawSelectedBox"
 
 const generator = rough.generator();
 
@@ -22,23 +22,22 @@ export const stickerHotKeys = [
     {"name": "heart", "hotkey": "h"}
 ]
 
-
-
-
 const Scrapbook = () => {
     const [elements, setElements] = useState([]);
     const [action, setAction] = useState('none');
     const [windowDimensions, setWindowDimensions] = React.useState({})
     const [canvasPosition, setCanvasPosition] = React.useState({x: 0, y:0})
     const [selectedSticker, setSelectedSticker] = React.useState('select')
-    const [selectedElement, setSelectedElement] = React.useState(null)
-    const [selectedBox, setSelectedBox] = React.useState(null)
+    // const [selectedElement, setSelectedElement] = React.useState(null) uncomment for object property changing
 
     let canvasRef = React.useCallback(canvas => {
-        if (canvas !== null) {
+        if (canvas) {
             let posInfo = canvas.getBoundingClientRect()
             setCanvasPosition({x: posInfo.x, y: posInfo.y})
         }
+        // A change in windowDimensions changes the position of the canvas, so windowDimensions is a
+        // dependency of this callback, but linters can't detect that kind of dependency
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [windowDimensions])
 
     React.useEffect(() => {
@@ -64,6 +63,16 @@ const Scrapbook = () => {
     // mouse tracking
     const handleMouseDown = (event) => {
         const { clientX, clientY} = event;
+        // redraw canvas without the selection box
+        // (makes it so user cannot select multiple items at once and
+        // the selection box will not be drawn multiple times)
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const roughCanvas = rough.canvas(canvas);
+
+        elements.forEach(({ roughElement }) => roughCanvas.draw(roughElement));
+
 
         // if select is active, do moving, else do drawing
         if (selectedSticker === "select") {
@@ -74,20 +83,13 @@ const Scrapbook = () => {
             )
             if (element) {
                 setAction('selected')
-                setSelectedElement(element)
-                drawSelectedBox(element, setSelectedBox, generator);
+                // setSelectedElement(element)
+                drawSelectedBox(element, generator);
             } else {
                 // reset action to none
                 setAction('none')
                 // remove the selected element
-                setSelectedElement(null)
-                // redraw canvas without the selection box
-                const canvas = document.getElementById("canvas");
-                const ctx = canvas.getContext("2d");
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                const roughCanvas = rough.canvas(canvas);
-
-                elements.forEach(({ roughElement }) => roughCanvas.draw(roughElement));
+                // setSelectedElement(null)
             }
         } else {
             // Starting pt is clientX, clintY and first create element end pt is same as start pt

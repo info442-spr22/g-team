@@ -5,7 +5,6 @@ import './theme/colors.css'
 import './theme/fonts.css'
 import './theme/sizes.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './custom.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
