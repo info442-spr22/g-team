@@ -9,6 +9,7 @@ import getElementAtPosition from "../../utils/GetElementAtPosition"
 import drawSelectedBox from "../../utils/DrawSelectedBox"
 import Button from '../../component/page-element/Button/Button'
 import { useScreenshot } from "use-react-screenshot";
+import {IMAGES} from '../../resources/constants/storage-keys'
 
 const generator = rough.generator();
 
@@ -146,7 +147,14 @@ const Scrapbook = () => {
 
     const saveCanvas = () => {
         captureCanvas().then((input) => {
-            window.localStorage.setItem("testImage", input)
+            let images = JSON.parse(window.localStorage.getItem(IMAGES))
+            let newEntry = {
+                "image": input,
+                "time_created": Date.now()
+            }
+            if (!images) images = []
+            images.push(newEntry)
+            window.localStorage.setItem(IMAGES, JSON.stringify(images))
         })
     }
 
