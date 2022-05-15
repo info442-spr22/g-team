@@ -21,7 +21,7 @@ function Landing() {
           <p>Get creative with GetWell. GetWell combines journaling and art,
           turning it into a digital scrapbooking experience for you to create spreads,
           share it with your friends, and transform your thoughts into art.</p>
-          <div><p>Get Started</p></div>
+          <div className={styles.call_to_action}><p>Get Started</p></div>
         </div>
         <div className={styles.intro_pic}>
           <img src={landing_splash} alt={"Person painting with space"} />

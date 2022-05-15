@@ -13,10 +13,11 @@ export default function NavBar({ authenticated }) {
   let links = [
     {to: urls.LANDING, text: 'Home'},
     {to: urls.SCRAPBOOK, text: 'Scrapbook'},
+    {to: urls.GALLERY, text: 'Gallery'},
   ]
-  if (authenticated) {
-    links.push({ to: urls.PROFILE, text: 'Profile' })
-  }
+ /* if (authenticated) {
+    links.push({ to: urls.GALLERY, text: 'Gallery' })
+  }*/
 
   const activeClass = styles.link + ' ' + styles.active
 
@@ -24,7 +25,7 @@ export default function NavBar({ authenticated }) {
     <NavLink
       to={'/' + link.to}
       className={({ isActive }) => isActive ? activeClass : styles.link}
-      key={link.id}
+      key={link.text}
     >
       {link.text}
     </NavLink>
