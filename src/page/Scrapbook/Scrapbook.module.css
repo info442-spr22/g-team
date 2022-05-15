@@ -1,20 +1,39 @@
 .pageContents {
-  height: calc(100vh - var(--nav-bar-height));
+  height: calc(100vh);
   width: 100vw;
   padding-top: calc(var(--nav-bar-height) + 24px);
   display: flex;
   flex-direction: row;
+  overflow: clip;
 }
 
 .rightWrapper {
   height: 100%;
-  width: 100%;
+  flex-grow: 1;
 
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
+.canvas {
+  border: 1px solid var(--scrapbook-canvas-border);
+  margin-bottom: 16px;
+}
+
+.buttonWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.buttonWrapper > * {
+  margin-top: 12px;
+}
+
 .canvasWrapper {
+  display: flex;
+  flex-direction: row;
   margin: 0 auto;
 }
+
