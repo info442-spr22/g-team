@@ -7,6 +7,7 @@ import ActionBar from '../../component/page-element/ActionBar/ActionBar'
 import createElement from '../../utils/CreateElement'
 import getElementAtPosition from "../../utils/GetElementAtPosition"
 import drawSelectedBox from "../../utils/DrawSelectedBox"
+import createText from "../../utils/CreateText"
 
 const generator = rough.generator();
 
@@ -24,6 +25,7 @@ export const stickerHotKeys = [
 
 const Scrapbook = () => {
     const [elements, setElements] = useState([]);
+    const [textElements, setTextElements] = useState([]);
     const [action, setAction] = useState('none');
     const [windowDimensions, setWindowDimensions] = React.useState({})
     const [canvasPosition, setCanvasPosition] = React.useState({x: 0, y:0})
@@ -57,8 +59,16 @@ const Scrapbook = () => {
         const roughCanvas = rough.canvas(canvas);
 
         elements.forEach(({ roughElement }) => roughCanvas.draw(roughElement));
+        textElements.forEach((textElement) => createText(
+            canvas,
+            ctx,
+            textElement.location.x,
+            textElement.location.y,
+            textElement.text,
+            textElement
+        ));
 
-    }, [elements]);
+    }, [elements, textElements]);
 
     // mouse tracking
     const handleMouseDown = (event) => {
@@ -72,6 +82,13 @@ const Scrapbook = () => {
         const roughCanvas = rough.canvas(canvas);
 
         elements.forEach(({ roughElement }) => roughCanvas.draw(roughElement));
+        textElements.forEach((textElement) => createText(
+            ctx,
+            textElement.location.x,
+            textElement.location.y,
+            textElement.text,
+            textElement
+        ));
 
 
         // if select is active, do moving, else do drawing
@@ -79,7 +96,7 @@ const Scrapbook = () => {
             const element = getElementAtPosition(
                 clientX - canvasPosition.x,
                 clientY - canvasPosition.y,
-                elements
+                elements, textElements
             )
             if (element) {
                 setAction('selected')
@@ -91,15 +108,25 @@ const Scrapbook = () => {
                 // remove the selected element
                 // setSelectedElement(null)
             }
+        } else if (selectedSticker === "text") {
+
+            const textElement = createText(
+                ctx,
+                clientX - canvasPosition.x, clientY - canvasPosition.y,
+                "Hello World!"
+            );
+            setTextElements((prevState) => [...prevState, textElement])
+
+            setAction("texting")
         } else {
             // Starting pt is clientX, clintY and first create element end pt is same as start pt
 
             const element = createElement(
-            generator,
-            clientX - canvasPosition.x, clientY - canvasPosition.y,
-            clientX - canvasPosition.x, clientY - canvasPosition.y,
-            selectedSticker,
-            {}
+                generator,
+                clientX - canvasPosition.x, clientY - canvasPosition.y,
+                clientX - canvasPosition.x, clientY - canvasPosition.y,
+                selectedSticker,
+                {}
             );
             setElements((prevState) => [...prevState, element])
 
