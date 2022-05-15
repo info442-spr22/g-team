@@ -26,6 +26,7 @@
 
   --scrapbook-bar-background: var(--color-five);
   --scrapbook-tool-selection: var(--color-six);
+  --scrapbook-tool-border: var(--color-three);
   --default-shape-color: var(--color-seven);
   --selected-shape-color: var(--color-one);
   --highlight-shape-color: var(--color-two);

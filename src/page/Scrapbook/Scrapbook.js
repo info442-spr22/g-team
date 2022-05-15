@@ -1,12 +1,12 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, {useLayoutEffect, useState} from "react"
 import styles from './Scrapbook.module.css'
-import rough from "roughjs/bundled/rough.esm";
+import rough from "roughjs/bundled/rough.esm"
 import NavBar from '../../component/page-element/NavBar/NavBar'
 import PropertiesSidebar from '../../component/page-element/PropertiesSidebar/PropertiesSidebar'
 import ActionBar from '../../component/page-element/ActionBar/ActionBar'
 import createElement from '../../utils/CreateElement'
 import getElementAtPosition from "../../utils/GetElementAtPosition"
-import drawSelectedBox from "../../utils/DrawSelectedBox";
+import drawSelectedBox from "../../utils/DrawSelectedBox"
 
 const generator = rough.generator();
 
