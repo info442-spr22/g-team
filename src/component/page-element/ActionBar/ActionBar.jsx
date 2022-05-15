@@ -5,8 +5,8 @@ import styles from "./ActionBar.module.css"
 import ToolBarSticker from '../../sticker/tool-bar/ToolBarSticker'
 
 export default function ActionBar(props) {
-  let stickers = stickerHotKeys.map( ({name, hotkey}) =>
-    <button id="selectMove" type="button" className="btn selectMove">
+  let stickers = stickerHotKeys.map(({name, hotkey}) =>
+    <button id="selectMove" type="button" className="btn selectMove" key={name}>
       <ToolBarSticker
         type={name}
         setSelectedSticker={(sticker) => {
@@ -22,7 +22,7 @@ export default function ActionBar(props) {
     <div className={styles.wrapper}>
       <div className={styles.actionBar}>
         <div onClick={() => {props.setSelectedSticker("select")}}>
-          <button id="selectMove" type="button" class="btn selectMove">
+          <button id="selectMove" type="button" className="btn selectMove">
             <CursorFill />
           </button>
         </div>

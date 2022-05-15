@@ -1,32 +1,36 @@
 import React from 'react'
 import styles from './ToolBarSticker.module.css'
 
-function ToolBarSticker(props) {
 
-  // select functionality
-  function select(event) {
+function handleKeyPress(event, props) {
+  // check if event is null
+  if (event && props) {
+    // select functionality
     if (props.hotkey === event.key) {
       props.setSelectedSticker(props.type)
+    } else if (event.key === "v") {
+      props.setSelectedSticker("select")
     }
   }
+}
+
+function ToolBarSticker(props) {
 
   // Looks for any keypress and runs select if it sees one is pressed down
   // https://devtrium.com/posts/how-keyboard-shortcut
   // modified handleKeyPress
-  const handleKeyPress = React.useCallback((event) => {
-    select(event);
-  }, []);
+
+
 
   React.useEffect(() => {
     // attach the event listener
-    document.addEventListener('keydown', handleKeyPress);
+    document.addEventListener('keydown', (event) => {handleKeyPress(event, props)});
 
     // remove the event listener
     return () => {
-      document.removeEventListener('keydown', handleKeyPress);
+      document.removeEventListener('keydown', (event) => {handleKeyPress(event, props)});
     };
-  }, [handleKeyPress]);
-
+  }, [props]);
 
   function Circle() {
     return(

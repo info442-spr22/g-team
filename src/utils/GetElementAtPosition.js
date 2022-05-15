@@ -39,20 +39,17 @@ function checkCorrectSideLine(x, y, point1, point2, xGreater, yGreater, isHorizo
 }
 
 function isWithinElement(x, y, element) {
-  const {roughElement, x1, x2, y1, y2} = element
+  const {x1, x2, y1, y2} = element
   let isWithin;
   let minX
   let maxX
   let minY
   let maxY
   let points
-  let slope
-  let yInter
   let selectInfo = element.selectInfo
   switch (element.stickerType) {
     case ("rectangle"):
     case ("square"):
-      console.log(element)
       minX = selectInfo.x;
       maxX = selectInfo.x + selectInfo.width;
       minY = selectInfo.y;
@@ -177,11 +174,81 @@ function isWithinElement(x, y, element) {
       )
 
       break
+    case ("heart"):
+      let circ1 = selectInfo.circle1
+      let isYLessTopCirc1 = (
+        y <= circ1.k + circ1.ry *
+          Math.sqrt(1 - (Math.pow(x - circ1.h, 2) / Math.pow(circ1.rx, 2)))
+      )
+
+      let isYMoreBotCirc1 = (
+        y >= circ1.k - circ1.ry *
+          Math.sqrt(1 - (Math.pow(x - circ1.h, 2) / Math.pow(circ1.rx, 2)))
+      )
+      let isXLessRightCirc1 = (
+        x <= circ1.h + circ1.rx *
+          Math.sqrt(1 - (Math.pow(y - circ1.k, 2) / Math.pow(circ1.ry, 2)))
+      )
+      let isXMoreLeftCirc1 = (
+        x >= circ1.h - circ1.rx *
+          Math.sqrt(1 - (Math.pow(y - circ1.k, 2) / Math.pow(circ1.ry, 2)))
+      )
+
+      let isInCirc1 = isYLessTopCirc1 && isYMoreBotCirc1 && isXLessRightCirc1 && isXMoreLeftCirc1
+
+      let circ2 = selectInfo.circle2
+      let isYLessTopCirc2 = (
+        y <= circ2.k + circ2.ry *
+          Math.sqrt(1 - (Math.pow(x - circ2.h, 2) / Math.pow(circ2.rx, 2)))
+      )
+
+      let isYMoreBotCirc2 = (
+        y >= circ2.k - circ2.ry *
+          Math.sqrt(1 - (Math.pow(x - circ2.h, 2) / Math.pow(circ2.rx, 2)))
+      )
+      let isXLessRightCirc2 = (
+        x <= circ2.h + circ2.rx *
+          Math.sqrt(1 - (Math.pow(y - circ2.k, 2) / Math.pow(circ2.ry, 2)))
+      )
+      let isXMoreLeftCirc2 = (
+        x >= circ2.h - circ2.rx *
+          Math.sqrt(1 - (Math.pow(y - circ2.k, 2) / Math.pow(circ2.ry, 2)))
+      )
+
+      let isInCirc2 = isYLessTopCirc2 && isYMoreBotCirc2 && isXLessRightCirc2 && isXMoreLeftCirc2
+
+      let topBez = selectInfo.topBez
+      minX = topBez.x
+      maxX = minX + topBez.width
+      minY = topBez.y
+      maxY = minY + topBez.height
+      let isInTopBez =  x >= minX && x <= maxX && y >= minY && y <= maxY;
+
+      let botBez = selectInfo.botBez
+      minX = botBez.x
+      maxX = minX + botBez.width
+      minY = botBez.y
+      maxY = minY + botBez.height
+      let isInBotBez =  x >= minX && x <= maxX && y >= minY && y <= maxY;
+
+
+      isWithin = isInCirc1 || isInCirc2 || isInTopBez || isInBotBez
+
+
+
+      break
     default:
   }
   return isWithin;
 }
 
 export default function getElementAtPosition(x, y, elements) {
+  // find all elements at position, store into a queue
+  // if queue already exists, compare the two
+  // if there are new elements select the first new one
+  // if there are the same elements
+  //    pop from queue, put at the bottom of the queue, select the popped element
+  // if there are old elements that are not in the new queue, they should be deleted
+  // change to elements.filter() to get all elements that fit isWithinElement
   return elements.find(element => isWithinElement(x, y, element))
 }
