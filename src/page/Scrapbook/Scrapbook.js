@@ -7,6 +7,7 @@ import ActionBar from '../../component/page-element/ActionBar/ActionBar'
 import createElement from '../../utils/CreateElement'
 import getElementAtPosition from "../../utils/GetElementAtPosition"
 import drawSelectedBox from "../../utils/DrawSelectedBox"
+import Button from '../../component/page-element/Button/Button'
 
 const generator = rough.generator();
 
@@ -138,13 +139,18 @@ const Scrapbook = () => {
                 <PropertiesSidebar />
                 <div className={styles.rightWrapper}>
                     <div className={styles.canvasWrapper}>
-                        <canvas ref={canvasRef} id="canvas" width={'800'} height={'550'}
+                        <canvas className={styles.canvas} ref={canvasRef} id="canvas" width={'800'} height={'550'}
                                 onMouseDown = {handleMouseDown}
                                 onMouseMove = {handleMouseMove}
                                 onMouseUp = {handleMouseUp}
                                 >
                             Canvas
                         </canvas>
+                        <div className={styles.buttonWrapper}>
+                            <Button>Save</Button>
+                            <Button>Share</Button>
+                            <Button variant>Restart</Button>
+                        </div>
                     </div>
                     <ActionBar
                       setSelectedSticker={setSelectedSticker}

@@ -1,20 +1,52 @@
 .pageContents {
-  height: calc(100vh - var(--nav-bar-height));
+  height: calc(100vh);
   width: 100vw;
   padding-top: calc(var(--nav-bar-height) + 24px);
   display: flex;
   flex-direction: row;
+  overflow: clip;
 }
 
 .rightWrapper {
   height: 100%;
-  width: 100%;
+  flex-grow: 1;
 
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.canvasWrapper {
+.canvas {
   margin: 0 auto;
+  border: 1px solid var(--scrapbook-canvas-border);
+}
+
+.buttonWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.buttonWrapper > * {
+  margin-top: 12px;
+}
+
+.canvasWrapper {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 16px;
+}
+
+@media only screen and (min-height: 768px) {
+  .canvasWrapper {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .buttonWrapper {
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+    margin-right: 24px;
+  }
 }
