@@ -9,7 +9,6 @@ props {
 
 export default function ArtCard(props) {
   const [largeView, setLargeView] = React.useState(false)
-  console.log("Hello world")
   return (
     <>
       <div
