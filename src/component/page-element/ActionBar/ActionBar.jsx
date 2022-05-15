@@ -26,7 +26,7 @@ export default function ActionBar(props) {
             <CursorFill />
           </button>
         </div>
-          <div onClick={() => {props.setSelectedSticker("select")}}>
+          <div onClick={() => {props.setSelectedSticker("text")}}>
               <button id="textBox" type="button" className="btn">
                   <TextareaT size='32px'/>
               </button>
