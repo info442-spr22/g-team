@@ -17,8 +17,8 @@
 }
 
 .canvas {
+  margin: 0 auto;
   border: 1px solid var(--scrapbook-canvas-border);
-  margin-bottom: 16px;
 }
 
 .buttonWrapper {
@@ -34,6 +34,19 @@
 .canvasWrapper {
   display: flex;
   flex-direction: row;
-  margin: 0 auto;
+  margin-bottom: 16px;
 }
 
+@media only screen and (min-height: 768px) {
+  .canvasWrapper {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .buttonWrapper {
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+    margin-right: 24px;
+  }
+}
