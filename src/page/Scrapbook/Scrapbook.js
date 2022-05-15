@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import styles from './Scrapbook.module.css'
 import rough from "roughjs/bundled/rough.esm";
 import NavBar from '../../component/page-element/NavBar/NavBar'
@@ -31,8 +31,7 @@ const Scrapbook = () => {
     const [windowDimensions, setWindowDimensions] = React.useState({})
     const [canvasPosition, setCanvasPosition] = React.useState({x: 0, y:0})
     const [selectedSticker, setSelectedSticker] = React.useState('select')
-    const [selectedElement, setSelectedElement] = React.useState(null)
-    const [selectedBox, setSelectedBox] = React.useState(null)
+    // const [selectedElement, setSelectedElement] = React.useState(null) uncomment for object property changing
 
     let canvasRef = React.useCallback(canvas => {
         if (canvas !== null) {
@@ -84,13 +83,13 @@ const Scrapbook = () => {
             )
             if (element) {
                 setAction('selected')
-                setSelectedElement(element)
-                drawSelectedBox(element, setSelectedBox, generator);
+                // setSelectedElement(element)
+                drawSelectedBox(element, generator);
             } else {
                 // reset action to none
                 setAction('none')
                 // remove the selected element
-                setSelectedElement(null)
+                // setSelectedElement(null)
             }
         } else {
             // Starting pt is clientX, clintY and first create element end pt is same as start pt
