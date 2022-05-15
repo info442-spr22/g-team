@@ -22,9 +22,6 @@ export const stickerHotKeys = [
     {"name": "heart", "hotkey": "h"}
 ]
 
-
-
-
 const Scrapbook = () => {
     const [elements, setElements] = useState([]);
     const [action, setAction] = useState('none');
@@ -35,10 +32,13 @@ const Scrapbook = () => {
     const [selectedBox, setSelectedBox] = React.useState(null)
 
     let canvasRef = React.useCallback(canvas => {
-        if (canvas !== null) {
+        if (canvas) {
             let posInfo = canvas.getBoundingClientRect()
             setCanvasPosition({x: posInfo.x, y: posInfo.y})
         }
+        // A change in windowDimensions changes the position of the canvas, so windowDimensions is a
+        // dependency of this callback, but linters can't detect that kind of dependency
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [windowDimensions])
 
     React.useEffect(() => {
