@@ -10,6 +10,8 @@ function handleKeyPress(event, props) {
       props.setSelectedSticker(props.type)
     } else if (event.key === "v") {
       props.setSelectedSticker("select")
+    } else if (event.key === "t") {
+      props.setSelectedSticker("text")
     }
   }
 }
