@@ -1,6 +1,6 @@
 import rough from "roughjs/bundled/rough.esm";
 
-export default function drawSelectedBox(element, setSelectedBox, generator) {
+export default function drawSelectedBox(element, generator) {
   const canvas = document.getElementById("canvas")
   const roughCanvas = rough.canvas(canvas)
   let selectInfo = element.selectInfo
@@ -11,5 +11,4 @@ export default function drawSelectedBox(element, setSelectedBox, generator) {
         {strokeLineDash: [10, 10]}
   )
   roughCanvas.draw(selectorBox)
-  setSelectedBox(selectorBox)
 }
