@@ -8,6 +8,7 @@ import createElement from '../../utils/CreateElement'
 import getElementAtPosition from "../../utils/GetElementAtPosition"
 import drawSelectedBox from "../../utils/DrawSelectedBox"
 import Button from '../../component/page-element/Button/Button'
+import Window from '../../component/page-element/Window/Window'
 import { useScreenshot } from "use-react-screenshot";
 import {IMAGES} from '../../resources/constants/storage-keys'
 
@@ -32,6 +33,7 @@ const Scrapbook = () => {
     const [canvasPosition, setCanvasPosition] = React.useState({x: 0, y:0})
     const [selectedSticker, setSelectedSticker] = React.useState('select')
     // const [selectedElement, setSelectedElement] = React.useState(null) uncomment for object property changing
+    const [showSharingPopup, setShowSharingPopup] = React.useState(false)
 
     let canvasRef = React.useRef(null)
 
@@ -162,6 +164,9 @@ const Scrapbook = () => {
     return(
         <>
             <NavBar authenticated={true} />
+            {showSharingPopup &&
+                <Window closePopup={() => setShowSharingPopup(false)} />
+            }
             <div className={styles.pageContents}>
                 <PropertiesSidebar />
                 <div className={styles.rightWrapper}>
@@ -174,9 +179,9 @@ const Scrapbook = () => {
                             Canvas
                         </canvas>
                         <div className={styles.buttonWrapper}>
-                            <Button onClick={saveCanvas}>Save</Button>
-                            <Button>Share</Button>
-                            <Button variant>Restart</Button>
+                        <Button onClick={saveCanvas}>Save</Button>
+                        <Button onClick={() => setShowSharingPopup(true)}>Share</Button>
+                        <Button variant>Restart</Button>
                         </div>
                     </div>
                     <ActionBar

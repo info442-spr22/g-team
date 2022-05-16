@@ -1,0 +1,89 @@
+.window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: var(--page-background);
+    width: 500px;
+    max-width: 80%;
+  }
+  
+  .window.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .window-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .window-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .window-body {
+    padding: 10px 15px;
+  }
+  
+  .overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--pop-up-background);
+    pointer-events: none;
+  }
+    
+  .overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .button {
+    font-size: 1.2rem;
+    border-radius: 10px;
+    width: 110px;
+    height: 45px;
+    margin: 0 15px;
+    background-color: var(--button-color);
+    border: none;
+  }
+  
+  .button * {
+    text-decoration: none;
+    color: var(--button-text-color)
+  }
+  
+  .button.variant {
+    border: 1px solid var(--button-variant-border-color);
+    background-color: var(--button-variant-color);
+  }
+  .button.variant * {
+    color: var(--button-variant-text-color)
+  }
+  
+  .button:hover {
+    color: var(--button-variant-text-color);
+    border-color: var(--scrapbook-tool-border);
+  }
+  
+  .button:focus {
+    border-color: var(--button-variant-text-color);
+    background-color: var(--selected-shape-color);
+    stroke: var(--highlight-shape-color);
+    stroke-width: 1px;
+  }
