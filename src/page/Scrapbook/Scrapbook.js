@@ -8,6 +8,7 @@ import createElement from '../../utils/CreateElement'
 import getElementAtPosition from "../../utils/GetElementAtPosition"
 import drawSelectedBox from "../../utils/DrawSelectedBox"
 import Button from '../../component/page-element/Button/Button'
+import Window from '../../component/page-element/Window/Window'
 
 const generator = rough.generator();
 
@@ -150,11 +151,7 @@ const Scrapbook = () => {
                         </canvas>
                         <div className={styles.buttonWrapper}>
                             <Button>Save</Button>
-                            <div>
-                            <button data-window-target="#window" id="shareButton" type="button" class="btn share">
-                                Share
-                            </button>
-                            </div>
+                            <Window />
                             <Button variant>Restart</Button>
                         </div>
                     </div>
