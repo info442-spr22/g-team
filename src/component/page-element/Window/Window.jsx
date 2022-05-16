@@ -1,4 +1,5 @@
 import React from 'react'
+ 
 
 export default function Window() {
     const openWindowButtons = document.querySelectorAll('[data-window-target]');
@@ -41,11 +42,6 @@ export default function Window() {
   
 return(
     <div>
-    <div>
-    <button data-window-target="#window" id="shareButton" type="button" class="btn share">
-        Share
-    </button>
-    </div>
     <div class="window" id="window">
     <div class="window-header">
     <div class="title">
