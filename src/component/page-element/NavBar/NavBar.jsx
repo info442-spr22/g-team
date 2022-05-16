@@ -2,6 +2,7 @@ import React from 'react'
 import styles from "./NavBar.module.css"
 import * as urls from '../../../resources/constants/url-endpoints'
 import {Link, NavLink} from 'react-router-dom'
+import Button from '../Button/Button'
 
 /*
 Props {
@@ -37,12 +38,12 @@ export default function NavBar({ authenticated }) {
       {linkElements}
       {!authenticated &&
         <>
-          <button className={styles.button + ' ' + styles.variant}>
-            <Link to={'/' + urls.AUTH}>Log In</Link>
-          </button>
-          <button className={styles.button}>
-            <Link to={'/' + urls.AUTH}>Sign Up</Link>
-          </button>
+          <Link to={'/' + urls.AUTH}>
+            <Button variant>Log In</Button>
+          </Link>
+          <Link to={'/' + urls.AUTH}>
+            <Button>Sign Up</Button>
+          </Link>
         </>
       }
     </div>

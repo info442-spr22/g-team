@@ -8,6 +8,7 @@
   --color-six: #DAF7A2;  /* light-green */
   /* --color-seven: #6ACF66;  neon-green */
   --color-seven: #000000; /* black */
+  --color-eight: #9A9A9A;
 
   --landing-section-one-color: var(--page-background);
 
@@ -27,6 +28,8 @@
   --scrapbook-bar-background: var(--color-five);
   --scrapbook-tool-selection: var(--color-six);
   --scrapbook-tool-border: var(--color-three);
+  --scrapbook-canvas-border: var(--color-eight);
+
   --default-shape-color: var(--color-seven);
   --selected-shape-color: var(--color-one);
   --highlight-shape-color: var(--color-two);
