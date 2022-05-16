@@ -137,7 +137,8 @@ const Scrapbook = () => {
         setAction("none");
     }
 
-    const [image, takeScreenshot] = useScreenshot()
+    // This comma means that the first element in the returned array is ignored, since we don't need it
+    const [, takeScreenshot] = useScreenshot()
 
     const captureCanvas = () => {
         if (canvasRef.current) {
