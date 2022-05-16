@@ -8,6 +8,7 @@ import createElement from '../../utils/CreateElement'
 import getElementAtPosition from "../../utils/GetElementAtPosition"
 import drawSelectedBox from "../../utils/DrawSelectedBox"
 import createText from "../../utils/CreateText"
+import TextBox from "../../component/tool/TextBox/TextBox"
 
 const generator = rough.generator();
 
@@ -30,6 +31,7 @@ const Scrapbook = () => {
     const [windowDimensions, setWindowDimensions] = React.useState({})
     const [canvasPosition, setCanvasPosition] = React.useState({x: 0, y:0})
     const [selectedSticker, setSelectedSticker] = React.useState('select')
+    const [textInputPosition, setInputPosition] = React.useState({})
     // const [selectedElement, setSelectedElement] = React.useState(null) uncomment for object property changing
 
     let canvasRef = React.useCallback(canvas => {
@@ -108,15 +110,10 @@ const Scrapbook = () => {
                 // setSelectedElement(null)
             }
         } else if (selectedSticker === "text") {
-
-            const textElement = createText(
-                ctx,
-                clientX - canvasPosition.x, clientY - canvasPosition.y,
-                "Hello World!"
-            );
-            setTextElements((prevState) => [...prevState, textElement])
-
-            setAction("texting")
+            if (!textInputPosition.x) {
+                setInputPosition({x: clientX, y: clientY})
+                setAction("texting")
+            }
         } else {
             // Starting pt is clientX, clintY and first create element end pt is same as start pt
 
@@ -174,6 +171,13 @@ const Scrapbook = () => {
                     </div>
                     <ActionBar
                       setSelectedSticker={setSelectedSticker}
+                    />
+                    <TextBox
+                      textInputPosition={textInputPosition}
+                      setInputPosition={setInputPosition}
+                      setSelectedSticker={setSelectedSticker}
+                      setTextElements={setTextElements}
+                      canvasPosition={canvasPosition}
                     />
                 </div>
             </div>

@@ -56,7 +56,6 @@ function isWithinElement(x, y, element) {
       minY = selectInfo.y;
       maxY = selectInfo.y + selectInfo.height;
       isWithin = x >= minX && x <= maxX && y >= minY && y <= maxY;
-      console.log(isWithin)
       break
     case ("line"):
       const a = {x: x1, y: y1};

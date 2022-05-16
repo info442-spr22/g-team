@@ -4,7 +4,7 @@ import styles from './ToolBarSticker.module.css'
 
 function handleKeyPress(event, props) {
   // check if event is null
-  if (event && props) {
+  if (event && props && !!!document.querySelector("div > input")) {
     // select functionality
     if (props.hotkey === event.key) {
       props.setSelectedSticker(props.type)

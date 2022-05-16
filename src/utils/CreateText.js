@@ -20,9 +20,6 @@ export default function createText(ctx, x, y, text, textElement = null) {
   ctx.fillStyle = textElement.style
   ctx.textAlign = textElement.align
 
-  // draw textbox
-  ctx.fillText(textElement.text, x, y)
-
   // add selection information
   let metrics = ctx.measureText(textElement.text)
   let width = metrics.width
@@ -33,8 +30,11 @@ export default function createText(ctx, x, y, text, textElement = null) {
     x: textElement.align === "left" ? x
                                     : textElement.align === "center" ? x + width / 2
                                                                      : x + width,
-    y: y - height
+    y: y
   }
+
+  // draw textbox
+  ctx.fillText(textElement.text, x, y + height)
 
   return textElement;
 }
