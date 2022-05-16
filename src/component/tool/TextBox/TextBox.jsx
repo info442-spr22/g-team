@@ -26,7 +26,6 @@ function handleEnter(event, props, textInputRef) {
     props.setInputPosition({})
     props.setSelectedSticker("select")
   } else if (/^.{1}$|^\s{1}$|^(Backspace)$/.test(event.key)) {
-    console.log(event.key)
     ctx.font = "30px Comic Sans MS"
     let extraSpace = "   "
     let metrics = ctx.measureText(
