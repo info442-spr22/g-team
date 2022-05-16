@@ -32,6 +32,7 @@ const Scrapbook = () => {
     const [canvasPosition, setCanvasPosition] = React.useState({x: 0, y:0})
     const [selectedSticker, setSelectedSticker] = React.useState('select')
     const [textInputPosition, setInputPosition] = React.useState({})
+    const [inputIsEmpty, setInputIsEmpty] = React.useState(false)
     // const [selectedElement, setSelectedElement] = React.useState(null) uncomment for object property changing
 
     let canvasRef = React.useCallback(canvas => {
@@ -91,6 +92,9 @@ const Scrapbook = () => {
             textElement
         ));
 
+        if (inputIsEmpty) {
+            setInputPosition({})
+        }
 
         // if select is active, do moving, else do drawing
         if (selectedSticker === "select") {
@@ -112,7 +116,10 @@ const Scrapbook = () => {
         } else if (selectedSticker === "text") {
             if (!textInputPosition.x) {
                 setInputPosition({x: clientX, y: clientY})
+
                 setAction("texting")
+
+                setSelectedSticker("select")
             }
         } else {
             // Starting pt is clientX, clintY and first create element end pt is same as start pt
@@ -178,6 +185,7 @@ const Scrapbook = () => {
                       setSelectedSticker={setSelectedSticker}
                       setTextElements={setTextElements}
                       canvasPosition={canvasPosition}
+                      setInputIsEmpty={setInputIsEmpty}
                     />
                 </div>
             </div>
