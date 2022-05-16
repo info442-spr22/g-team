@@ -5,4 +5,5 @@
   border-style: dashed;
   border-color: black;
   width: 140px;
+  min-width: 140px;
 }

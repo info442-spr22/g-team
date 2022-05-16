@@ -5,13 +5,13 @@ import createText from '../../../utils/CreateText'
 
 
 function handleEnter(event, props, textInputRef) {
-  const whiteSpace = new RegExp("\\s")
   props.setInputIsEmpty((
-    whiteSpace.test(textInputRef.current.value) ||
+    /\\s/.test(textInputRef.current.value) ||
     textInputRef.current.value === ""
   ))
+
+  const ctx = document.getElementById("canvas").getContext("2d")
   if (event.key === "Enter") {
-    const ctx = document.getElementById("canvas").getContext("2d")
 
     const textElement = createText(
         ctx,
@@ -25,6 +25,16 @@ function handleEnter(event, props, textInputRef) {
 
     props.setInputPosition({})
     props.setSelectedSticker("select")
+  } else if (/^.{1}$|^\s{1}$|^(Backspace)$/.test(event.key)) {
+    console.log(event.key)
+    ctx.font = "30px Comic Sans MS"
+    let extraSpace = "   "
+    let metrics = ctx.measureText(
+      event.key === "Backspace" ? textInputRef.current.value + extraSpace
+                      : textInputRef.current.value + event.key + extraSpace
+    )
+    let width = metrics.width
+    textInputRef.current.style.width = width + "px"
   }
 }
 
