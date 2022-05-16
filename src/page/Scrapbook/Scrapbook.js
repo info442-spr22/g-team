@@ -31,6 +31,7 @@ const Scrapbook = () => {
     const [canvasPosition, setCanvasPosition] = React.useState({x: 0, y:0})
     const [selectedSticker, setSelectedSticker] = React.useState('select')
     // const [selectedElement, setSelectedElement] = React.useState(null) uncomment for object property changing
+    const [showSharingPopup, setShowSharingPopup] = React.useState(false)
 
     let canvasRef = React.useCallback(canvas => {
         if (canvas) {
@@ -138,6 +139,9 @@ const Scrapbook = () => {
     return(
         <>
             <NavBar authenticated={true} />
+            {showSharingPopup &&
+                <Window closePopup={() => setShowSharingPopup(false)} />
+            }
             <div className={styles.pageContents}>
                 <PropertiesSidebar />
                 <div className={styles.rightWrapper}>
@@ -151,7 +155,7 @@ const Scrapbook = () => {
                         </canvas>
                         <div className={styles.buttonWrapper}>
                             <Button>Save</Button>
-                            <Window />
+                            <Button onClick={() => setShowSharingPopup(true)}>Share</Button>
                             <Button variant>Restart</Button>
                         </div>
                     </div>
