@@ -46,4 +46,4 @@ const ColorPicker = ({value, onChange, ...rest }) => {
 //     );
 //   }
 
-export default ColorPicker
+export default ColorPicker;
