@@ -132,6 +132,8 @@ const Scrapbook = () => {
         setAction("none");
     }
 
+   
+
     return(
         <>
             <NavBar authenticated={true} />
@@ -148,7 +150,11 @@ const Scrapbook = () => {
                         </canvas>
                         <div className={styles.buttonWrapper}>
                             <Button>Save</Button>
-                            <Button>Share</Button>
+                            <div>
+                            <button data-window-target="#window" id="shareButton" type="button" class="btn share">
+                                Share
+                            </button>
+                            </div>
                             <Button variant>Restart</Button>
                         </div>
                     </div>
