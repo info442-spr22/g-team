@@ -8,6 +8,8 @@ import createElement from '../../utils/CreateElement'
 import getElementAtPosition from "../../utils/GetElementAtPosition"
 import drawSelectedBox from "../../utils/DrawSelectedBox"
 import Button from '../../component/page-element/Button/Button'
+import { useScreenshot } from "use-react-screenshot";
+import {IMAGES} from '../../resources/constants/storage-keys'
 
 const generator = rough.generator();
 
@@ -31,10 +33,13 @@ const Scrapbook = () => {
     const [selectedSticker, setSelectedSticker] = React.useState('select')
     // const [selectedElement, setSelectedElement] = React.useState(null) uncomment for object property changing
 
-    let canvasRef = React.useCallback(canvas => {
+    let canvasRef = React.useRef(null)
+
+    let canvasCallbackRef = React.useCallback(canvas => {
         if (canvas) {
             let posInfo = canvas.getBoundingClientRect()
             setCanvasPosition({x: posInfo.x, y: posInfo.y})
+            canvasRef.current = canvas
         }
         // A change in windowDimensions changes the position of the canvas, so windowDimensions is a
         // dependency of this callback, but linters can't detect that kind of dependency
@@ -132,6 +137,28 @@ const Scrapbook = () => {
         setAction("none");
     }
 
+    // This comma means that the first element in the returned array is ignored, since we don't need it
+    const [, takeScreenshot] = useScreenshot()
+
+    const captureCanvas = () => {
+        if (canvasRef.current) {
+            return takeScreenshot(canvasRef.current)
+        }
+    }
+
+    const saveCanvas = () => {
+        captureCanvas().then((input) => {
+            let images = JSON.parse(window.localStorage.getItem(IMAGES))
+            let newEntry = {
+                "image": input,
+                "time_created": Date.now()
+            }
+            if (!images) images = []
+            images.push(newEntry)
+            window.localStorage.setItem(IMAGES, JSON.stringify(images))
+        })
+    }
+
     return(
         <>
             <NavBar authenticated={true} />
@@ -139,7 +166,7 @@ const Scrapbook = () => {
                 <PropertiesSidebar />
                 <div className={styles.rightWrapper}>
                     <div className={styles.canvasWrapper}>
-                        <canvas className={styles.canvas} ref={canvasRef} id="canvas" width={'800'} height={'550'}
+                        <canvas className={styles.canvas} ref={canvasCallbackRef} id="canvas" width={'800'} height={'550'}
                                 onMouseDown = {handleMouseDown}
                                 onMouseMove = {handleMouseMove}
                                 onMouseUp = {handleMouseUp}
@@ -147,7 +174,7 @@ const Scrapbook = () => {
                             Canvas
                         </canvas>
                         <div className={styles.buttonWrapper}>
-                            <Button>Save</Button>
+                            <Button onClick={saveCanvas}>Save</Button>
                             <Button>Share</Button>
                             <Button variant>Restart</Button>
                         </div>
