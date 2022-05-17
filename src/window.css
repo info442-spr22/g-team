@@ -35,6 +35,10 @@
   .window-body {
     padding: 10px 15px;
   }
+
+  #clearButtons {
+    font-size: 1rem;
+  }
   
   .overlay {
     position: fixed;

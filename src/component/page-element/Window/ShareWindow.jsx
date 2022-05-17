@@ -1,7 +1,7 @@
 import React from 'react'
  
 
-export default function Window(props) {
+export default function ShareWindow(props) {
 
   
 return(

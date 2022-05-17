@@ -10,7 +10,8 @@ import drawSelectedBox from "../../utils/DrawSelectedBox"
 import createText from "../../utils/CreateText"
 import TextBox from "../../component/tool/TextBox/TextBox"
 import Button from '../../component/page-element/Button/Button'
-import Window from '../../component/page-element/Window/Window'
+import ShareWindow from '../../component/page-element/Window/ShareWindow'
+import ClearWindow from '../../component/page-element/Window/ClearWindow'
 import { useScreenshot } from "use-react-screenshot";
 import {IMAGES} from '../../resources/constants/storage-keys'
 
@@ -30,6 +31,7 @@ export const stickerHotKeys = [
 
 const Scrapbook = () => {
     const [elements, setElements] = useState([]);
+    //const [history, setHistory] = useState([]);
     const [textElements, setTextElements] = useState([]);
     const [action, setAction] = useState('none');
     const [windowDimensions, setWindowDimensions] = React.useState({})
@@ -39,6 +41,7 @@ const Scrapbook = () => {
     const [inputIsEmpty, setInputIsEmpty] = React.useState(false)
     // const [selectedElement, setSelectedElement] = React.useState(null) uncomment for object property changing
     const [showSharingPopup, setShowSharingPopup] = React.useState(false)
+    const [showClearPopup, setShowClearPopup] = React.useState(false)
 
     let canvasRef = React.useRef(null)
 
@@ -144,7 +147,7 @@ const Scrapbook = () => {
             setAction("drawing");
         }
     };
-
+    
     const handleMouseMove = (event) => {
 
         if (action === "drawing") {
@@ -195,7 +198,10 @@ const Scrapbook = () => {
         <>
             <NavBar authenticated={true} />
             {showSharingPopup &&
-                <Window closePopup={() => setShowSharingPopup(false)} />
+                <ShareWindow closePopup={() => setShowSharingPopup(false)} />
+                    }
+             {showClearPopup &&
+                <ClearWindow closePopup={() => setShowClearPopup(false)} />
             }
             <div className={styles.pageContents}>
                 <PropertiesSidebar />
@@ -211,7 +217,7 @@ const Scrapbook = () => {
                         <div className={styles.buttonWrapper}>
                         <Button onClick={saveCanvas}>Save</Button>
                         <Button onClick={() => setShowSharingPopup(true)}>Share</Button>
-                        <Button variant>Restart</Button>
+                        <Button variant onClick={() => setShowClearPopup(true)}>Restart</Button>
                         </div>
                     </div>
                     <ActionBar
