@@ -12,12 +12,23 @@ function handleEnter(event, props, textInputRef) {
 
   const ctx = document.getElementById("canvas").getContext("2d")
   if (event.key === "Enter") {
-
     const textElement = createText(
         ctx,
         props.textInputPosition.x - props.canvasPosition.x,
         props.textInputPosition.y - props.canvasPosition.y,
-        event.target.value
+        event.target.value,
+        {
+          font: props.textInputInfo.font,
+          size: props.textInputInfo.size + "px",
+          align: "left",
+          style: props.textInputInfo.font,
+          text: event.target.value,
+          location: {
+            x: props.textInputPosition.x - props.canvasPosition.x,
+            y: props.textInputPosition.y - props.canvasPosition.y
+          },
+          stickerType: "text"
+        }
     );
 
     props.setTextElements((prevState) => [...prevState, textElement])
@@ -25,8 +36,18 @@ function handleEnter(event, props, textInputRef) {
 
     props.setInputPosition({})
     props.setSelectedSticker("select")
+    props.setTextInputInfo({
+      font: "Comic Sans MS",
+      size: "30",
+      style: "black"
+  })
   } else if (/^.{1}$|^\s{1}$|^(Backspace)$/.test(event.key)) {
-    ctx.font = "30px Comic Sans MS"
+    console.log(props.textInputInfo.size + "px " + props.textInputInfo.font)
+
+    ctx.font = props.textInputInfo.size + "px " + props.textInputInfo.font
+    textInputRef.current.style.fontSize = props.textInputInfo.size + "px"
+    textInputRef.current.style.fontFamily = props.textInputInfo.font
+
     let extraSpace = "   "
     let metrics = ctx.measureText(
       event.key === "Backspace" ? textInputRef.current.value + extraSpace

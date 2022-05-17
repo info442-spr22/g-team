@@ -37,6 +37,11 @@ const Scrapbook = () => {
     const [selectedSticker, setSelectedSticker] = React.useState('select')
     const [textInputPosition, setInputPosition] = React.useState({})
     const [inputIsEmpty, setInputIsEmpty] = React.useState(false)
+    const [textInputInfo, setTextInputInfo] = React.useState({
+        font: "Comic Sans MS",
+        size: "30",
+        style: "black"
+    })
     // const [selectedElement, setSelectedElement] = React.useState(null) uncomment for object property changing
     const [showSharingPopup, setShowSharingPopup] = React.useState(false)
 
@@ -198,7 +203,11 @@ const Scrapbook = () => {
                 <Window closePopup={() => setShowSharingPopup(false)} />
             }
             <div className={styles.pageContents}>
-                <PropertiesSidebar />
+                <PropertiesSidebar
+                    textInputPosition={textInputPosition}
+                    setTextInputInfo={setTextInputInfo}
+                    textInputInfo={textInputInfo}
+                />
                 <div className={styles.rightWrapper}>
                     <div className={styles.canvasWrapper}>
                         <canvas className={styles.canvas} ref={canvasCallbackRef} id="canvas" width={'800'} height={'550'}
@@ -224,6 +233,8 @@ const Scrapbook = () => {
                       setTextElements={setTextElements}
                       canvasPosition={canvasPosition}
                       setInputIsEmpty={setInputIsEmpty}
+                      textInputInfo={textInputInfo}
+                      setTextInputInfo={setTextInputInfo}
                     />
                 </div>
             </div>
