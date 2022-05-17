@@ -34,5 +34,9 @@
   }
   
 .artCards {
-
+  margin: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  justify-content: left;
 }
