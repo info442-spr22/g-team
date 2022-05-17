@@ -20,3 +20,15 @@
 .button.variant * {
   color: var(--button-variant-text-color)
 }
+
+.button:hover {
+  color: var(--button-variant-text-color);
+  border-color: var(--scrapbook-tool-border);
+}
+
+.button:focus {
+  border-color: var(--button-variant-text-color);
+  background-color: var(--selected-shape-color);
+  stroke: var(--highlight-shape-color);
+  stroke-width: 1px;
+}

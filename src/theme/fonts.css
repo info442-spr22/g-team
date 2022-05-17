@@ -10,3 +10,7 @@ h1, h2, h3 {
 p, li, button, a {
   font-family: 'Questrial', sans-serif
 }
+
+input {
+  font-family: "Comic Sans MS";
+}

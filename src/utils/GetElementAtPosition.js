@@ -50,6 +50,7 @@ function isWithinElement(x, y, element) {
   switch (element.stickerType) {
     case ("rectangle"):
     case ("square"):
+    case ("text"):
       minX = selectInfo.x;
       maxX = selectInfo.x + selectInfo.width;
       minY = selectInfo.y;
@@ -242,7 +243,7 @@ function isWithinElement(x, y, element) {
   return isWithin;
 }
 
-export default function getElementAtPosition(x, y, elements) {
+export default function getElementAtPosition(x, y, elements, textElements) {
   // find all elements at position, store into a queue
   // if queue already exists, compare the two
   // if there are new elements select the first new one
@@ -250,5 +251,6 @@ export default function getElementAtPosition(x, y, elements) {
   //    pop from queue, put at the bottom of the queue, select the popped element
   // if there are old elements that are not in the new queue, they should be deleted
   // change to elements.filter() to get all elements that fit isWithinElement
-  return elements.find(element => isWithinElement(x, y, element))
+  const allElements = elements.concat(textElements)
+  return allElements.find(element => isWithinElement(x, y, element))
 }

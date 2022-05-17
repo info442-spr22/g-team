@@ -1,0 +1,8 @@
+.text_box_input {
+  position: fixed;
+  font-size: 30px;
+  border-style: dashed;
+  border-color: black;
+  width: 140px;
+  min-width: 140px;
+}
