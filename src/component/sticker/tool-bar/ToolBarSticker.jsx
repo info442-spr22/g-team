@@ -4,12 +4,14 @@ import styles from './ToolBarSticker.module.css'
 
 function handleKeyPress(event, props) {
   // check if event is null
-  if (event && props) {
+  if (event && props && !!!document.querySelector("div > input")) {
     // select functionality
     if (props.hotkey === event.key) {
       props.setSelectedSticker(props.type)
     } else if (event.key === "v") {
       props.setSelectedSticker("select")
+    } else if (event.key === "t") {
+      props.setSelectedSticker("text")
     }
   }
 }

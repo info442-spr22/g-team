@@ -7,6 +7,8 @@ import ActionBar from '../../component/page-element/ActionBar/ActionBar'
 import createElement from '../../utils/CreateElement'
 import getElementAtPosition from "../../utils/GetElementAtPosition"
 import drawSelectedBox from "../../utils/DrawSelectedBox"
+import createText from "../../utils/CreateText"
+import TextBox from "../../component/tool/TextBox/TextBox"
 import Button from '../../component/page-element/Button/Button'
 import Window from '../../component/page-element/Window/Window'
 import { useScreenshot } from "use-react-screenshot";
@@ -28,10 +30,13 @@ export const stickerHotKeys = [
 
 const Scrapbook = () => {
     const [elements, setElements] = useState([]);
+    const [textElements, setTextElements] = useState([]);
     const [action, setAction] = useState('none');
     const [windowDimensions, setWindowDimensions] = React.useState({})
     const [canvasPosition, setCanvasPosition] = React.useState({x: 0, y:0})
     const [selectedSticker, setSelectedSticker] = React.useState('select')
+    const [textInputPosition, setInputPosition] = React.useState({})
+    const [inputIsEmpty, setInputIsEmpty] = React.useState(false)
     // const [selectedElement, setSelectedElement] = React.useState(null) uncomment for object property changing
     const [showSharingPopup, setShowSharingPopup] = React.useState(false)
 
@@ -65,8 +70,15 @@ const Scrapbook = () => {
         const roughCanvas = rough.canvas(canvas);
 
         elements.forEach(({ roughElement }) => roughCanvas.draw(roughElement));
+        textElements.forEach((textElement) => createText(
+            ctx,
+            textElement.location.x,
+            textElement.location.y,
+            textElement.text,
+            textElement
+        ));
 
-    }, [elements]);
+    }, [elements, textElements]);
 
     // mouse tracking
     const handleMouseDown = (event) => {
@@ -80,14 +92,24 @@ const Scrapbook = () => {
         const roughCanvas = rough.canvas(canvas);
 
         elements.forEach(({ roughElement }) => roughCanvas.draw(roughElement));
+        textElements.forEach((textElement) => createText(
+            ctx,
+            textElement.location.x,
+            textElement.location.y,
+            textElement.text,
+            textElement
+        ));
 
+        if (inputIsEmpty) {
+            setInputPosition({})
+        }
 
         // if select is active, do moving, else do drawing
         if (selectedSticker === "select") {
             const element = getElementAtPosition(
                 clientX - canvasPosition.x,
                 clientY - canvasPosition.y,
-                elements
+                elements, textElements
             )
             if (element) {
                 setAction('selected')
@@ -99,15 +121,23 @@ const Scrapbook = () => {
                 // remove the selected element
                 // setSelectedElement(null)
             }
+        } else if (selectedSticker === "text") {
+            if (!textInputPosition.x) {
+                setInputPosition({x: clientX, y: clientY})
+
+                setAction("texting")
+
+                setSelectedSticker("select")
+            }
         } else {
             // Starting pt is clientX, clintY and first create element end pt is same as start pt
 
             const element = createElement(
-            generator,
-            clientX - canvasPosition.x, clientY - canvasPosition.y,
-            clientX - canvasPosition.x, clientY - canvasPosition.y,
-            selectedSticker,
-            {}
+                generator,
+                clientX - canvasPosition.x, clientY - canvasPosition.y,
+                clientX - canvasPosition.x, clientY - canvasPosition.y,
+                selectedSticker,
+                {}
             );
             setElements((prevState) => [...prevState, element])
 
@@ -186,6 +216,14 @@ const Scrapbook = () => {
                     </div>
                     <ActionBar
                       setSelectedSticker={setSelectedSticker}
+                    />
+                    <TextBox
+                      textInputPosition={textInputPosition}
+                      setInputPosition={setInputPosition}
+                      setSelectedSticker={setSelectedSticker}
+                      setTextElements={setTextElements}
+                      canvasPosition={canvasPosition}
+                      setInputIsEmpty={setInputIsEmpty}
                     />
                 </div>
             </div>

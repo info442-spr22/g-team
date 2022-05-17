@@ -1,5 +1,5 @@
 import React from "react"
-import {CursorFill} from 'react-bootstrap-icons'
+import {CursorFill, TextareaT} from 'react-bootstrap-icons'
 import {stickerHotKeys} from '../../../page/Scrapbook/Scrapbook'
 import styles from "./ActionBar.module.css"
 import ToolBarSticker from '../../sticker/tool-bar/ToolBarSticker'
@@ -30,6 +30,11 @@ export default function ActionBar(props) {
             <CursorFill />
           </button>
         </div>
+          <div onClick={() => {props.setSelectedSticker("text")}}>
+              <button id="textBox" type="button" className="btn">
+                  <TextareaT size='32px'/>
+              </button>
+          </div>
         {stickers}
       </div>
     </div>

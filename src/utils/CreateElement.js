@@ -162,6 +162,7 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
     case ('rectangle'):
       roughElement = generator.rectangle(leftX, topY, width, height, {fill: 'black'})
       break
+    case ('text'):
     default:
   }
   return {x1, y1, x2, y2, selectInfo, stickerType, roughElement };
