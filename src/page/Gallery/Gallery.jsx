@@ -6,6 +6,7 @@ import ArtCard from '../../component/page-element/ArtCard/ArtCard'
 
 function Gallery() {
     let artData = JSON.parse(window.localStorage.getItem(IMAGES))
+    if (!artData) artData = []
     artData.sort((art1, art2) => art2.time_created - art1.time_created)
     let artCards = artData.map( ({image, time_created}) => <ArtCard src={image} key={time_created} /> )
 
