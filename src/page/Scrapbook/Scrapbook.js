@@ -39,6 +39,7 @@ const Scrapbook = () => {
     const [inputIsEmpty, setInputIsEmpty] = React.useState(false)
     // const [selectedElement, setSelectedElement] = React.useState(null) uncomment for object property changing
     const [showSharingPopup, setShowSharingPopup] = React.useState(false)
+    const [color, setColor] = useState('#ff0000');
 
     let canvasRef = React.useRef(null)
 
@@ -191,6 +192,11 @@ const Scrapbook = () => {
         })
     }
 
+    const changeColor = (color) => {
+        {setColor(color.hex)}
+    }
+      
+
     return(
         <>
             <NavBar authenticated={true} />
@@ -216,6 +222,7 @@ const Scrapbook = () => {
                     </div>
                     <ActionBar
                       setSelectedSticker={setSelectedSticker}
+                      changeColor={changeColor}
                     />
                     <TextBox
                       textInputPosition={textInputPosition}
