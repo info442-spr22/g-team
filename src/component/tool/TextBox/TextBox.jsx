@@ -14,9 +14,6 @@ function handleEnter(event, props, textInputRef) {
   if (event.key === "Enter") {
     const textElement = createText(
         ctx,
-        props.textInputPosition.x - props.canvasPosition.x,
-        props.textInputPosition.y - props.canvasPosition.y,
-        event.target.value,
         {
           font: props.textInputInfo.font,
           size: props.textInputInfo.size + "px",
@@ -42,7 +39,6 @@ function handleEnter(event, props, textInputRef) {
       style: "black"
   })
   } else if (/^.{1}$|^\s{1}$|^(Backspace)$/.test(event.key)) {
-    console.log(props.textInputInfo.size + "px " + props.textInputInfo.font)
 
     ctx.font = props.textInputInfo.size + "px " + props.textInputInfo.font
     textInputRef.current.style.fontSize = props.textInputInfo.size + "px"

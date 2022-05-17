@@ -77,9 +77,6 @@ const Scrapbook = () => {
         elements.forEach(({ roughElement }) => roughCanvas.draw(roughElement));
         textElements.forEach((textElement) => createText(
             ctx,
-            textElement.location.x,
-            textElement.location.y,
-            textElement.text,
             textElement
         ));
 
@@ -99,9 +96,6 @@ const Scrapbook = () => {
         elements.forEach(({ roughElement }) => roughCanvas.draw(roughElement));
         textElements.forEach((textElement) => createText(
             ctx,
-            textElement.location.x,
-            textElement.location.y,
-            textElement.text,
             textElement
         ));
 
