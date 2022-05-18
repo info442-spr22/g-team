@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './LargeView.module.css'
 import { X } from 'react-bootstrap-icons'
 import Button from '../Button/Button'
-import Window from '../Window/Window'
+import ShareWindow from '../Window/ShareWindow'
 
 
 export default function LargeView(props) {
@@ -39,7 +39,7 @@ export default function LargeView(props) {
               bottom: trans.top,
               left: trans.left + trans.width / 2,
               position: "fixed",
-              transform: "translate(-140%, 110%)"
+              transform: "translate(-140%, 150%)"
             }} children={"Share"}
             onClick={function() {
               setIsWindow(true)
@@ -48,14 +48,14 @@ export default function LargeView(props) {
               bottom: trans.top,
               left: trans.left + trans.width / 2,
               position: "fixed",
-              transform: "translate(0, 110%)"
+              transform: "translate(0, 150%)"
             }} children={"Discard"} variant={true}
             onClick={function() {
               props.setToDelete(props.del_key)
               props.setLargeView(false)
             }}/>
           </div>
-          {isWindow && <Window closePopup={() => setIsWindow(false)}/>}
+          {isWindow && <ShareWindow closePopup={() => setIsWindow(false)}/>}
         </div>
   )
 }
