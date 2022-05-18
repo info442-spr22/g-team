@@ -155,12 +155,12 @@ C.
         <li>If user has account and is signed in, a pop up will appear to let them know their piece has been saved (detailed in Save to Gallery section)</li>
        </ol>
      </ol>
-<li>Can click the clear button to remove all content from page</li>
+<li>`complete, #119`Can click the clear button to remove all content from page</li>
     <ol>
-    <li>A warning saying “Are you sure…” will be prompted for confirmation</li>
+    <li>`complete, #119`A warning saying “Are you sure…” will be prompted for confirmation</li>
       <ol>
-      <li>Pressing “Yes, clear my canvas” will close the pop up and restart the canvas back to its default state</li>
-      <li>Pressing “No, don’t clear my canvas” will close the pop up</li>
+      <li>`complete, #119`Pressing “Yes, clear my canvas” will close the pop up and restart the canvas back to its default state</li>
+      <li>`complete, #119`Pressing “No, don’t clear my canvas” will close the pop up</li>
       </ol>
     </ol>
 <li>Select + move tool</li>
