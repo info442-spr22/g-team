@@ -42,8 +42,8 @@
   display: flex;
 }
 
-.button {
-  color: var(--landing-section-two-color);
+.Button {
+  background-color: var(--landing-section-two-color);
 }
 
 .call_to_action {
