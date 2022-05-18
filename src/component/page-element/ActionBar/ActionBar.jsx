@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import {CursorFill, TextareaT} from 'react-bootstrap-icons'
 import {stickerHotKeys} from '../../../page/Scrapbook/Scrapbook'
 import styles from "./ActionBar.module.css"
@@ -19,7 +19,7 @@ export default function ActionBar(props) {
       />
     </button>
   )
- 
+
 
 
   return(
@@ -31,7 +31,7 @@ export default function ActionBar(props) {
           </button>
         </div>
         <div>
-        <ColorPicker />
+        <ColorPicker setCanvasColor={props.setCanvasColor}/>
         </div>
           <div onClick={() => {props.setSelectedSticker("text")}}>
               <button id="textBox" type="button" className="btn">
