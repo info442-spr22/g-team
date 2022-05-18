@@ -39,6 +39,7 @@ const Scrapbook = () => {
     const [inputIsEmpty, setInputIsEmpty] = React.useState(false)
     // const [selectedElement, setSelectedElement] = React.useState(null) uncomment for object property changing
     const [showSharingPopup, setShowSharingPopup] = React.useState(false)
+    const [canvasColor, setCanvasColor] = useState('#ffffff');
 
     let canvasRef = React.useRef(null)
 
@@ -191,6 +192,7 @@ const Scrapbook = () => {
         })
     }
 
+
     return(
         <>
             <NavBar authenticated={true} />
@@ -205,6 +207,7 @@ const Scrapbook = () => {
                                 onMouseDown = {handleMouseDown}
                                 onMouseMove = {handleMouseMove}
                                 onMouseUp = {handleMouseUp}
+                                style={{backgroundColor: canvasColor}}
                                 >
                             Canvas
                         </canvas>
@@ -216,6 +219,7 @@ const Scrapbook = () => {
                     </div>
                     <ActionBar
                       setSelectedSticker={setSelectedSticker}
+                      setCanvasColor={setCanvasColor}
                     />
                     <TextBox
                       textInputPosition={textInputPosition}
