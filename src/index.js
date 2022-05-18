@@ -8,6 +8,21 @@ import './theme/fonts.css'
 import './theme/sizes.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {initializeApp} from 'firebase/app';
+import {getAuth} from 'firebase/auth'
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD1oBDDtW8s4cClwcedg0VRcd0KmEalYUQ",
+  authDomain: "getwell-info442-gteam.firebaseapp.com",
+  projectId: "getwell-info442-gteam",
+  storageBucket: "getwell-info442-gteam.appspot.com",
+  messagingSenderId: "1035607993662",
+  appId: "1:1035607993662:web:1092a9ecb8500ff0f0d06f"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app)
 
 ReactDOM.render(
   <React.StrictMode>
