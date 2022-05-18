@@ -36,7 +36,7 @@ export default function NavBar({ authenticated }) {
     <div className={styles.bar}>
       <h1 className={styles.title}>GetWell</h1>
       {linkElements}
-      {!authenticated &&
+      {/* {!authenticated &&
         <>
           <Link to={'/' + urls.AUTH}>
             <Button variant>Log In</Button>
@@ -45,7 +45,7 @@ export default function NavBar({ authenticated }) {
             <Button>Sign Up</Button>
           </Link>
         </>
-      }
+      } */}
     </div>
   )
 }
