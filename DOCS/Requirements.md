@@ -39,22 +39,22 @@ A.
 ## Landing Page (Core)
 B.
 <ol>
-<li> `complete, no PR` Should be the first page users see</li>
-<li> `complete, #86`User must be able to scroll through landing page</li>
+<li>`complete, no PR` Should be the first page users see</li>
+<li>`complete, #86` User must be able to scroll through landing page</li>
   <ol>
   <li>`complete, #86` Product name and description</li>
   <li>`complete, #86` Information about the product</li>
   </ol>
-<li>`complete, #86` User can access navigation bar at the top of the page</li>
+<li>`complete, #80` User can access navigation bar at the top of the page</li>
   <ol>
   <li>`Changed due to circumstance` If signed in:</li>
       <ol>
-    <li>`complete, #86` Click on “Scrapbook” to enter Scrapbook page</li>
-    <li>`complete, #86` Click on “Gallery” to enter Gallery page</li>
+    <li>`complete, #80` Click on “Scrapbook” to enter Scrapbook page</li>
+    <li>`complete, #80` Click on “Gallery” to enter Gallery page</li>
       </ol>
   <li>`stretch` If not signed in or no account:</li>
       <ol>
-    <li>`complete, #86` Click on “Scrapbook” to enter Scrapbook page</li>
+    <li>`complete, #80` Click on “Scrapbook” to enter Scrapbook page</li>
     <li>`stretch` Click on “Sign in” to enter Sign-In/Log-In page</li>
       </ol>
    </ol>
@@ -75,28 +75,28 @@ C.
 <ol>
 <li>`complete, #90` This page consists of a canvas, an 'object properties' sidebar, and an action bar</li>
 <li>`complete, no PR` By default, the select + move tool is highlighted with a change of color and an outline around the symbol.</li>
-<li>`complete, #86` By default, the background color of the canvas is white.</li>
+<li>`complete, #87` By default, the background color of the canvas is white.</li>
   <ol>
-      <li>Users can click on a square with the label “background color” in the action bar to open a color selection tool. Using this tool, the user can choose a new background color for the canvas.</li>
-      <li>When a new color is chosen, the square the user clicked on will change to that color as well.</li>
+      <li>`complete, #117` Users can click on a square with the label “background color” in the action bar to open a color selection tool. Using this tool, the user can choose a new background color for the canvas.</li>
+      <li>`complete, #117` When a new color is chosen, the square the user clicked on will change to that color as well.</li>
   </ol>
 <li>Color selection tool requirements:</li>
       <ol>
-      <li>When the user opens the color selection tool in any way, it will appear beneath the trigger as a medium-sized rectangle.</li>
-      <li>The user can use their cursor to create a different shade of the primary color they have currently selected in the rectangle in the center of the color selection tool.</li>
-      <li>The user can change the primary color using their cursor on the primary color slider second from the right of the color selection tool.</li>
-      <li>The user can change the opacity using the opacity slider on the far right of the color selection tool.</li>
-      <li>The user can see the new color they have created in the bottom half of the rectangle on the left of the color selection tool.</li>
-      <li>The user can see the color most recently selected in the top half of the rectangle on the left of the color selection tool.</li>
-      <li>The user confirms the color by clicking the save button.</li>
-      <li>The user cancels the change of color by clicking the clear button.</li>
-      <li>This tool is accessible in the 'object properties' sidebar to…</li>
+      <li>`complete, #117` When the user opens the color selection tool in any way, it will appear beneath the trigger as a medium-sized rectangle.</li>
+      <li>`complete, #117` The user can use their cursor to create a different shade of the primary color they have currently selected in the rectangle in the center of the color selection tool.</li>
+      <li>`complete, #117` The user can change the primary color using their cursor on the primary color slider second from the right of the color selection tool.</li>
+      <li>`incomplete` The user can change the opacity using the opacity slider on the far right of the color selection tool.</li>
+      <li>`changed due to circumstances` The user can see the new color they have created in the bottom half of the rectangle on the left of the color selection tool.</li>
+      <li>`changed due to circumstances` The user can see the color most recently selected in the top half of the rectangle on the left of the color selection tool.</li>
+      <li>`changed due to circumstances` The user confirms the color by clicking the save button.</li>
+      <li>`changed due to circumstances` The user cancels the change of color by clicking the clear button.</li>
+      <li>`changed to Action Bar, #117`This tool is accessible in the 'object properties' sidebar to…</li>
           <ol>
-          <li>edit the color of a sticker's fill</li>
+          <li>`incomplete` edit the color of a sticker's fill</li>
           <li>edit the color of a sticker's outline (stretch)</li>
         </ol>
         </ol>
-<li>Users can use pre-created stickers on the canvas (see pre-created stickers section for more requirements)</li>
+<li>`complete, #91, #94, #95, #98` Users can use pre-created stickers on the canvas (see pre-created stickers section for more requirements)</li>
 <li>Users can place self-created stickers on canvas (stretch goal, see create own stickers section)</li>
 <li>Users can write text on canvas</li>
       <ol>
@@ -125,19 +125,19 @@ C.
             <li>`incomplete` While still on the text box tool, users can use the sidebar to access colors and change the color of the text by clicking on a color</li>
             </ol>
         </ol>
-<li>Users can copy the following objects using the shortcut ctrl/cmd + c</li>
+<li>`incomplete` Users can copy the following objects using the shortcut ctrl/cmd + c</li>
       <ol>
       <li>Pre-created stickers</li>
       <li>Text boxes</li>
       <li>Custom stickers (Stretch)</li>
       </ol>
-<li>Users can cut the following objects using the shortcut ctrl/cmd + x</li>
+<li>`incomplete` Users can cut the following objects using the shortcut ctrl/cmd + x</li>
       <ol>
       <li>Pre-created stickers</li>
       <li>Text boxes</li>
       <li>Custom stickers (Stretch)</li>
       </ol>
-<li>Users can paste the following objects using the shortcut ctrl/cmd + v</li>
+<li>`incomplete` Users can paste the following objects using the shortcut ctrl/cmd + v</li>
       <ol>
       <li>Pre-created stickers</li>
       <li>Text boxes</li>
@@ -155,12 +155,12 @@ C.
         <li>If user has account and is signed in, a pop up will appear to let them know their piece has been saved (detailed in Save to Gallery section)</li>
        </ol>
      </ol>
-<li>Can click the clear button to remove all content from page</li>
+<li>`complete, #119` Can click the clear button to remove all content from page</li>
     <ol>
-    <li>A warning saying “Are you sure…” will be prompted for confirmation</li>
+    <li>`complete, #119` A warning saying “Are you sure…” will be prompted for confirmation</li>
       <ol>
-      <li>Pressing “Yes, clear my canvas” will close the pop up and restart the canvas back to its default state</li>
-      <li>Pressing “No, don’t clear my canvas” will close the pop up</li>
+      <li>`complete, #119` Pressing “Yes, clear my canvas” will close the pop up and restart the canvas back to its default state</li>
+      <li>`complete, #119` Pressing “No, don’t clear my canvas” will close the pop up</li>
       </ol>
     </ol>
 <li>Select + move tool</li>
@@ -175,7 +175,7 @@ C.
         <li>`complete #101` if a portion of the canvas with no object is clicked, the object is de-selected</li>
         <li>(stretch) Using the arrow keys, the user is able to move a selected object in small increments</li>
         </ol>
-      <li>`incomplete`The user can move an object by clicking and dragging with the select + move tool</li>
+      <li>`incomplete` The user can move an object by clicking and dragging with the select + move tool</li>
       </ol>
 <li>Object deletion</li>
         <ol>
