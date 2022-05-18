@@ -5,8 +5,8 @@ import element from '../../../page/Scrapbook/Scrapbook'
  
 
 export default function ClearWindow(props) {
-    
-
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
 
   
 return(
@@ -22,7 +22,7 @@ return(
       Are you sure you want to restart?
       </div>
       <div class="window-buttons">
-        <Button clear onClick={props.closePopup}>Yes, clear my canvas</Button>
+        <Button clear onClick={props.closePopup, ctx.clearRect(0, 0, canvas.width, canvas.height)}>Yes, clear my canvas</Button>
         <Button noclear onClick={props.closePopup}>No, don’t clear my canvas</Button>
       </div>
       </div>

@@ -29,9 +29,9 @@ export const stickerHotKeys = [
     {"name": "heart", "hotkey": "h"}
 ]
 
+
 const Scrapbook = () => {
     const [elements, setElements] = useState([]);
-    //const [history, setHistory] = useState([]);
     const [textElements, setTextElements] = useState([]);
     const [action, setAction] = useState('none');
     const [windowDimensions, setWindowDimensions] = React.useState({})
@@ -143,7 +143,6 @@ const Scrapbook = () => {
                 {}
             );
             setElements((prevState) => [...prevState, element])
-
             setAction("drawing");
         }
     };
@@ -163,7 +162,7 @@ const Scrapbook = () => {
             )
 
             const elementsCopy = [...elements]
-            elementsCopy[index] = updatedElement
+            elementsCopy[index] = updatedElement     
             setElements(elementsCopy)
         }
     }
@@ -193,6 +192,19 @@ const Scrapbook = () => {
             window.localStorage.setItem(IMAGES, JSON.stringify(images))
         })
     }
+
+    /*const setState = (action, overwrite = false) => {
+        const newState = typeof action === "function" ? action(history[index]) : action;
+        if (overwrite) {
+            const historyCopy = [...history];
+            historyCopy[index] = newState;
+            setHistory(historyCopy);
+        } else { 
+            setHistory(prevState => [...prevState, newState]);
+            setIndex(prevState => prevState([0]));
+        }
+        const restart = () => index > 0 && setIndex(prevState => prevState([0]));
+    }*/
 
     return(
         <>
