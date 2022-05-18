@@ -1,4 +1,4 @@
-.cardBorder * {
+.cardBorder *, .largeBorder * {
   box-sizing: border-box;
 }
 
