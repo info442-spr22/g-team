@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './ArtCard.module.css'
-import { X } from 'react-bootstrap-icons'
+import LargeView from '../LargeView/LargeView'
 
 /*
 props {
@@ -10,8 +10,6 @@ props {
 
 export default function ArtCard(props) {
   const [largeView, setLargeView] = React.useState(false)
-
-  const ref = React.useRef(null)
 
   return (
     <>
@@ -26,20 +24,7 @@ export default function ArtCard(props) {
       </div>
       {largeView &&
         /* The below empty element will be replaced with the expanded view of this art piece when implementing issue #103 */
-        <div>
-          <div className={styles.largeBorder} ref={ref}>
-            <img
-              src={props.src} alt={'One of your saved scrapbooking entries'}
-              className={styles.largeCard}
-            />
-          </div>
-          <div className={styles.closeBtn}>
-              <X size='32px' style={{transform: "translate(" + [, ] +  ")"}}
-                onClick={(e) => {
-                  console.log(e.target.parentNode.parentNode)
-                }}/>
-          </div>
-        </div>
+        <LargeView src={props.src} setLargeView={setLargeView} del_key={props.del_key} setToDelete={props.setToDelete}/>
       }
     </>
   )
