@@ -40,30 +40,30 @@ A.
 B.
 <ol>
 <li> `complete, no PR` Should be the first page users see</li>
-<li>User must be able to scroll through landing page</li>
+<li> `complete, #86`User must be able to scroll through landing page</li>
   <ol>
-  <li>Product name and description</li>
-  <li>Information about the product</li>
+  <li>`complete, #86`Product name and description</li>
+  <li>`complete, #86`Information about the product</li>
   </ol>
-<li>User can access navigation bar at the top of the page</li>
+<li>`complete, #86`User can access navigation bar at the top of the page</li>
   <ol>
-  <li>If signed in:</li>
+  <li>`stretch`If signed in:</li>
       <ol>
-    <li>Click on “Scrapbook” to enter Scrapbook page</li>
-    <li>Click on “Gallery” to enter Gallery page</li>
+    <li>`complete, #86`Click on “Scrapbook” to enter Scrapbook page</li>
+    <li>`complete, #86`Click on “Gallery” to enter Gallery page</li>
       </ol>
-  <li>If not signed in or no account:</li>
+  <li>`stretch`If not signed in or no account:</li>
       <ol>
-    <li>Click on “Scrapbook” to enter Scrapbook page</li>
-    <li>Click on “Sign in” to enter Sign-In/Log-In page</li>
+    <li>`complete, #86`Click on “Scrapbook” to enter Scrapbook page</li>
+    <li>`stretch`Click on “Sign in” to enter Sign-In/Log-In page</li>
       </ol>
    </ol>
-<li>Users can use “Start Scrapbooking” button to enter “Scrapbook” page</li>
-<li>Users can read about features about product</li>
+<li>`complete, `Users can use “Start Scrapbooking” button to enter “Scrapbook” page</li>
+<li>`complete, #86`Users can read about features about product</li>
   <ol>
-     <li>There will be a section underneath the Product name and description that introduces the main features about the product</li>
+     <li>`complete, #86`There will be a section underneath the Product name and description that introduces the main features about the product</li>
      <ol>
-       <li>Will be in a row of 3 items, each item will have the feature + description</li>
+       <li>`complete, #86`Will be in a row of 3 items, each item will have the feature + description</li>
      </ol>
     </ol>
 <li>Users can read about how product works (stretch)</li>
@@ -73,8 +73,8 @@ B.
 ## Scrapbook (Core)
 C.
 <ol>
-<li>This page consists of a canvas, an 'object properties' sidebar, and an action bar</li>
-<li>By default, the select + move tool is highlighted with a change of color and an outline around the symbol.</li>
+<li>`complete, #90`This page consists of a canvas, an 'object properties' sidebar, and an action bar</li>
+<li>`complete, no PR`By default, the select + move tool is highlighted with a change of color and an outline around the symbol.</li>
 <li>By default, the background color of the canvas is white.</li>
   <ol>
       <li>Users can click on a square with the label “background color” in the action bar to open a color selection tool. Using this tool, the user can choose a new background color for the canvas.</li>
