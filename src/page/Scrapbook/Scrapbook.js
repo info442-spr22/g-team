@@ -14,6 +14,7 @@ import ShareWindow from '../../component/page-element/Window/ShareWindow'
 import ClearWindow from '../../component/page-element/Window/ClearWindow'
 import { useScreenshot } from "use-react-screenshot";
 import {IMAGES} from '../../resources/constants/storage-keys'
+import Popup from '../../component/page-element/Window/ErrorMessage'
 
 const generator = rough.generator();
 
@@ -39,9 +40,15 @@ const Scrapbook = () => {
     const [selectedSticker, setSelectedSticker] = React.useState('select')
     const [textInputPosition, setInputPosition] = React.useState({})
     const [inputIsEmpty, setInputIsEmpty] = React.useState(false)
+    const [textInputInfo, setTextInputInfo] = React.useState({
+        font: "Comic Sans MS",
+        size: "30",
+        style: "black"
+    })
     // const [selectedElement, setSelectedElement] = React.useState(null) uncomment for object property changing
     const [showSharingPopup, setShowSharingPopup] = React.useState(false)
     const [showClearPopup, setShowClearPopup] = React.useState(false)
+    const [errorPopup, setErrorPopup] = React.useState(false)
     const [canvasColor, setCanvasColor] = useState('#ffffff');
 
     let canvasRef = React.useRef(null)
@@ -76,9 +83,6 @@ const Scrapbook = () => {
         elements.forEach(({ roughElement }) => roughCanvas.draw(roughElement));
         textElements.forEach((textElement) => createText(
             ctx,
-            textElement.location.x,
-            textElement.location.y,
-            textElement.text,
             textElement
         ));
 
@@ -98,9 +102,6 @@ const Scrapbook = () => {
         elements.forEach(({ roughElement }) => roughCanvas.draw(roughElement));
         textElements.forEach((textElement) => createText(
             ctx,
-            textElement.location.x,
-            textElement.location.y,
-            textElement.text,
             textElement
         ));
 
@@ -206,7 +207,11 @@ const Scrapbook = () => {
                 />
             }
             <div className={styles.pageContents}>
-                <PropertiesSidebar />
+                <PropertiesSidebar
+                    textInputPosition={textInputPosition}
+                    setTextInputInfo={setTextInputInfo}
+                    textInputInfo={textInputInfo}
+                />
                 <div className={styles.rightWrapper}>
                     <div className={styles.canvasWrapper}>
                         <canvas className={styles.canvas} ref={canvasCallbackRef} id="canvas" width={'800'} height={'550'}
@@ -221,6 +226,14 @@ const Scrapbook = () => {
                         <Button onClick={saveCanvas}>Save</Button>
                         <Button onClick={() => setShowSharingPopup(true)}>Share</Button>
                         <Button variant onClick={() => setShowClearPopup(true)}>Restart</Button>
+
+                        
+                        {/* <Button onClick={() => setErrorPopup(true)}>Error</Button>
+                        <Popup trigger={errorPopup} setTrigger= {setErrorPopup}>
+                            <h3>Uh oh! Something went wrong, please try again later</h3>
+                        </Popup> */}
+
+                        <Button variant>Restart</Button>
                         </div>
                     </div>
                     <ActionBar
@@ -234,6 +247,8 @@ const Scrapbook = () => {
                       setTextElements={setTextElements}
                       canvasPosition={canvasPosition}
                       setInputIsEmpty={setInputIsEmpty}
+                      textInputInfo={textInputInfo}
+                      setTextInputInfo={setTextInputInfo}
                     />
                 </div>
             </div>
