@@ -33,4 +33,6 @@
   --default-shape-color: var(--color-seven);
   --selected-shape-color: var(--color-one);
   --highlight-shape-color: var(--color-two);
+  --hover-color: var(--color-one);
+  --selected-link-color: var(--color-three);
 }

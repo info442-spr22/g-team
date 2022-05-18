@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 import styles from './Landing.module.css';
 import landing_splash from '../../resources/images/landing_splash.svg';
 import palette from '../../resources/images/palette.svg';
@@ -10,6 +11,8 @@ import Shane from '../../resources/images/Shane.jpg';
 import Daniel from '../../resources/images/Daniel.jpg';
 import Kexin from '../../resources/images/Kexin.jpg';
 import NavBar from '../../component/page-element/NavBar/NavBar'
+import Button from '../../component/page-element/Button/Button'
+import { SCRAPBOOK } from '../../resources/constants/url-endpoints';
 
 function Landing() {
   return(
@@ -21,7 +24,11 @@ function Landing() {
           <p>Get creative with GetWell. GetWell combines journaling and art,
           turning it into a digital scrapbooking experience for you to create spreads,
           share it with your friends, and transform your thoughts into art.</p>
-          <div className={styles.call_to_action}><p>Get Started</p></div>
+          {/* <div className={styles.call_to_action}><p>Get Started</p></div> */}
+          <Link to={'/' + SCRAPBOOK}>
+            <Button landing className={styles.call_to_action}>Get Started</Button>
+          </Link>
+          
         </div>
         <div className={styles.intro_pic}>
           <img src={landing_splash} alt={"Person painting with space"} />
