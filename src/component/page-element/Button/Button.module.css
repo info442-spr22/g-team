@@ -3,7 +3,7 @@
   border-radius: 10px;
   width: 110px;
   height: 45px;
-  margin: 0 15px;
+  margin: 0 15px 15px;
   background-color: var(--button-color);
   border: none;
 }
@@ -19,6 +19,14 @@
 }
 .button.variant * {
   color: var(--button-variant-text-color)
+}
+
+.button.clear {
+  font-size: .9rem;
+}
+
+.button.noclear {
+  font-size: .9rem;
 }
 
 .button:hover {

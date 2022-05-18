@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './ArtCard.module.css'
+import LargeView from '../LargeView/LargeView'
 
 /*
 props {
@@ -9,6 +10,7 @@ props {
 
 export default function ArtCard(props) {
   const [largeView, setLargeView] = React.useState(false)
+
   return (
     <>
       <div
@@ -22,7 +24,7 @@ export default function ArtCard(props) {
       </div>
       {largeView &&
         /* The below empty element will be replaced with the expanded view of this art piece when implementing issue #103 */
-        <></>
+        <LargeView src={props.src} setLargeView={setLargeView} del_key={props.del_key} setToDelete={props.setToDelete}/>
       }
     </>
   )

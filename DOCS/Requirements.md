@@ -1,6 +1,6 @@
 # Requirements
 
-## Create Account / Log-In (Core)
+## Create Account / Log-In (Stretch)
 A.
 <ol>
   <li>These are two pages that each have a form with the following appearance:</li>
@@ -39,7 +39,7 @@ A.
 ## Landing Page (Core)
 B.
 <ol>
-<li>Should be the first page users see</li>
+<li> `complete, no PR` Should be the first page users see</li>
 <li>User must be able to scroll through landing page</li>
   <ol>
   <li>Product name and description</li>

@@ -10,7 +10,8 @@ import drawSelectedBox from "../../utils/DrawSelectedBox"
 import createText from "../../utils/CreateText"
 import TextBox from "../../component/tool/TextBox/TextBox"
 import Button from '../../component/page-element/Button/Button'
-import Window from '../../component/page-element/Window/Window'
+import ShareWindow from '../../component/page-element/Window/ShareWindow'
+import ClearWindow from '../../component/page-element/Window/ClearWindow'
 import { useScreenshot } from "use-react-screenshot";
 import {IMAGES} from '../../resources/constants/storage-keys'
 import Popup from '../../component/page-element/Window/ErrorMessage'
@@ -29,6 +30,7 @@ export const stickerHotKeys = [
     {"name": "heart", "hotkey": "h"}
 ]
 
+
 const Scrapbook = () => {
     const [elements, setElements] = useState([]);
     const [textElements, setTextElements] = useState([]);
@@ -38,8 +40,14 @@ const Scrapbook = () => {
     const [selectedSticker, setSelectedSticker] = React.useState('select')
     const [textInputPosition, setInputPosition] = React.useState({})
     const [inputIsEmpty, setInputIsEmpty] = React.useState(false)
+    const [textInputInfo, setTextInputInfo] = React.useState({
+        font: "Comic Sans MS",
+        size: "30",
+        style: "black"
+    })
     // const [selectedElement, setSelectedElement] = React.useState(null) uncomment for object property changing
     const [showSharingPopup, setShowSharingPopup] = React.useState(false)
+    const [showClearPopup, setShowClearPopup] = React.useState(false)
     const [errorPopup, setErrorPopup] = React.useState(false)
     const [canvasColor, setCanvasColor] = useState('#ffffff');
 
@@ -75,9 +83,6 @@ const Scrapbook = () => {
         elements.forEach(({ roughElement }) => roughCanvas.draw(roughElement));
         textElements.forEach((textElement) => createText(
             ctx,
-            textElement.location.x,
-            textElement.location.y,
-            textElement.text,
             textElement
         ));
 
@@ -97,9 +102,6 @@ const Scrapbook = () => {
         elements.forEach(({ roughElement }) => roughCanvas.draw(roughElement));
         textElements.forEach((textElement) => createText(
             ctx,
-            textElement.location.x,
-            textElement.location.y,
-            textElement.text,
             textElement
         ));
 
@@ -143,11 +145,10 @@ const Scrapbook = () => {
                 {}
             );
             setElements((prevState) => [...prevState, element])
-
             setAction("drawing");
         }
     };
-
+    
     const handleMouseMove = (event) => {
 
         if (action === "drawing") {
@@ -163,7 +164,7 @@ const Scrapbook = () => {
             )
 
             const elementsCopy = [...elements]
-            elementsCopy[index] = updatedElement
+            elementsCopy[index] = updatedElement     
             setElements(elementsCopy)
         }
     }
@@ -199,10 +200,18 @@ const Scrapbook = () => {
         <>
             <NavBar authenticated={true} />
             {showSharingPopup &&
-                <Window closePopup={() => setShowSharingPopup(false)} />
+                <ShareWindow closePopup={() => setShowSharingPopup(false)} />
+                    }
+             {showClearPopup && 
+                <ClearWindow closePopup={() => setShowClearPopup(false)} 
+                />
             }
             <div className={styles.pageContents}>
-                <PropertiesSidebar />
+                <PropertiesSidebar
+                    textInputPosition={textInputPosition}
+                    setTextInputInfo={setTextInputInfo}
+                    textInputInfo={textInputInfo}
+                />
                 <div className={styles.rightWrapper}>
                     <div className={styles.canvasWrapper}>
                         <canvas className={styles.canvas} ref={canvasCallbackRef} id="canvas" width={'800'} height={'550'}
@@ -216,6 +225,8 @@ const Scrapbook = () => {
                         <div className={styles.buttonWrapper}>
                         <Button onClick={saveCanvas}>Save</Button>
                         <Button onClick={() => setShowSharingPopup(true)}>Share</Button>
+                        <Button variant onClick={() => setShowClearPopup(true)}>Restart</Button>
+
                         
                         {/* <Button onClick={() => setErrorPopup(true)}>Error</Button>
                         <Popup trigger={errorPopup} setTrigger= {setErrorPopup}>
@@ -236,6 +247,8 @@ const Scrapbook = () => {
                       setTextElements={setTextElements}
                       canvasPosition={canvasPosition}
                       setInputIsEmpty={setInputIsEmpty}
+                      textInputInfo={textInputInfo}
+                      setTextInputInfo={setTextInputInfo}
                     />
                 </div>
             </div>
