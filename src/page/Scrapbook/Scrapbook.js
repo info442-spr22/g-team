@@ -42,6 +42,7 @@ const Scrapbook = () => {
     // const [selectedElement, setSelectedElement] = React.useState(null) uncomment for object property changing
     const [showSharingPopup, setShowSharingPopup] = React.useState(false)
     const [showClearPopup, setShowClearPopup] = React.useState(false)
+    const [canvasColor, setCanvasColor] = useState('#ffffff');
 
     let canvasRef = React.useRef(null)
 
@@ -193,18 +194,6 @@ const Scrapbook = () => {
         })
     }
 
-    /*const setState = (action, overwrite = false) => {
-        const newState = typeof action === "function" ? action(history[index]) : action;
-        if (overwrite) {
-            const historyCopy = [...history];
-            historyCopy[index] = newState;
-            setHistory(historyCopy);
-        } else { 
-            setHistory(prevState => [...prevState, newState]);
-            setIndex(prevState => prevState([0]));
-        }
-        const restart = () => index > 0 && setIndex(prevState => prevState([0]));
-    }*/
 
     return(
         <>
@@ -223,6 +212,7 @@ const Scrapbook = () => {
                                 onMouseDown = {handleMouseDown}
                                 onMouseMove = {handleMouseMove}
                                 onMouseUp = {handleMouseUp}
+                                style={{backgroundColor: canvasColor}}
                                 >
                             Canvas
                         </canvas>
@@ -234,6 +224,7 @@ const Scrapbook = () => {
                     </div>
                     <ActionBar
                       setSelectedSticker={setSelectedSticker}
+                      setCanvasColor={setCanvasColor}
                     />
                     <TextBox
                       textInputPosition={textInputPosition}

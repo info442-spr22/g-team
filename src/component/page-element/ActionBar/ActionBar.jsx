@@ -3,6 +3,7 @@ import {CursorFill, TextareaT} from 'react-bootstrap-icons'
 import {stickerHotKeys} from '../../../page/Scrapbook/Scrapbook'
 import styles from "./ActionBar.module.css"
 import ToolBarSticker from '../../sticker/tool-bar/ToolBarSticker'
+import ColorPicker from "../../tool/ColorPicker/ColorPicker"
 
 
 export default function ActionBar(props) {
@@ -18,7 +19,6 @@ export default function ActionBar(props) {
       />
     </button>
   )
- 
 
 
 
@@ -29,6 +29,9 @@ export default function ActionBar(props) {
           <button id="selectMove" type="button" className={"btn selectMove " + styles.actionBarButton}>
             <CursorFill />
           </button>
+        </div>
+        <div>
+        <ColorPicker setCanvasColor={props.setCanvasColor}/>
         </div>
           <div onClick={() => {props.setSelectedSticker("text")}}>
               <button id="textBox" type="button" className="btn">
