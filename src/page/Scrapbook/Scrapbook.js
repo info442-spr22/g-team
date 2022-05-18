@@ -14,6 +14,7 @@ import ShareWindow from '../../component/page-element/Window/ShareWindow'
 import ClearWindow from '../../component/page-element/Window/ClearWindow'
 import { useScreenshot } from "use-react-screenshot";
 import {IMAGES} from '../../resources/constants/storage-keys'
+import TwitterPostService from '../../utils/TwitterPostService'
 import Popup from '../../component/page-element/Window/ErrorMessage'
 
 const generator = rough.generator();
@@ -195,6 +196,15 @@ const Scrapbook = () => {
         })
     }
 
+    const handleShareButton = () => {
+        const authToken = TwitterPostService.getToken()
+        if (authToken) {
+            setShowSharingPopup(true)
+        } else {
+            TwitterPostService.authenticate()
+              .then(() => setShowSharingPopup(true))
+        }
+    }
 
     return(
         <>
@@ -224,16 +234,12 @@ const Scrapbook = () => {
                         </canvas>
                         <div className={styles.buttonWrapper}>
                         <Button onClick={saveCanvas}>Save</Button>
-                        <Button onClick={() => setShowSharingPopup(true)}>Share</Button>
+                        <Button onClick={handleShareButton}>Share</Button>
                         <Button variant onClick={() => setShowClearPopup(true)}>Restart</Button>
-
-                        
                         {/* <Button onClick={() => setErrorPopup(true)}>Error</Button>
                         <Popup trigger={errorPopup} setTrigger= {setErrorPopup}>
                             <h3>Uh oh! Something went wrong, please try again later</h3>
                         </Popup> */}
-
-                        <Button variant>Restart</Button>
                         </div>
                     </div>
                     <ActionBar
