@@ -73,26 +73,26 @@ B.
 ## Scrapbook (Core)
 C.
 <ol>
-<li>`complete, #90`This page consists of a canvas, an 'object properties' sidebar, and an action bar</li>
-<li>`complete, no PR`By default, the select + move tool is highlighted with a change of color and an outline around the symbol.</li>
-<li>By default, the background color of the canvas is white.</li>
+<li>`complete, #90` This page consists of a canvas, an 'object properties' sidebar, and an action bar</li>
+<li>`complete, no PR` By default, the select + move tool is highlighted with a change of color and an outline around the symbol.</li>
+<li>`complete, #87` By default, the background color of the canvas is white.</li>
   <ol>
-      <li>Users can click on a square with the label “background color” in the action bar to open a color selection tool. Using this tool, the user can choose a new background color for the canvas.</li>
-      <li>When a new color is chosen, the square the user clicked on will change to that color as well.</li>
+      <li>`complete, #117` Users can click on a square with the label “background color” in the action bar to open a color selection tool. Using this tool, the user can choose a new background color for the canvas.</li>
+      <li>`complete, #117` When a new color is chosen, the square the user clicked on will change to that color as well.</li>
   </ol>
 <li>Color selection tool requirements:</li>
       <ol>
-      <li>When the user opens the color selection tool in any way, it will appear beneath the trigger as a medium-sized rectangle.</li>
-      <li>The user can use their cursor to create a different shade of the primary color they have currently selected in the rectangle in the center of the color selection tool.</li>
-      <li>The user can change the primary color using their cursor on the primary color slider second from the right of the color selection tool.</li>
-      <li>The user can change the opacity using the opacity slider on the far right of the color selection tool.</li>
-      <li>The user can see the new color they have created in the bottom half of the rectangle on the left of the color selection tool.</li>
-      <li>The user can see the color most recently selected in the top half of the rectangle on the left of the color selection tool.</li>
-      <li>The user confirms the color by clicking the save button.</li>
-      <li>The user cancels the change of color by clicking the clear button.</li>
-      <li>This tool is accessible in the 'object properties' sidebar to…</li>
+      <li>`complete, #117`When the user opens the color selection tool in any way, it will appear beneath the trigger as a medium-sized rectangle.</li>
+      <li>`complete, #117`The user can use their cursor to create a different shade of the primary color they have currently selected in the rectangle in the center of the color selection tool.</li>
+      <li>`complete, #117`The user can change the primary color using their cursor on the primary color slider second from the right of the color selection tool.</li>
+      <li>`incomplete`The user can change the opacity using the opacity slider on the far right of the color selection tool.</li>
+      <li>`changed due to circumstances`The user can see the new color they have created in the bottom half of the rectangle on the left of the color selection tool.</li>
+      <li>`changed due to circumstances`The user can see the color most recently selected in the top half of the rectangle on the left of the color selection tool.</li>
+      <li>`changed due to circumstances`The user confirms the color by clicking the save button.</li>
+      <li>`changed due to circumstances`The user cancels the change of color by clicking the clear button.</li>
+      <li>`changed to Action Bar, #117`This tool is accessible in the 'object properties' sidebar to…</li>
           <ol>
-          <li>edit the color of a sticker's fill</li>
+          <li>`incomplete`edit the color of a sticker's fill</li>
           <li>edit the color of a sticker's outline (stretch)</li>
         </ol>
         </ol>
