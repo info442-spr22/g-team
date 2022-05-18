@@ -149,7 +149,7 @@ const Scrapbook = () => {
             setAction("drawing");
         }
     };
-    
+
     const handleMouseMove = (event) => {
 
         if (action === "drawing") {
@@ -165,7 +165,7 @@ const Scrapbook = () => {
             )
 
             const elementsCopy = [...elements]
-            elementsCopy[index] = updatedElement     
+            elementsCopy[index] = updatedElement
             setElements(elementsCopy)
         }
     }
@@ -196,15 +196,15 @@ const Scrapbook = () => {
         })
     }
 
-    const handleShareButton = () => {
-        const authToken = TwitterPostService.getToken()
-        if (authToken) {
-            setShowSharingPopup(true)
-        } else {
-            TwitterPostService.authenticate()
-              .then(() => setShowSharingPopup(true))
-        }
-    }
+    // const handleShareButton = () => {
+    //     const authToken = TwitterPostService.getToken()
+    //     if (authToken) {
+    //         setShowSharingPopup(true)
+    //     } else {
+    //         TwitterPostService.authenticate()
+    //           .then(() => setShowSharingPopup(true))
+    //     }
+    // }
 
     return(
         <>
@@ -212,8 +212,8 @@ const Scrapbook = () => {
             {showSharingPopup &&
                 <ShareWindow closePopup={() => setShowSharingPopup(false)} />
                     }
-             {showClearPopup && 
-                <ClearWindow closePopup={() => setShowClearPopup(false)} 
+             {showClearPopup &&
+                <ClearWindow closePopup={() => setShowClearPopup(false)}
                 />
             }
             <div className={styles.pageContents}>
@@ -234,7 +234,7 @@ const Scrapbook = () => {
                         </canvas>
                         <div className={styles.buttonWrapper}>
                         <Button onClick={saveCanvas}>Save</Button>
-                        <Button onClick={handleShareButton}>Share</Button>
+                        {/* <Button onClick={handleShareButton}>Share</Button> */}
                         <Button variant onClick={() => setShowClearPopup(true)}>Restart</Button>
                         {/* <Button onClick={() => setErrorPopup(true)}>Error</Button>
                         <Popup trigger={errorPopup} setTrigger= {setErrorPopup}>
