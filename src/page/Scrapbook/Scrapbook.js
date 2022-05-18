@@ -13,6 +13,7 @@ import Button from '../../component/page-element/Button/Button'
 import Window from '../../component/page-element/Window/Window'
 import { useScreenshot } from "use-react-screenshot";
 import {IMAGES} from '../../resources/constants/storage-keys'
+import Popup from '../../component/page-element/Window/ErrorMessage'
 
 const generator = rough.generator();
 
@@ -39,6 +40,7 @@ const Scrapbook = () => {
     const [inputIsEmpty, setInputIsEmpty] = React.useState(false)
     // const [selectedElement, setSelectedElement] = React.useState(null) uncomment for object property changing
     const [showSharingPopup, setShowSharingPopup] = React.useState(false)
+    const [errorPopup, setErrorPopup] = React.useState(false)
     const [canvasColor, setCanvasColor] = useState('#ffffff');
 
     let canvasRef = React.useRef(null)
@@ -214,6 +216,12 @@ const Scrapbook = () => {
                         <div className={styles.buttonWrapper}>
                         <Button onClick={saveCanvas}>Save</Button>
                         <Button onClick={() => setShowSharingPopup(true)}>Share</Button>
+                        
+                        {/* <Button onClick={() => setErrorPopup(true)}>Error</Button>
+                        <Popup trigger={errorPopup} setTrigger= {setErrorPopup}>
+                            <h3>Uh oh! Something went wrong, please try again later</h3>
+                        </Popup> */}
+
                         <Button variant>Restart</Button>
                         </div>
                     </div>
