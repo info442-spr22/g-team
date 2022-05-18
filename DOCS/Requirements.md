@@ -42,28 +42,28 @@ B.
 <li> `complete, no PR` Should be the first page users see</li>
 <li> `complete, #86`User must be able to scroll through landing page</li>
   <ol>
-  <li>`complete, #86`Product name and description</li>
-  <li>`complete, #86`Information about the product</li>
+  <li>`complete, #86` Product name and description</li>
+  <li>`complete, #86` Information about the product</li>
   </ol>
-<li>`complete, #86`User can access navigation bar at the top of the page</li>
+<li>`complete, #86` User can access navigation bar at the top of the page</li>
   <ol>
-  <li>`stretch`If signed in:</li>
+  <li>`Changed due to circumstance` If signed in:</li>
       <ol>
-    <li>`complete, #86`Click on “Scrapbook” to enter Scrapbook page</li>
-    <li>`complete, #86`Click on “Gallery” to enter Gallery page</li>
+    <li>`complete, #86` Click on “Scrapbook” to enter Scrapbook page</li>
+    <li>`complete, #86` Click on “Gallery” to enter Gallery page</li>
       </ol>
-  <li>`stretch`If not signed in or no account:</li>
+  <li>`stretch` If not signed in or no account:</li>
       <ol>
-    <li>`complete, #86`Click on “Scrapbook” to enter Scrapbook page</li>
-    <li>`stretch`Click on “Sign in” to enter Sign-In/Log-In page</li>
+    <li>`complete, #86` Click on “Scrapbook” to enter Scrapbook page</li>
+    <li>`stretch` Click on “Sign in” to enter Sign-In/Log-In page</li>
       </ol>
    </ol>
-<li>`complete, `Users can use “Start Scrapbooking” button to enter “Scrapbook” page</li>
-<li>`complete, #86`Users can read about features about product</li>
+<li>`complete, #124` Users can use “Start Scrapbooking” button to enter “Scrapbook” page</li>
+<li>`complete, #86` Users can read about features about product</li>
   <ol>
-     <li>`complete, #86`There will be a section underneath the Product name and description that introduces the main features about the product</li>
+     <li>`complete, #86` There will be a section underneath the Product name and description that introduces the main features about the product</li>
      <ol>
-       <li>`complete, #86`Will be in a row of 3 items, each item will have the feature + description</li>
+       <li>`complete, #86` Will be in a row of 3 items, each item will have the feature + description</li>
      </ol>
     </ol>
 <li>Users can read about how product works (stretch)</li>
@@ -73,9 +73,9 @@ B.
 ## Scrapbook (Core)
 C.
 <ol>
-<li>`complete, #90`This page consists of a canvas, an 'object properties' sidebar, and an action bar</li>
-<li>`complete, no PR`By default, the select + move tool is highlighted with a change of color and an outline around the symbol.</li>
-<li>By default, the background color of the canvas is white.</li>
+<li>`complete, #90` This page consists of a canvas, an 'object properties' sidebar, and an action bar</li>
+<li>`complete, no PR` By default, the select + move tool is highlighted with a change of color and an outline around the symbol.</li>
+<li>`complete, #86` By default, the background color of the canvas is white.</li>
   <ol>
       <li>Users can click on a square with the label “background color” in the action bar to open a color selection tool. Using this tool, the user can choose a new background color for the canvas.</li>
       <li>When a new color is chosen, the square the user clicked on will change to that color as well.</li>
@@ -100,29 +100,29 @@ C.
 <li>Users can place self-created stickers on canvas (stretch goal, see create own stickers section)</li>
 <li>Users can write text on canvas</li>
       <ol>
-      <li>By clicking the Text icon, users will select the text box tool.</li>
-      <li>By clicking the “t” key on the keyboard, users will select the text box tool.</li>
-      <li>While the text box tool is selected, users can click on the canvas to place a text box.</li>
-      <li>While editing the text box, the 'object properties' sidebar has its contents replaced with the text box properties editor</li>
+      <li>`complete #113` By clicking the Text icon, users will select the text box tool.</li>
+      <li>`complete #113` By clicking the “t” key on the keyboard, users will select the text box tool.</li>
+      <li>`complete #113` While the text box tool is selected, users can click on the canvas to place a text box.</li>
+      <li>`complete #116` While editing the text box, the 'object properties' sidebar has its contents replaced with the text box properties editor</li>
             <ol>
-            <li>Users can change font</li>
+            <li>`complete #116` Users can change font</li>
               <ol>
-              <li>By pressing on the drop down arrow where the current font is displayed, a drop down with font options will appear</li>
-              <li>Users can use drop down to change font of text by selecting a font from the drop down</li>
+              <li>`complete #116` By pressing on the drop down arrow where the current font is displayed, a drop down with font options will appear</li>
+              <li>`complete #116` Users can use drop down to change font of text by selecting a font from the drop down</li>
               </ol>
-            <li>Users can change the text style</li>
+            <li>`incomplete` Users can change the text style</li>
               <ol>
-              <li>By pressing the drop down arrow where the current text style is displayed, a drop down with text type will appear</li>
-              <li>Users can use the drop down to change the text style (bold, normal, italicized)</li>
+              <li>`incomplete` By pressing the drop down arrow where the current text style is displayed, a drop down with text type will appear</li>
+              <li>`incomplete` Users can use the drop down to change the text style (bold, normal, italicized)</li>
               </ol>
-            <li>Users can change the font size with a numeric value</li>
+            <li>`complete #116` Users can change the font size with a numeric value</li>
               <ol>
-              <li>By pressing the number that displays the font size, users can delete and type in a new number for the font size</li>
+              <li>`complete #116` By pressing the number that displays the font size, users can delete and type in a new number for the font size</li>
               </ol>
             </ol>
-          <li>Change font color</li>
+          <li>`incomplete` Change font color</li>
             <ol>
-            <li>While still on the text box tool, users can use the sidebar to access colors and change the color of the text by clicking on a color</li>
+            <li>`incomplete` While still on the text box tool, users can use the sidebar to access colors and change the color of the text by clicking on a color</li>
             </ol>
         </ol>
 <li>Users can copy the following objects using the shortcut ctrl/cmd + c</li>
@@ -145,7 +145,7 @@ C.
       </ol>
 <li>Users can click the save button to save content to gallery</li>
      <ol>
-     <li>Users need an account to save to the gallery.</li>
+     <li>`stretch` Users need an account to save to the gallery.</li>
        <ol>
         <li>If the user does not have an account they will instead be prompted to create one</li>
           <ol>
@@ -165,21 +165,21 @@ C.
     </ol>
 <li>Select + move tool</li>
       <ol>
-      <li>In the action bar, there will be a select + move tool</li>
-      <li>This tool is 'in use' after having been clicked in the action bar</li>
-      <li>When the selection tool is in use, clicking on any object on the canvas will bring up that object's properties in the sidebar</li>
+      <li>`complete #101` In the action bar, there will be a select + move tool</li>
+      <li>`complete #101` This tool is 'in use' after having been clicked in the action bar</li>
+      <li>`incomplete` When the selection tool is in use, clicking on any object on the canvas will bring up that object's properties in the sidebar</li>
       <li>While an object is selected,</li>
         <ol>
-        <li>editing the properties in the sidebar will change that object's properties</li>
-        <li>there is a delete button revealed in the action bar</li>
-        <li>if a portion of the canvas with no object is clicked, the object is de-selected</li>
+        <li>`incomplete` editing the properties in the sidebar will change that object's properties</li>
+        <li>`incomplete` there is a delete button revealed in the action bar</li>
+        <li>`complete #101` if a portion of the canvas with no object is clicked, the object is de-selected</li>
         <li>(stretch) Using the arrow keys, the user is able to move a selected object in small increments</li>
         </ol>
-      <li>The user can move an object by clicking and dragging with the select + move tool</li>
+      <li>`incomplete`The user can move an object by clicking and dragging with the select + move tool</li>
       </ol>
 <li>Object deletion</li>
         <ol>
-       <li>A sticker or text box can be deleted by selecting the object with the select + move tool and clicking the delete button in the action bar</li>
+       <li>`incomplete` A sticker or text box can be deleted by selecting the object with the select + move tool and clicking the delete button in the action bar</li>
        <li>(stretch) When deleted, up to 20 objects will be saved in memory in a stack, and pressing the 'undo deletion' button in the action bar will take a deleted object out of the stack and restore it on the canvas</li>
        <li>(stretch) The 'undo deletion' button will only show when there are deleted objects in the stack</li>
        <li>(stretch) If an object is deleted and the stack is full, then the oldest deleted object is removed from the bottom of the stack, permanently deleting it</li>
@@ -192,16 +192,16 @@ D.
 <li>Users are signed in</li>
 <li>Within the Scrapbook page, users can click on the “Save” button to save a piece</li>
   <ol>
-    <li>Clicking the button will prompt a pop up</li>
+    <li>`incomplete` Clicking the button will prompt a pop up</li>
     <ol>
-      <li>Pop up will confirm to user that their work has been saved to gallery</li>
+      <li>`incomplete` Pop up will confirm to user that their work has been saved to gallery</li>
         <ol>
         <li>User can press “OK” to remove pop up</li>
         <li>User can press “X” in top corner to exit pop up</li>
         <li>User can press “Go to gallery” to navigate to gallery</li>
         <li>User can press “Share” to share content (detailed in View Art Pieces/Share Them 8a)</li>
         </ol>
-     <li>Pop up will say that an error has occurred and work has not been saved</li>
+     <li>`incomplete` Pop up will say that an error has occurred and work has not been saved</li>
         <ol>
         <li>User can press “Retry” to try saving again (pops up until success)</li>
         <li>User can press “X” in top corner to exit pop up</li>
@@ -213,91 +213,91 @@ D.
 ## Pre-created Stickers (Core)
 E.
 <ol>
-<li>Users can view all pre-created stickers under the “Stickers” section on the 'object properties' sidebar on the Scrapbook page.</li>
-<li>Users can select any of the following stickers:</li>
+<li>`complete #83, #85, #88` Users can view all pre-created stickers under the “Stickers” section on the 'object properties' sidebar on the Scrapbook page.</li>
+<li>`complete #92` Users can select any of the following stickers:</li>
   <ol>
-  <li>Circle</li>
+  <li>`complete #92` Circle</li>
     <ol>
-    <li>Users can select the circle by clicking the “c” key on their keyboard.</li>
+    <li>`complete #101` Users can select the circle by clicking the “c” key on their keyboard.</li>
     </ol>
-  <li>Ellipse</li>
+  <li>`complete #92` Ellipse</li>
     <ol>
-    <li>Users can select the ellipse by clicking the “e” key on their keyboard.</li>
+    <li>`complete #101` Users can select the ellipse by clicking the “e” key on their keyboard.</li>
     </ol>
-  <li>Square</li>
+  <li>`complete #92` Square</li>
     <ol>
-    <li>Users can select the square by clicking the “s” key on their keyboard.</li>
+    <li>`complete #101` Users can select the square by clicking the “s” key on their keyboard.</li>
     </ol>
-  <li>Rectangle</li>
+  <li>`complete #92` Rectangle</li>
     <ol>
-    <li>Users can select the rectangle by clicking the “r” key on their keyboard.</li>
+    <li>`complete #101` Users can select the rectangle by clicking the “r” key on their keyboard.</li>
     </ol>
-  <li>Line</li>
+  <li>`complete #92` Line</li>
     <ol>
-    <li>Users can select the line by clicking the “l” key on their keyboard.</li>
+    <li>`complete #101` Users can select the line by clicking the “l” key on their keyboard.</li>
     </ol>
-  <li>Arrow</li>
+  <li>`complete #98` Arrow</li>
     <ol>
-    <li>Users can select the arrow by clicking the “a” key on their keyboard.</li>
+    <li>`complete #101` Users can select the arrow by clicking the “a” key on their keyboard.</li>
     </ol>
-  <li>Triangle</li>
+  <li>`complete #92` Triangle</li>
     <ol>
-    <li>Users can select the triangle by clicking the “shift + t” key on their keyboard.</li>
+    <li>`complete #101` Users can select the triangle by clicking the “shift + t” key on their keyboard.</li>
     </ol>
-  <li>Star</li>
+  <li>`complete #95` Star</li>
     <ol>
-    <li>Users can select the star by clicking the “x” key on their keyboard.</li>
+    <li>`complete #101` Users can select the star by clicking the “x” key on their keyboard.</li>
     </ol>
-  <li>Heart</li>
+  <li>`complete #94` Heart</li>
     <ol>
-    <li>Users can select the heart by clicking the “h” key on their keyboard.</li>
+    <li>`complete #106` Users can select the heart by clicking the “h” key on their keyboard.</li>
     </ol>
   </ol>
-<li>By clicking on a sticker, the user will select that sticker represented by a square outline appearing around it and the background color of this square changing color.</li>
-<li>With a sticker selected the user can click and hold on the canvas to begin the sticker placement process.</li>
-<li>When the user releases their mouse button while the sticker placement process is undergoing, they will place the sticker on the canvas.</li>
-<li>When the user moves their cursor during the sticker placement process, the preview of what the sticker will look like when placed appears.</li>
+<li>`complete #92` By clicking on a sticker, the user will select that sticker represented by a square outline appearing around it and the background color of this square changing color.</li>
+<li>`complete #89, #91, #94, #95, #98` With a sticker selected the user can click and hold on the canvas to begin the sticker placement process.</li>
+<li>`complete #89, #91, #94, #95, #98` When the user releases their mouse button while the sticker placement process is undergoing, they will place the sticker on the canvas.</li>
+<li>`complete #89, #91, #94, #95, #98` When the user moves their cursor during the sticker placement process, the preview of what the sticker will look like when placed appears.</li>
   <ol>
-  <li>If the user’s cursor goes off the canvas, the preview stops.</li>
-  <li>If the user’s cursor was off the canvas, during the sticker placement process and returns to the canvas, the preview will resume following the cursor.</li>
+  <li>`complete #89` If the user’s cursor goes off the canvas, the preview stops.</li>
+  <li>`complete #89` If the user’s cursor was off the canvas, during the sticker placement process and returns to the canvas, the preview will resume following the cursor.</li>
   </ol>
-<li>When a sticker that is placed on the canvas is selected with the select + move tool, the bar on the left of the canvas is replaced with the sticker information bar</li>
+<li>`incomplete` When a sticker that is placed on the canvas is selected with the select + move tool, the bar on the left of the canvas is replaced with the sticker information bar</li>
   <ol>
-  <li>The user can edit the width of the sticker using numeric values.</li>
-  <li>The user can edit the height of the sticker using numeric values.</li>
-  <li>The user can edit the rotation of the sticker using numeric values (degrees).</li>
-  <li>The user can edit the color of the sticker's fill by clicking on a square labeled “sticker fill” opening the color selection tool.</li>
+  <li>`incomplete` The user can edit the width of the sticker using numeric values.</li>
+  <li>`incomplete` The user can edit the height of the sticker using numeric values.</li>
+  <li>`incomplete` The user can edit the rotation of the sticker using numeric values (degrees).</li>
+  <li>`incomplete` The user can edit the color of the sticker's fill by clicking on a square labeled “sticker fill” opening the color selection tool.</li>
     <ol>
-    <li>See color selection tool requirements in Scrapbook-4.</li>
+    <li>`complete #117` See color selection tool requirements in Scrapbook-4.</li>
     </ol>
-  <li>The user can edit the color of the sticker's fill by clicking on a square labeled “sticker outline” opening the color selection tool. (stretch)</li>
+  <li>`incomplete` The user can edit the color of the sticker's fill by clicking on a square labeled “sticker outline” opening the color selection tool. (stretch)</li>
     <ol>
-    <li>See color selection tool requirements in Scrapbook-4.</li>
+    <li>`complete #117` See color selection tool requirements in Scrapbook-4.</li>
     </ol>
   </ol>
-<li>When a sticker that is placed on the canvas is clicked the sticker will be outlined in a rectangle with squares on the corners.</li>
+<li>`incomplete` When a sticker that is placed on the canvas is clicked the sticker will be outlined in a rectangle with squares on the corners.</li>
   <ol>
-  <li>The user can click and drag these corners to adjust the size of the sticker</li>
+  <li>`incomplete` The user can click and drag these corners to adjust the size of the sticker</li>
   </ol>
-<li>When a sticker that is placed on the canvas is clicked, the user can use the arrow keys on their keyboard to move the sticker a set distance.</li>
-<li>The user can click and drag a sticker on the canvas to change its position.</li>
+<li>`incomplete` When a sticker that is placed on the canvas is clicked, the user can use the arrow keys on their keyboard to move the sticker a set distance.</li>
+<li>`incomplete` The user can click and drag a sticker on the canvas to change its position.</li>
 </ol>
 
 ## Nav Bar (Core)
 F.
 <ol>
-<li>On left side of nav bar, the name of product will be displayed</li>
+<li>`Complete #85` On left side of nav bar, the name of product will be displayed</li>
   <ol>
-  <li>Clicking on the product name will lead users to the About Us page (stretch)</li>
+  <li>`Complete #85` Clicking on the product name will lead users to the About Us page (stretch)</li>
   </ol>
-<li>On right side of nav bar, there will be two buttons to help users navigate to different pages. The options will differ depending on whether or not the user is logged in or not</li>
+<li>`Complete #85` On right side of nav bar, there will be two buttons to help users navigate to different pages. The options will differ depending on whether or not the user is logged in or not</li>
   <ol>
   <li>If logged in:</li>
     <ol>
-      <li>Click on “Scrapbook” to enter Scrapbook page</li>
-      <li>Click on “Gallery” to enter Gallery page</li>
+      <li>`Complete #121` Click on “Scrapbook” to enter Scrapbook page</li>
+      <li>`Complete #121` Click on “Gallery” to enter Gallery page</li>
     </ol>
-    <li>If not signed in or no account:</li>
+    <li> `Change due to circumstance #121` If not signed in or no account:</li>
     <ol>
       <li>Click on “Scrapbook” to enter Scrapbook page</li>
       <li>Click on “Sign in” to enter Sign-In/Log-In page</li>
@@ -310,32 +310,32 @@ G.
 <ol>
 <li>When to prompt sharing:</li>
   <ol>
-  <li>After pressing Scrapbook share button</li>  
-  <li>When saving to gallery</li>
+  <li>`Complete no PR` After pressing Scrapbook share button</li>  
+  <li>`incomplete` When saving to gallery</li>
   <li>When looking at art in detail (stretch)</li>
   </ol>
-<li>A user can share to social media after being prompted when saving to the gallery (see Save to Gallery 2.a.i.4)</li>
-<li>A user can also share to social media after clicking on share button on Scrapbook page.</li>
+<li>`Complete #111` A user can share to social media after being prompted when saving to the gallery (see Save to Gallery 2.a.i.4)</li>
+<li>`Complete no PR` A user can also share to social media after clicking on share button on Scrapbook page.</li>
 <li>A user can share to social media by clicking the share button on the view art piece preview (see View Art Piece/Share (stretch) page) (stretch)</li>
-<li>When a user starts the share process, a medium sized pop-up window appears with social media icons.</li>
-<li>When a user clicks on one of these social media icons, they will be redirected to this platform to share their art piece.</li>
-<li>If an error occurs during the sharing to social media process, an error message will be displayed  stating “Something went wrong, please try again.”</li>
-<li>If the user clicks on the x in the top right corner, they will abort the sharing to social media process and exit the pop-up window.</li>
+<li>`Incomplete due to circumstance` When a user starts the share process, a medium sized pop-up window appears with social media icons.</li>
+<li>`Complete no PR` When a user clicks on one of these social media icons, they will be redirected to this platform to share their art piece.</li>
+<li>`Complete #118` If an error occurs during the sharing to social media process, an error message will be displayed  stating “Something went wrong, please try again.”</li>
+<li>`Complete #111` If the user clicks on the x in the top right corner, they will abort the sharing to social media process and exit the pop-up window.</li>
 </ol>
 
 ## Gallery (Core)
 H.
 <ol>
-<li>The user should be able to access their personal gallery of scrapbooking artwork after clicking on the account tab in the navigation bar at the top.</li>
+<li>`Complete #86` The user should be able to access their personal gallery of scrapbooking artwork after clicking on the account tab in the navigation bar at the top.</li>
   <ol>
-  <li>If user somehow tries to access it, they will be redirected to the login page</li>
+  <li>`Change due to circumstance` If user somehow tries to access it, they will be redirected to the login page</li>
     </ol>
-<li>This feature requires users to have an account, otherwise, they cannot access it</li>
-<li>If user has no saved pieces, the gallery will be empty (no cards)</li>
-<li>If user has saved piece(s), the gallery will display the piece(s) (3 cards per row)</li>
-<li>Under the profile page, users can scroll down and see their saved pieces</li>
-<li>User can view art pieces in detail by clicking on the card (detailed in View Art Pieces/Share Them section)</li>
-<li>By default, the gallery pieces are sorted by newest (newest on top and oldest on the bottom)</li>
+<li>`Change due to circumstance` This feature requires users to have an account, otherwise, they cannot access it</li>
+<li>`Complete #105` If user has no saved pieces, the gallery will be empty (no cards)</li>
+<li>`Complete #115` If user has saved piece(s), the gallery will display the piece(s) (3 cards per row)</li>
+<li>`Complete #112` Under the profile page, users can scroll down and see their saved pieces</li>
+<li>`Incomplete` User can view art pieces in detail by clicking on the card (detailed in View Art Pieces/Share Them section)</li>
+<li>`Complete #112` By default, the gallery pieces are sorted by newest (newest on top and oldest on the bottom)</li>
 <li>User can sort their pieces (Stretch)</li>
   <ol>
     <li>By clicking on the “Sort by” drop down, a list of filter options will appear (Stretch)</li>
@@ -353,18 +353,18 @@ H.
 ## View Art Pieces/Share Them (Core)
 I.
 <ol>
-<li>The user will be able to click on the artwork in particular that they would like to share to social media.</li>
-<li>A medium sized pop-up window will appear in the center of the page that will contain their artwork and the date it was saved.</li>
+<li>`complete #122` The user will be able to click on the artwork in particular that they would like to share to social media.</li>
+<li>`complete #122` A medium sized pop-up window will appear in the center of the page that will contain their artwork and the date it was saved.</li>
     <ol>
-    <li>If the user accidentally clicked on the artwork or does not want to look at it anymore, there will be a small X in the top right corner that allows the user to click on and close the window.</li>
+    <li>`complete #122` If the user accidentally clicked on the artwork or does not want to look at it anymore, there will be a small X in the top right corner that allows the user to click on and close the window.</li>
     </ol>
-<li>Underneath the pop-up window, there will be two small-sized buttons that say “discard” and “share.”</li>
+<li>`complete #122` Underneath the pop-up window, there will be two small-sized buttons that say “discard” and “share.”</li>
     <ol>
-    <li>If the user clicks on the “share” button, another medium sized pop-up window will appear that contains multiple different social media icons, such as twitter, facebook, and instagram.</li>
-    <li>The user will be able to click on one of the social media icons and will be redirected to the corresponding platform to share their content.</li>
-    <li>If an error occurs while attempting to share the artwork, the user will be prompted on the same window to try again, with an error message that says “Something went wrong, please try again.”</li>
-    <li>If the user wants to go back because they do not want to share the content, they will be able to click on a small back arrow on the top left corner of the pop-up window.</li>
-    <li>There will also be a small X in the top right corner that allows the user to click on and close the window.</li>
+    <li>`complete #122` If the user clicks on the “share” button, another medium sized pop-up window will appear that contains multiple different social media icons, such as twitter, facebook, and instagram.</li>
+    <li>`complete no pr` The user will be able to click on one of the social media icons and will be redirected to the corresponding platform to share their content.</li>
+    <li>`complete no pr` If an error occurs while attempting to share the artwork, the user will be prompted on the same window to try again, with an error message that says “Something went wrong, please try again.”</li>
+    <li>`incomplete` If the user wants to go back because they do not want to share the content, they will be able to click on a small back arrow on the top left corner of the pop-up window.</li>
+    <li>`complete #122` There will also be a small X in the top right corner that allows the user to click on and close the window.</li>
     </ol>
 </ol>
 
