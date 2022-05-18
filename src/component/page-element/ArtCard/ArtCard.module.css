@@ -1,4 +1,4 @@
-.cardBorder * {
+.cardBorder *, .largeBorder * {
   box-sizing: border-box;
 }
 
@@ -8,6 +8,8 @@
   padding: 15px;
   border-radius: 3px;
   background-color: var(--color-three);
+  margin-bottom: 70px;
+  margin-left: 70px;
 }
 
 .card {
