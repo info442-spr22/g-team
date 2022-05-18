@@ -37,57 +37,6 @@ function App(props) {
           </BrowserRouter>
       </div>
     );
-
-    /* The rest is only useful if we want to log users into firebase
-    const [errorMessage, setErrorMessage] = React.useState(undefined);
-    const [user, setUser] = React.useState(undefined);
-
-    //register new user
-    const handleSignUp = (email, password, handle, avatar) => {
-        setErrorMessage(null);
-    }
-
-    // log in existing user
-    const handleSignIn = (email, password) => {
-        setErrorMessage(null);
-    }
-
-    //log out current user
-    const handleSignOut = () => {
-        setErrorMessage(null);
-    }
-
-
-    let content = null;
-
-    if(!user) { //if logged out, show sign up form
-        content = (
-          <div className="container">
-              <h1>Sign Up</h1>
-              <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={auth()} />
-          </div>
-        );
-    } else { // if logged in, show welcome message
-        content = (
-          <div className="App">
-              {user &&
-                <button className="btn btn-warning" onClick={handleSignOut}>
-                    Log Out {user.displayName}
-                </button>
-              }
-
-              <BrowserRouter>
-                  <Routes>
-                      <Route path={urls.LANDING} element={<Landing />} />
-                      <Route path={urls.SCRAPBOOK} element={<Scrapbook/>} />
-                      <Route path={urls.GALLERY} element={<Gallery/>} />
-                  </Routes>
-              </BrowserRouter>
-          </div>
-        );
-    }
-    return <div>content</div>
-     */
 }
 
 export default App;

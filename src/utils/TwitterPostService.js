@@ -1,37 +1,43 @@
+import {signInWithPopup, TwitterAuthProvider} from 'firebase/auth'
+import {TWITTER} from '../resources/constants/storage-keys'
+import {auth} from '../index'
+
+const provider = new TwitterAuthProvider()
 
 export default class TwitterPostService {
-  // static BASE_URL = "https://upload.twitter.com/1.1/media/upload.json?command=INIT&media_type=image/png&media_category=TWEET_IMAGE"
   static BASE_URL = "https://upload.twitter.com/1.1/media/upload.json?media_category=TWEET_IMAGE"
-  // TODO: If you see this singleton code commented out here, I forgot to delete it - please delete it for me!
-  // instance;
-  // constructor() {
-  //   // Singleton pattern
-  //   return this.instance || this
-  // }
-  // async function likePost() {
-  //   // 'this' is the like icon of the card with id 'id'.
-  //   let id = this.parentNode.parentNode.parentNode.id;
-  //
-  //   let params = new FormData();
-  //   params.append("id", id);
-  //
-  //   try {
-  //     let resp = await fetch("/yipper/likes", {"method": "post", "body": params});
-  //     await checkStatus(resp);
-  //     this.parentNode.lastChild.textContent = await resp.text();
-  //   } catch (err) {
-  //     handleError();
-  //   }
-  // }
+
+  static getToken() {
+    return window.sessionStorage.getItem(TWITTER.TOKEN)
+  }
+
+  static async authenticate() {
+    return signInWithPopup(auth, provider)
+      .then(result => {
+        const credential = TwitterAuthProvider.credentialFromResult(result)
+        // window.sessionStorage.setItem(TWITTER.CREDENTIAL, credential)
+        window.sessionStorage.setItem(TWITTER.TOKEN, credential.accessToken)
+      })
+      .catch(error => {
+        alert(error.message)
+        console.log(error)
+      })
+  }
 
   static uploadImage(base64) {
     let params = new FormData();
     params.append("media_data", base64)
     // fetch(this.BASE_URL + `&media_data=${base64}`, {method: "POST", body: params})
 
-    fetch(this.BASE_URL, {method: "POST", body: params})
-      .then(resp => resp.json())
-      .then(console.log)
-      .catch(err => console.log(err.message))
+    const token = this.getToken()
+    if (token) {
+      fetch(this.BASE_URL, {method: "POST", body: params})
+        .then(resp => resp.json())
+        .then(console.log)
+        .catch(err => console.log(err.message))
+    } else {
+      return new Promise((resolve, reject) => {reject({ message: "Something went wrong, try sharing again. You may need to sign in." })})
+    }
+
   }
 }

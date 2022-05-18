@@ -13,6 +13,7 @@ import Button from '../../component/page-element/Button/Button'
 import Window from '../../component/page-element/Window/Window'
 import { useScreenshot } from "use-react-screenshot";
 import {IMAGES} from '../../resources/constants/storage-keys'
+import TwitterPostService from '../../utils/TwitterPostService'
 
 const generator = rough.generator();
 
@@ -191,6 +192,16 @@ const Scrapbook = () => {
         })
     }
 
+    const handleShareButton = () => {
+        const authToken = TwitterPostService.getToken()
+        if (authToken) {
+            setShowSharingPopup(true)
+        } else {
+            TwitterPostService.authenticate()
+              .then(() => setShowSharingPopup(true))
+        }
+    }
+
     return(
         <>
             <NavBar authenticated={true} />
@@ -210,7 +221,7 @@ const Scrapbook = () => {
                         </canvas>
                         <div className={styles.buttonWrapper}>
                         <Button onClick={saveCanvas}>Save</Button>
-                        <Button onClick={() => setShowSharingPopup(true)}>Share</Button>
+                        <Button onClick={handleShareButton}>Share</Button>
                         <Button variant>Restart</Button>
                         </div>
                     </div>
