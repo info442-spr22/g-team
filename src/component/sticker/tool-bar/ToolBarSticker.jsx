@@ -12,6 +12,12 @@ function handleKeyPress(event, props) {
       props.setSelectedSticker("select")
     } else if (event.key === "t") {
       props.setSelectedSticker("text")
+    } else if (event.key === "x" && (event.metaKey || event.ctrlKey)) {
+      
+    } else if (event.key === "c" && (event.metaKey || event.ctrlKey)) {
+      
+    } else if (event.key === "v" && (event.metaKey || event.ctrlKey)) {
+      
     }
   }
 }

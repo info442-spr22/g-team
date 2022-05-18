@@ -40,6 +40,7 @@ const Scrapbook = () => {
     // const [selectedElement, setSelectedElement] = React.useState(null) uncomment for object property changing
     const [showSharingPopup, setShowSharingPopup] = React.useState(false)
     const [canvasColor, setCanvasColor] = useState('#ffffff');
+    // const [copy, setCopy] = React.useState();
 
     let canvasRef = React.useRef(null)
 
