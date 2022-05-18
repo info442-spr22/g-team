@@ -201,8 +201,9 @@ const Scrapbook = () => {
             {showSharingPopup &&
                 <ShareWindow closePopup={() => setShowSharingPopup(false)} />
                     }
-             {showClearPopup &&
-                <ClearWindow closePopup={() => setShowClearPopup(false)} />
+             {showClearPopup && 
+                <ClearWindow closePopup={() => setShowClearPopup(false)} 
+                />
             }
             <div className={styles.pageContents}>
                 <PropertiesSidebar />
