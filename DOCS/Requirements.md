@@ -96,7 +96,7 @@ C.
           <li>edit the color of a sticker's outline (stretch)</li>
         </ol>
         </ol>
-<li>Users can use pre-created stickers on the canvas (see pre-created stickers section for more requirements)</li>
+<li>`complete, #91, #94, #95, #98`Users can use pre-created stickers on the canvas (see pre-created stickers section for more requirements)</li>
 <li>Users can place self-created stickers on canvas (stretch goal, see create own stickers section)</li>
 <li>Users can write text on canvas</li>
       <ol>
@@ -125,19 +125,19 @@ C.
             <li>While still on the text box tool, users can use the sidebar to access colors and change the color of the text by clicking on a color</li>
             </ol>
         </ol>
-<li>Users can copy the following objects using the shortcut ctrl/cmd + c</li>
+<li>`incomplete`Users can copy the following objects using the shortcut ctrl/cmd + c</li>
       <ol>
       <li>Pre-created stickers</li>
       <li>Text boxes</li>
       <li>Custom stickers (Stretch)</li>
       </ol>
-<li>Users can cut the following objects using the shortcut ctrl/cmd + x</li>
+<li>`incomplete`Users can cut the following objects using the shortcut ctrl/cmd + x</li>
       <ol>
       <li>Pre-created stickers</li>
       <li>Text boxes</li>
       <li>Custom stickers (Stretch)</li>
       </ol>
-<li>Users can paste the following objects using the shortcut ctrl/cmd + v</li>
+<li>`incomplete`Users can paste the following objects using the shortcut ctrl/cmd + v</li>
       <ol>
       <li>Pre-created stickers</li>
       <li>Text boxes</li>
