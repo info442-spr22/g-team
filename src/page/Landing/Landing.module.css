@@ -42,8 +42,13 @@
   display: flex;
 }
 
-.call_to_action p {
-  margin-top: 15px;
+.button {
+  color: var(--landing-section-two-color);
+}
+
+.call_to_action {
+  margin-top: 5px;
+  font-size: 20px;
 }
 
 .intro_txt, .intro_pic {
@@ -52,7 +57,7 @@
 }
 
 .intro_pic {
-  margin-top: calc(10px + var(--nav-bar-height));
+  margin-top: calc(20px + var(--nav-bar-height));
 }
 
 .intro_txt, .intro_pic, .intro_pic img {
