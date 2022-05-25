@@ -213,7 +213,10 @@ const Scrapbook = () => {
                 <ShareWindow closePopup={() => setShowSharingPopup(false)} />
                     }
              {showClearPopup &&
-                <ClearWindow closePopup={() => setShowClearPopup(false)}
+                <ClearWindow
+                    closePopup={() => setShowClearPopup(false)}
+                    setElements={setElements}
+                    setTextElements={setTextElements}
                 />
             }
             <div className={styles.pageContents}>
