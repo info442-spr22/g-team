@@ -39,6 +39,7 @@ const Scrapbook = () => {
     const [windowDimensions, setWindowDimensions] = React.useState({})
     const [canvasPosition, setCanvasPosition] = React.useState({x: 0, y:0})
     const [selectedSticker, setSelectedSticker] = React.useState('select')
+    const [updatedSticker, setUpdatedSticker] = React.useState('null')
     const [textInputPosition, setInputPosition] = React.useState({})
     const [inputIsEmpty, setInputIsEmpty] = React.useState(false)
     const [textInputInfo, setTextInputInfo] = React.useState({
@@ -46,7 +47,7 @@ const Scrapbook = () => {
         size: "30",
         style: "black"
     })
-    // const [selectedElement, setSelectedElement] = React.useState(null) uncomment for object property changing
+    const [selectedElement, setSelectedElement] = React.useState(null)
     const [showSharingPopup, setShowSharingPopup] = React.useState(false)
     const [showClearPopup, setShowClearPopup] = React.useState(false)
     const [errorPopup, setErrorPopup] = React.useState(false)
@@ -87,7 +88,12 @@ const Scrapbook = () => {
             textElement
         ));
 
-    }, [elements, textElements]);
+        drawSelectedBox(updatedSticker, generator)
+        if (action !== "selected") {
+            setUpdatedSticker("null")
+        }
+
+    }, [action, elements, textElements, updatedSticker]);
 
     // mouse tracking
     const handleMouseDown = (event) => {
@@ -119,13 +125,16 @@ const Scrapbook = () => {
             )
             if (element) {
                 setAction('selected')
-                // setSelectedElement(element)
-                drawSelectedBox(element, generator);
+                let offsetX = clientX - element.selectInfo.x
+                let offsetY = clientY - element.selectInfo.y
+                setSelectedElement({...element, offsetX, offsetY})
+                setUpdatedSticker(element)
+                console.log(element)
             } else {
                 // reset action to none
                 setAction('none')
                 // remove the selected element
-                // setSelectedElement(null)
+                setSelectedElement(null)
             }
         } else if (selectedSticker === "text") {
             if (!textInputPosition.x) {
@@ -138,12 +147,12 @@ const Scrapbook = () => {
         } else {
             // Starting pt is clientX, clintY and first create element end pt is same as start pt
 
+            const id = elements.length;
             const element = createElement(
                 generator,
                 clientX - canvasPosition.x, clientY - canvasPosition.y,
                 clientX - canvasPosition.x, clientY - canvasPosition.y,
-                selectedSticker,
-                {}
+                selectedSticker, id
             );
             setElements((prevState) => [...prevState, element])
             setAction("drawing");
@@ -151,27 +160,92 @@ const Scrapbook = () => {
     };
 
     const handleMouseMove = (event) => {
-
+        const {clientX, clientY} = event
+        let id
+        let index
+        let updatedElement
+        let elementsCopy
         if (action === "drawing") {
-            const { clientX, clientY} = event
-            const index = elements.length - 1
-            const { x1, y1 } = elements[index]
-            const updatedElement = createElement(
+            index = elements.length - 1
+            id = elements.length
+            const x1 = elements[index].x1
+            const y1 = elements[index].y1
+            updatedElement = createElement(
                 generator,
                 x1, y1,
                 clientX - canvasPosition.x, clientY - canvasPosition.y,
-                selectedSticker,
-                {}
-            )
+                selectedSticker, id
+            );
 
-            const elementsCopy = [...elements]
+            elementsCopy = [...elements]
             elementsCopy[index] = updatedElement
             setElements(elementsCopy)
+        } else if (action === "selected") {
+            id = selectedElement.id
+            const selectInfo = selectedElement.selectInfo
+            let offsetX = selectedElement.offsetX
+            let offsetY = selectedElement.offsetY
+            let x1 = clientX - offsetX
+            let x2 = x1 + selectInfo.width
+            let y1 = clientY - offsetY
+            let y2 = y1 + selectInfo.height
+
+            if (selectedElement.stickerType === "arrow") {
+                if (selectInfo.arrowDirection === "topRight") {
+                    x1 = clientX - offsetX
+                    x2 = clientX  + (selectedElement.x2 - selectInfo.x - offsetX)
+                    y1 = clientY + (selectedElement.y1 - selectInfo.y - offsetY)
+                    y2 = clientY - (offsetY - (selectedElement.y2 - selectInfo.y))
+                } else if (selectInfo.arrowDirection === "botRight") {
+                    x1 = clientX - offsetX
+                    x2 = clientX + (selectedElement.x2 - selectedElement.x1 - offsetX)
+                    y1 = clientY - offsetY
+                    y2 = clientY + (selectedElement.y2 - selectedElement.y1 - offsetY)
+                } else if (selectInfo.arrowDirection === "topLeft") {
+                    x1 = clientX + (selectedElement.x1 - selectedElement.x2 - offsetX)
+                    x2 = clientX - offsetX
+                    y1 = clientY + (selectedElement.y1 - selectInfo.y - offsetY)
+                    y2 = clientY - (offsetY - (selectedElement.y2 - selectInfo.y))
+                } else if (selectInfo.arrowDirection === "botLeft") {
+                    x1 = clientX + (selectedElement.x1 - selectedElement.x2 - offsetX)
+                    x2 = clientX - offsetX
+                    y1 = clientY - offsetY
+                    y2 = clientY + (selectedElement.y2 - selectedElement.y1 - offsetY)
+                }
+            }
+            if (selectedElement.stickerType === "line") {
+                if (selectedElement.x1 <= selectedElement.x2) {
+                    x1 = clientX - offsetX
+                    x2 = clientX + (selectInfo.width - offsetX)
+                } else {
+                    x1 = clientX + (selectInfo.width - offsetX)
+                        x2 = clientX - offsetX
+                }
+                if (selectedElement.y1 <= selectedElement.y2) {
+                    y1 = clientY - offsetY
+                    y2 = clientY + (selectInfo.height - offsetY)
+                } else {
+                    y1 = clientY + (selectInfo.height - offsetY)
+                    y2 = clientY - offsetY
+                }
+            }
+
+            updatedElement = createElement(
+                generator,
+                x1, y1, x2, y2,
+                selectedElement.stickerType, id
+            );
+
+            elementsCopy = [...elements]
+            elementsCopy[id-1] = updatedElement
+            setElements(elementsCopy)
+            setUpdatedSticker(updatedElement)
         }
     }
 
     const handleMouseUp = () => {
-        setAction("none");
+        setAction("none")
+        setTimeout(function() {drawSelectedBox(updatedSticker, generator)}, 1)
     }
 
     // This comma means that the first element in the returned array is ignored, since we don't need it
