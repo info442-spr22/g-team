@@ -9,7 +9,7 @@ import stickerStyles from "../../sticker/tool-bar/ToolBarSticker.module.css"
 
 export default function ActionBar(props) {
   let stickers = stickerHotKeys.map(({name, hotkey}) =>
-    <button type="button" className={(props.selectedSticker === name ? stickerStyles.selectedButton : '')} key={name}>
+    <button type="button" className={(props.selectedSticker === name ? stickerStyles.selectedButton : styles.actionBarButton)} key={name}>
       <ToolBarSticker
         type={name}
         setSelectedSticker={(sticker) => {
@@ -26,13 +26,13 @@ export default function ActionBar(props) {
   return(
     <div className={styles.wrapper}>
       <div className={styles.actionBar}>
-        <button onClick={() => {props.setSelectedSticker("select")}} type="button" className={( props.selectedSticker === "select" ? stickerStyles.selectedButton : '' )}>
+        <button onClick={() => {props.setSelectedSticker("select")}} type="button" className={( props.selectedSticker === "select" ? stickerStyles.selectedButton : styles.actionBarButton )}>
           <CursorFill />
         </button>
         <div>
           <ColorPicker setCanvasColor={props.setCanvasColor}/>
         </div>
-        <button onClick={() => {props.setSelectedSticker("text")}} type="button" className={( props.selectedSticker === "text" ? stickerStyles.selectedButton : '' )}>
+        <button onClick={() => {props.setSelectedSticker("text")}} type="button" className={( props.selectedSticker === "text" ? stickerStyles.selectedButton : styles.actionBarButton )}>
           <TextareaT size='32px'/>
         </button>
         {stickers}

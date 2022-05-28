@@ -17,11 +17,11 @@
   align-items: center;
 }
 
-/*.actionBarButton {*/
-/*  color: var(--button-variant-text-color);*/
-/*  background-color: var(--scrapbook-bar-background);*/
-/*  border-color: var(--scrapbook-bar-background);*/
-/*}*/
+.actionBarButton {
+  color: var(--button-variant-text-color);
+  background-color: transparent;
+  border: none
+}
 
 /*.actionBarButton:hover {*/
 /*  color: var(--button-variant-text-color);*/
