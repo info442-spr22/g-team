@@ -241,11 +241,8 @@ const Scrapbook = () => {
             setUpdatedSticker(updatedElement)
         } else if (action === "selected") {
             id = selectedElement.id
-            const selectInfo = selectedElement.selectInfo
             let offsetX = selectedElement.offsetX
             let offsetY = selectedElement.offsetY
-            let x1 = clientX - offsetX
-            let y1 = clientY - offsetY
             const canvas = document.getElementById("canvas");
             const ctx = canvas.getContext("2d");
             console.log(id)
@@ -258,8 +255,8 @@ const Scrapbook = () => {
                     style: selectedElement.font,
                     text: selectedElement.text,
                     location: {
-                      x: clientX - selectedElement.offsetX,
-                      y: clientY - selectedElement.offsetY
+                      x: clientX - offsetX,
+                      y: clientY - offsetY
                     },
                     stickerType: "text",
                     id: id
