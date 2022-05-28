@@ -1,6 +1,7 @@
 import rough from "roughjs/bundled/rough.esm";
 
 export default function drawSelectedBox(element, generator) {
+  if (element === "null") {return}
   const canvas = document.getElementById("canvas")
   const roughCanvas = rough.canvas(canvas)
   let selectInfo = element.selectInfo
