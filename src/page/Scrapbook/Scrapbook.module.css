@@ -50,3 +50,20 @@
     margin-right: 24px;
   }
 }
+
+@media (max-width: 1000px) {
+  .pageContents {
+    display: none;
+  }
+  .screenError {
+    padding-top: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .screenError {
+    display: none;
+  }
+}

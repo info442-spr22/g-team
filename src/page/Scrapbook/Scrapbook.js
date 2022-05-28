@@ -295,6 +295,11 @@ const Scrapbook = () => {
                     setTextElements={setTextElements}
                 />
             }
+
+            <div className={styles.screenError}>
+                <h1>Sorry, but it seems like your screen is too small.</h1>
+                <p>Unfortunately, GetWell currently doesn't support smaller screen sizes. Please use a device that is at least 1000 pixels wide.</p>
+            </div>
             {showSavePopup &&
                 <SaveWindow 
                     closePopup={() => setShowSavePopup(false)}

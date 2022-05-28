@@ -168,3 +168,49 @@
   text-align: left;
   font-size: 18px;
 }
+
+@media (max-width: 600px) {
+  .intro_pic {
+    display: none;
+  }
+
+  .key_feat {
+    height: 160vh;
+  }
+
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .features > div {
+    flex: 2 0 50%;
+    margin-bottom: 50px;
+  }
+
+  .key_feat h2 {
+    font-size: 50px;
+  }
+
+  .our_team {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    flex-basis: 50%;
+  }
+
+  .our_team div > div {
+    flex: 2 0 50%;
+  }
+
+  .insp > span {
+    position: absolute;
+    padding: 10px
+  }
+}
+
+@media (max-width: 1000px) {
+  .intro_pic img {
+    width: 120%;
+  }
+}
