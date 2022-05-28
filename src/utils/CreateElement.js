@@ -1,4 +1,4 @@
-export default function createElement(generator, x1, y1, x2, y2, stickerType, stickerProps) {
+export default function createElement(generator, x1, y1, x2, y2, stickerType, id) {
   let roughElement;
   let leftX = x1 < x2 ? x1 : x2
   let topY = y1 < y2 ? y1 : y2
@@ -17,18 +17,23 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
       let armLength = 0.3 * Math.sqrt(width * width + height * height)
       let angle = Math.atan(height / width)
       let arrowheadAngle = Math.PI / 4
+      let arrowDirection
       if (x1 <= x2) {
         if (y1 <= y2) {
           // angle = angle
+          arrowDirection = "botRight"
         } else {
           angle = angle * -1
+          arrowDirection = "topRight"
         }
       } else {
         angle = angle + Math.PI
         if (y1 <= y2) {
           angle = angle * -1
+          arrowDirection = "botLeft"
         } else {
           // angle = angle
+          arrowDirection = "topLeft"
         }
       }
       points = [ [x1, y1], [x2, y2],
@@ -47,7 +52,8 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
         x: minX,
         y: minY,
         width: Math.max.apply(Math, points.map(row => row[0])) - minX,
-        height: Math.max.apply(Math, points.map(row => row[1])) - minY
+        height: Math.max.apply(Math, points.map(row => row[1])) - minY,
+        arrowDirection: arrowDirection
       }
 
       break
@@ -165,6 +171,6 @@ export default function createElement(generator, x1, y1, x2, y2, stickerType, st
     case ('text'):
     default:
   }
-  return {x1, y1, x2, y2, selectInfo, stickerType, roughElement };
+  return {x1, y1, x2, y2, selectInfo, stickerType, roughElement, id};
 }
 

@@ -1,6 +1,5 @@
 export default function createText(ctx, textElement) {
   // set textbox parameters
-  console.log(textElement)
   ctx.font = textElement.size + " " + textElement.font
   ctx.fillStyle = textElement.style
   let align = textElement.align
