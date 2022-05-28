@@ -29,6 +29,10 @@
   font-size: .9rem;
 }
 
+.button.save {
+  font-size: .9rem;
+}
+
 .button:hover {
   color: var(--button-variant-text-color);
   border-color: var(--scrapbook-tool-border);

@@ -12,6 +12,7 @@ import TextBox from "../../component/tool/TextBox/TextBox"
 import Button from '../../component/page-element/Button/Button'
 import ShareWindow from '../../component/page-element/Window/ShareWindow'
 import ClearWindow from '../../component/page-element/Window/ClearWindow'
+import SaveWindow from '../../component/page-element/Window/SaveWindow'
 import { useScreenshot } from "use-react-screenshot";
 import {IMAGES} from '../../resources/constants/storage-keys'
 import TwitterPostService from '../../utils/TwitterPostService'
@@ -50,6 +51,7 @@ const Scrapbook = () => {
     const [selectedElement, setSelectedElement] = React.useState(null)
     const [showSharingPopup, setShowSharingPopup] = React.useState(false)
     const [showClearPopup, setShowClearPopup] = React.useState(false)
+    const [showSavePopup, setShowSavePopup] = React.useState(false)
     const [errorPopup, setErrorPopup] = React.useState(false)
     const [canvasColor, setCanvasColor] = useState('#ffffff');
 
@@ -293,6 +295,10 @@ const Scrapbook = () => {
                     setTextElements={setTextElements}
                 />
             }
+            {showSavePopup &&
+                <SaveWindow 
+                    closePopup={() => setShowSavePopup(false)}
+                />}
             <div className={styles.pageContents}>
                 <PropertiesSidebar
                     textInputPosition={textInputPosition}
@@ -310,7 +316,10 @@ const Scrapbook = () => {
                             Canvas
                         </canvas>
                         <div className={styles.buttonWrapper}>
-                        <Button onClick={saveCanvas}>Save</Button>
+                        <Button onClick={() => {
+                            setShowSavePopup(true);
+                            saveCanvas();
+                            }}>Save</Button>
                         {/* <Button onClick={handleShareButton}>Share</Button> */}
                         <Button variant onClick={() => setShowClearPopup(true)}>Restart</Button>
                         {/* <Button onClick={() => setErrorPopup(true)}>Error</Button>
