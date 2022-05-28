@@ -22,6 +22,4 @@
 .selectedButton:focus {
   border-color: var(--button-variant-text-color);
   background-color: var(--selected-shape-color);
-  /*stroke: var(--highlight-shape-color);*/
-  /*stroke-width: 1px;*/
 }
