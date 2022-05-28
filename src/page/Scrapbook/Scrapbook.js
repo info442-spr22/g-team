@@ -131,7 +131,6 @@ const Scrapbook = () => {
                 let offsetY = clientY - element.selectInfo.y
                 setSelectedElement({...element, offsetX, offsetY})
                 setUpdatedSticker(element)
-                console.log(element)
             } else {
                 // reset action to none
                 setAction('none')
@@ -182,7 +181,7 @@ const Scrapbook = () => {
             elementsCopy = [...elements]
             elementsCopy[index] = updatedElement
             setElements(elementsCopy)
-        } else if (action === "selected") {
+        } else if (action === "selected" && selectedElement.stickerType !== "text") {
             id = selectedElement.id
             const selectInfo = selectedElement.selectInfo
             let offsetX = selectedElement.offsetX
@@ -241,6 +240,33 @@ const Scrapbook = () => {
             elementsCopy = [...elements]
             elementsCopy[id-1] = updatedElement
             setElements(elementsCopy)
+            setUpdatedSticker(updatedElement)
+        } else if (action === "selected") {
+            id = selectedElement.id
+            let offsetX = selectedElement.offsetX
+            let offsetY = selectedElement.offsetY
+            const canvas = document.getElementById("canvas");
+            const ctx = canvas.getContext("2d");
+            console.log(id)
+            updatedElement = createText(
+                ctx,
+                {
+                    font: selectedElement.font,
+                    size: selectedElement.size + "px",
+                    align: "left",
+                    style: selectedElement.font,
+                    text: selectedElement.text,
+                    location: {
+                      x: clientX - offsetX,
+                      y: clientY - offsetY
+                    },
+                    stickerType: "text",
+                    id: id
+                  }
+            )
+            elementsCopy = [...textElements]
+            elementsCopy[id] = updatedElement
+            setTextElements(elementsCopy)
             setUpdatedSticker(updatedElement)
         }
     }
@@ -346,6 +372,7 @@ const Scrapbook = () => {
                       setInputIsEmpty={setInputIsEmpty}
                       textInputInfo={textInputInfo}
                       setTextInputInfo={setTextInputInfo}
+                      id={textElements.length}
                     />
                 </div>
             </div>

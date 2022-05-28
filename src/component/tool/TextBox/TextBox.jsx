@@ -24,7 +24,8 @@ function handleEnter(event, props, textInputRef) {
             x: props.textInputPosition.x - props.canvasPosition.x,
             y: props.textInputPosition.y - props.canvasPosition.y
           },
-          stickerType: "text"
+          stickerType: "text",
+          id: props.id
         }
     );
 
