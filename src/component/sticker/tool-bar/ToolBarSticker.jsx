@@ -191,7 +191,7 @@ function ToolBarSticker(props) {
   }
 
   return (
-    <div onClick={() => {props.setSelectedSticker(props.type)}} ref={handleKeyPress}>
+    <div onClick={() => {props.setSelectedSticker(props.type)}} ref={handleKeyPress} className={props.selected ? styles.selectedButton : ''}>
       {sticker}
     </div>
   )

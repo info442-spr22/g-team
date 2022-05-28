@@ -248,6 +248,7 @@ const Scrapbook = () => {
                     <ActionBar
                       setSelectedSticker={setSelectedSticker}
                       setCanvasColor={setCanvasColor}
+                      selectedSticker={selectedSticker}
                     />
                     <TextBox
                       textInputPosition={textInputPosition}
