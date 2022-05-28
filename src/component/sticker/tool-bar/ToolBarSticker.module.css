@@ -8,8 +8,6 @@
 
 .selectedButton {
   color: var(--button-variant-text-color);
-  /* background-color: var(--scrapbook-bar-background); */
-  /* border-color: var(--scrapbook-bar-background); */
   border-color: var(--button-variant-text-color);
   background-color: var(--selected-shape-color);
   stroke: var(--highlight-shape-color);
