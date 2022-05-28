@@ -190,7 +190,6 @@ const Scrapbook = () => {
             let y1 = clientY - offsetY
             let y2 = y1 + selectInfo.height
 
-            console.log(selectedElement)
             if (selectedElement.stickerType === "arrow") {
                 if (selectInfo.arrowDirection === "topRight") {
                     x1 = clientX - offsetX
@@ -212,6 +211,22 @@ const Scrapbook = () => {
                     x2 = clientX - offsetX
                     y1 = clientY - offsetY
                     y2 = clientY + (selectedElement.y2 - selectedElement.y1 - offsetY)
+                }
+            }
+            if (selectedElement.stickerType === "line") {
+                if (selectedElement.x1 <= selectedElement.x2) {
+                    x1 = clientX - offsetX
+                    x2 = clientX + (selectInfo.width - offsetX)
+                } else {
+                    x1 = clientX + (selectInfo.width - offsetX)
+                        x2 = clientX - offsetX
+                }
+                if (selectedElement.y1 <= selectedElement.y2) {
+                    y1 = clientY - offsetY
+                    y2 = clientY + (selectInfo.height - offsetY)
+                } else {
+                    y1 = clientY + (selectInfo.height - offsetY)
+                    y2 = clientY - offsetY
                 }
             }
 
