@@ -141,8 +141,6 @@ const Scrapbook = () => {
                 setInputPosition({x: clientX, y: clientY})
 
                 setAction("texting")
-
-                setSelectedSticker("select")
             }
         } else {
             // Starting pt is clientX, clintY and first create element end pt is same as start pt

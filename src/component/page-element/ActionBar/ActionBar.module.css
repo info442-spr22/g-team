@@ -17,21 +17,21 @@
   align-items: center;
 }
 
-.actionBarButton {
-  color: var(--button-variant-text-color);
-  background-color: var(--scrapbook-bar-background);
-  border-color: var(--scrapbook-bar-background);
-}
+/*.actionBarButton {*/
+/*  color: var(--button-variant-text-color);*/
+/*  background-color: var(--scrapbook-bar-background);*/
+/*  border-color: var(--scrapbook-bar-background);*/
+/*}*/
 
-.actionBarButton:hover {
-  color: var(--button-variant-text-color);
-  border-color: var(--scrapbook-tool-border);
-}
+/*.actionBarButton:hover {*/
+/*  color: var(--button-variant-text-color);*/
+/*  border-color: var(--scrapbook-tool-border);*/
+/*}*/
 
-.actionBarButton:focus {
-  border-color: var(--button-variant-text-color);
-  background-color: var(--selected-shape-color);
-  stroke: var(--highlight-shape-color);
-  stroke-width: 1px;
-}
+/*.actionBarButton:focus {*/
+/*  border-color: var(--button-variant-text-color);*/
+/*  background-color: var(--selected-shape-color);*/
+/*  stroke: var(--highlight-shape-color);*/
+/*  stroke-width: 1px;*/
+/*}*/
 

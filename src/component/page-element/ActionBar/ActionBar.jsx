@@ -9,10 +9,9 @@ import stickerStyles from "../../sticker/tool-bar/ToolBarSticker.module.css"
 
 export default function ActionBar(props) {
   let stickers = stickerHotKeys.map(({name, hotkey}) =>
-    <button id="selectMove" type="button" className={"btn selectMove " + styles.actionBarButton} key={name}>
+    <button type="button" className={"btn " + (props.selectedSticker === name ? stickerStyles.selectedButton : '')} key={name}>
       <ToolBarSticker
         type={name}
-        selected={props.selectedSticker === name}
         setSelectedSticker={(sticker) => {
           console.log(sticker)
           props.setSelectedSticker(sticker)
@@ -27,19 +26,15 @@ export default function ActionBar(props) {
   return(
     <div className={styles.wrapper}>
       <div className={styles.actionBar}>
-        <div onClick={() => {props.setSelectedSticker("select")}} className={props.selectedSticker === "select" ? stickerStyles.selectedButton : ''}>
-          <button id="selectMove" type="button" className={"btn selectMove " + styles.actionBarButton}>
-            <CursorFill />
-          </button>
-        </div>
+        <button onClick={() => {props.setSelectedSticker("select")}} type="button" className={"btn " + ( props.selectedSticker === "select" ? stickerStyles.selectedButton : '' )}>
+          <CursorFill />
+        </button>
         <div>
-        <ColorPicker setCanvasColor={props.setCanvasColor}/>
+          <ColorPicker setCanvasColor={props.setCanvasColor}/>
         </div>
-          <div onClick={() => {props.setSelectedSticker("text")}} className={props.selectedSticker === "text" ? stickerStyles.selectedButton : ''}>
-              <button id="textBox" type="button" className="btn">
-                  <TextareaT size='32px'/>
-              </button>
-          </div>
+        <button onClick={() => {props.setSelectedSticker("text")}} type="button" className={"btn " + ( props.selectedSticker === "text" ? stickerStyles.selectedButton : '' )}>
+          <TextareaT size='32px'/>
+        </button>
         {stickers}
       </div>
     </div>
