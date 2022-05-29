@@ -214,3 +214,14 @@
     width: 120%;
   }
 }
+
+@media (max-width: 400px) {
+  .insp > span {
+    position: absolute;
+    padding: 0px
+  }
+  
+  .insp {
+    padding-top: 100px;
+  }
+}
