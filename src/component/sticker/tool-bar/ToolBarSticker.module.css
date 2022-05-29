@@ -8,18 +8,20 @@
 
 .selectedButton {
   color: var(--button-variant-text-color);
-  border-color: var(--button-variant-text-color);
+  border-color: var(--selected-shape-color);
   background-color: var(--selected-shape-color);
+  border-radius: 10%;
+  border-style: solid;
   /*stroke: var(--highlight-shape-color);*/
   /*stroke-width: 1px;*/
 }
 
 .selectedButton:hover {
   color: var(--button-variant-text-color);
-  border-color: var(--scrapbook-tool-border);
+  border-color: var(--selected-shape-color);
 }
 
 .selectedButton:focus {
-  border-color: var(--button-variant-text-color);
+  border-color: var(--selected-shape-color);
   background-color: var(--selected-shape-color);
 }

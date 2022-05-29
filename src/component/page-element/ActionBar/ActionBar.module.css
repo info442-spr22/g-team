@@ -23,10 +23,15 @@
   border: none
 }
 
-/*.actionBarButton:hover {*/
-/*  color: var(--button-variant-text-color);*/
-/*  border-color: var(--scrapbook-tool-border);*/
-/*}*/
+.actionBar button:hover {
+  border: 0.05rem solid;
+  border-radius: 10%;
+}
+
+/* .actionBarButton:hover {
+ color: var(--button-variant-text-color);
+ border-color: var(--scrapbook-tool-border);
+} */
 
 /*.actionBarButton:focus {*/
 /*  border-color: var(--button-variant-text-color);*/
