@@ -12,6 +12,7 @@ import TextBox from "../../component/tool/TextBox/TextBox"
 import Button from '../../component/page-element/Button/Button'
 import ShareWindow from '../../component/page-element/Window/ShareWindow'
 import ClearWindow from '../../component/page-element/Window/ClearWindow'
+import SaveWindow from '../../component/page-element/Window/SaveWindow'
 import { useScreenshot } from "use-react-screenshot";
 import {IMAGES} from '../../resources/constants/storage-keys'
 import TwitterPostService from '../../utils/TwitterPostService'
@@ -50,6 +51,7 @@ const Scrapbook = () => {
     const [selectedElement, setSelectedElement] = React.useState(null)
     const [showSharingPopup, setShowSharingPopup] = React.useState(false)
     const [showClearPopup, setShowClearPopup] = React.useState(false)
+    const [showSavePopup, setShowSavePopup] = React.useState(false)
     const [errorPopup, setErrorPopup] = React.useState(false)
     const [canvasColor, setCanvasColor] = useState('#ffffff');
 
@@ -129,7 +131,6 @@ const Scrapbook = () => {
                 let offsetY = clientY - element.selectInfo.y
                 setSelectedElement({...element, offsetX, offsetY})
                 setUpdatedSticker(element)
-                console.log(element)
             } else {
                 // reset action to none
                 setAction('none')
@@ -178,7 +179,7 @@ const Scrapbook = () => {
             elementsCopy = [...elements]
             elementsCopy[index] = updatedElement
             setElements(elementsCopy)
-        } else if (action === "selected") {
+        } else if (action === "selected" && selectedElement.stickerType !== "text") {
             id = selectedElement.id
             const selectInfo = selectedElement.selectInfo
             let offsetX = selectedElement.offsetX
@@ -238,6 +239,33 @@ const Scrapbook = () => {
             elementsCopy[id-1] = updatedElement
             setElements(elementsCopy)
             setUpdatedSticker(updatedElement)
+        } else if (action === "selected") {
+            id = selectedElement.id
+            let offsetX = selectedElement.offsetX
+            let offsetY = selectedElement.offsetY
+            const canvas = document.getElementById("canvas");
+            const ctx = canvas.getContext("2d");
+            console.log(id)
+            updatedElement = createText(
+                ctx,
+                {
+                    font: selectedElement.font,
+                    size: selectedElement.size + "px",
+                    align: "left",
+                    style: selectedElement.font,
+                    text: selectedElement.text,
+                    location: {
+                      x: clientX - offsetX,
+                      y: clientY - offsetY
+                    },
+                    stickerType: "text",
+                    id: id
+                  }
+            )
+            elementsCopy = [...textElements]
+            elementsCopy[id] = updatedElement
+            setTextElements(elementsCopy)
+            setUpdatedSticker(updatedElement)
         }
     }
 
@@ -291,6 +319,15 @@ const Scrapbook = () => {
                     setTextElements={setTextElements}
                 />
             }
+
+            <div className={styles.screenError}>
+                <h1>Sorry, but it seems like your screen is too small.</h1>
+                <p>Unfortunately, GetWell currently doesn't support smaller screen sizes. Please use a device that is at least 1000 pixels wide.</p>
+            </div>
+            {showSavePopup &&
+                <SaveWindow 
+                    closePopup={() => setShowSavePopup(false)}
+                />}
             <div className={styles.pageContents}>
                 <PropertiesSidebar
                     textInputPosition={textInputPosition}
@@ -308,7 +345,10 @@ const Scrapbook = () => {
                             Canvas
                         </canvas>
                         <div className={styles.buttonWrapper}>
-                        <Button onClick={saveCanvas}>Save</Button>
+                        <Button onClick={() => {
+                            setShowSavePopup(true);
+                            saveCanvas();
+                            }}>Save</Button>
                         {/* <Button onClick={handleShareButton}>Share</Button> */}
                         <Button variant onClick={() => setShowClearPopup(true)}>Restart</Button>
                         {/* <Button onClick={() => setErrorPopup(true)}>Error</Button>
@@ -331,6 +371,7 @@ const Scrapbook = () => {
                       setInputIsEmpty={setInputIsEmpty}
                       textInputInfo={textInputInfo}
                       setTextInputInfo={setTextInputInfo}
+                      id={textElements.length}
                     />
                 </div>
             </div>
