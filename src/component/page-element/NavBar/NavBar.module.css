@@ -45,3 +45,15 @@
     margin: 0 12px;
   }
 }
+
+@media (max-width: 400px) {
+  .bar {
+   padding-left: 15px;
+   padding-right: 10px;
+  }
+  
+  .link {
+    margin: 0 10px;
+    font-size: 16px;
+  }
+}
