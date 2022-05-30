@@ -1,7 +1,7 @@
 import React from 'react'
-import { SketchPicker } from 'react-color'
+import { ChromePicker } from 'react-color'
 import styles from "../../page-element/ActionBar/ActionBar.module.css"
-
+import rgbHex from "rgb-hex";
 
 export default function ColorPicker(props) {
   const [open, setOpen] = React.useState(false);
@@ -41,7 +41,7 @@ export default function ColorPicker(props) {
   return(
     <div ref={ref}>
       <div>
-        {open &&<SketchPicker styles={pickerStyles} color={color} onChangeComplete={(color) => {
+        {open &&<ChromePicker styles={pickerStyles} color={color} onChangeComplete={(color) => {
           props.setCanvasColor(color.hex)
           setColor(color.hex)
         }}/>}
