@@ -296,15 +296,15 @@ const Scrapbook = () => {
         })
     }
 
-    // const handleShareButton = () => {
-    //     const authToken = TwitterPostService.getToken()
-    //     if (authToken) {
-    //         setShowSharingPopup(true)
-    //     } else {
-    //         TwitterPostService.authenticate()
-    //           .then(() => setShowSharingPopup(true))
-    //     }
-    // }
+    const handleShareButton = () => {
+        const authToken = TwitterPostService.getToken()
+        if (authToken) {
+            setShowSharingPopup(true)
+        } else {
+            TwitterPostService.authenticate()
+              .then(() => setShowSharingPopup(true))
+        }
+    }
 
     return(
         <>
@@ -349,7 +349,7 @@ const Scrapbook = () => {
                             setShowSavePopup(true);
                             saveCanvas();
                             }}>Save</Button>
-                        {/* <Button onClick={handleShareButton}>Share</Button> */}
+                         <Button onClick={handleShareButton}>Share</Button>
                         <Button variant onClick={() => setShowClearPopup(true)}>Restart</Button>
                         {/* <Button onClick={() => setErrorPopup(true)}>Error</Button>
                         <Popup trigger={errorPopup} setTrigger= {setErrorPopup}>

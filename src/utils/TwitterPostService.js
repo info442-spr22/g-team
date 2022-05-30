@@ -25,19 +25,31 @@ export default class TwitterPostService {
   }
 
   static uploadImage(base64) {
+    return this.#hostImage(base64)
+  }
+
+  static #hostImage(base64) {
     let params = new FormData();
     params.append("media_data", base64)
     // fetch(this.BASE_URL + `&media_data=${base64}`, {method: "POST", body: params})
 
     const token = this.getToken()
     if (token) {
-      fetch(this.BASE_URL, {method: "POST", body: params})
+      // params.append()
+
+      return fetch(this.BASE_URL, {
+        method: "POST",
+        body: params,
+        headers: {
+          'Authorization': `Basic ${token}`,
+          // 'Content-Type': 'multipart/form-data'
+        },
+      })
         .then(resp => resp.json())
-        .then(console.log)
+        .then(json => console.log(json))
         .catch(err => console.log(err.message))
     } else {
       return new Promise((resolve, reject) => {reject({ message: "Something went wrong, try sharing again. You may need to sign in." })})
     }
-
   }
 }
