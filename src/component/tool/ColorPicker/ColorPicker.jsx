@@ -42,8 +42,9 @@ export default function ColorPicker(props) {
     <div ref={ref}>
       <div>
         {open &&<ChromePicker styles={pickerStyles} color={color} onChangeComplete={(color) => {
-          props.setCanvasColor(color.hex)
-          setColor(color.hex)
+          const hexColor = "#" + rgbHex(color.rgb.r, color.rgb.g, color.rgb.b, color.rgb.a);
+          props.setCanvasColor(hexColor)
+          setColor(hexColor)
         }}/>}
       </div>
       <div>
