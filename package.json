@@ -19,6 +19,7 @@
     "react-firebaseui": "^6.0.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "rgb-hex": "^4.0.0",
     "roughjs": "^4.5.2",
     "sass": "^1.51.0",
     "use-react-screenshot": "^3.0.0",
